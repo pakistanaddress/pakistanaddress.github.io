@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2408.htm" />
+<title>PHP后期静态绑定 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">PHP后期静态绑定</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2>介绍</h2> <p>PHP中后期静态绑定的此功能用于在静态继承中引用类。当调用静态方法时，类名将与范围解析运算符（：:)附加在一起，而在其他实例方法的情况下，我们使用对象名来调用它们。static ::不会使用定义方法的类来解析，而是使用运行时信息来计算。对当前类的静态引用是使用函数所属的类（而不是定义其的类）来解析的</p> <h2>示例</h2> <p>在以下代码中，父类使用self ::前缀调用静态方法。与子类调用时相同的方法未引用子类名称，因为它无法解析</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;test1{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;$name="Raja"; &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;name(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"类名称："&nbsp;.&nbsp;__CLASS__; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;getname(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self::name(); &nbsp;&nbsp;&nbsp;} } class&nbsp;test2&nbsp;extends&nbsp;test1{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;name(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"类名称："&nbsp;.&nbsp;__CLASS__; &nbsp;&nbsp;&nbsp;} } test2::getname(); ?&gt;</pre> <p>输出结果</p> <p>结果显示再次期望，返回父类的名称</p> <pre>类名称：test1</pre> <p>使用static ::而不是self ::在运行时创建后期绑定</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;test1{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;name(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"类名称："&nbsp;.&nbsp;__CLASS__; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;getname(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static::name(); &nbsp;&nbsp;&nbsp;} } class&nbsp;test2&nbsp;extends&nbsp;test1{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;name(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"类名称："&nbsp;.&nbsp;__CLASS__; &nbsp;&nbsp;&nbsp;} } test2::getname(); ?&gt;</pre> <p>上面的代码现在按预期返回子类的名称</p> <p>输出结果</p> <pre>类名称：test2</pre> <h2>在非静态上下文中使用static ::</h2> <p>父级中的私有方法被复制到子级，因此其作用域仍将是父级</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;test1{ &nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;name(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"类名称："&nbsp;.&nbsp;__CLASS__&nbsp;."\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;getname(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;name(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static::name(); &nbsp;&nbsp;&nbsp;} } class&nbsp;test2&nbsp;extends&nbsp;test1{ &nbsp;&nbsp;&nbsp;// } $t2=new&nbsp;test2(); $t2-&gt;getname(); ?&gt;</pre> <p>输出结果</p> <p>输出显示以下结果</p> <pre>类名称：test1 类名称：test1</pre> <p>但是，当父方法被覆盖时，其范围会改变</p> <h2>示例</h2> <pre>class&nbsp;test3&nbsp;extends&nbsp;test1{ &nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;name()&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;original&nbsp;method&nbsp;is&nbsp;replaced;&nbsp;the&nbsp;scope&nbsp;of&nbsp;name&nbsp;is&nbsp;test3&nbsp;*/ &nbsp;&nbsp;&nbsp;} } $t3&nbsp;=&nbsp;new&nbsp;test3(); $t3-&gt;name();</pre> <p>输出结果</p> <p>输出显示以下异常</p> <pre>PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Call&nbsp;to&nbsp;private&nbsp;method&nbsp;test3::name()&nbsp;from&nbsp;context&nbsp;''</pre> <div></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2407.htm">MySQL碎片整理小节&#8211;实例演示</a></p>
+                                        <p>下一个：<a href="/html/category/article-2409.htm">Spring Boot项目配置Druid数据源(druid-spring-boot-starter)</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

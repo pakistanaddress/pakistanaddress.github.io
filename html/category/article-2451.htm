@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2451.htm" />
+<title>python实现模拟身份验证服务器综合系统设计 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">python实现模拟身份验证服务器综合系统设计</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>完成一个 Python 程序，实现密码存储和验证，用于模拟身份验证服务器，以便破解数据库的对手无法获得用户的明文密码。实现基本的注册和登录功能。</p> <p>测试样例如下：</p> <h4> <a id="input_4" rel="nofollow"></a>input</h4> <pre><code class="prism language-txt">R timerring i love cryptography L timerring i love cryptography L timerring i love cipher L Who i love cryptography Q </code></pre> <p>该系统的源码如下：</p> <h4> <a id="source_code_23" rel="nofollow"></a>source code</h4> <pre><code class="prism language-python"><span class="token keyword">from</span> __future__ <span class="token keyword">import</span> annotations <span class="token keyword">from</span> typing <span class="token keyword">import</span> Dict <span class="token keyword">import</span> getpass <span class="token keyword">import</span> hashlib <span class="token keyword">import</span> os  database<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> UserPassword<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token keyword">class</span> <span class="token class-name">UserPassword</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> in_username<span class="token punctuation">,</span> in_password_hash<span class="token punctuation">,</span> in_salt<span class="token punctuation">)</span><span class="token punctuation">:</span>         self<span class="token punctuation">.</span>username<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> in_username         self<span class="token punctuation">.</span>password_hash<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> in_password_hash         self<span class="token punctuation">.</span>salt<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> in_salt         self<span class="token punctuation">.</span>method<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">'scrypt'</span>      <span class="token comment"># define verify_password function</span>     <span class="token keyword">def</span> <span class="token function">verify_password</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> password<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>         password_ver<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> password<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>         <span class="token comment"># use the same salt</span>         salt_ver<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>salt         <span class="token comment"># set corresponding parameters</span>         n<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">4</span>         r<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">8</span>         p<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">16</span>         password_hash_ver<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>scrypt<span class="token punctuation">(</span>password_ver<span class="token punctuation">,</span> salt<span class="token operator">=</span>salt_ver<span class="token punctuation">,</span> n<span class="token operator">=</span>n<span class="token punctuation">,</span> r<span class="token operator">=</span>r<span class="token punctuation">,</span> p<span class="token operator">=</span>p<span class="token punctuation">)</span>         <span class="token comment"># verify the hash value of the password</span>         <span class="token keyword">if</span> password_hash_ver <span class="token operator">==</span> self<span class="token punctuation">.</span>password_hash<span class="token punctuation">:</span>             <span class="token keyword">return</span> <span class="token boolean">True</span>         <span class="token keyword">else</span><span class="token punctuation">:</span>             <span class="token keyword">return</span> <span class="token boolean">False</span>   <span class="token keyword">def</span> <span class="token function">database_add_item</span><span class="token punctuation">(</span>user<span class="token punctuation">:</span> UserPassword<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>     <span class="token keyword">if</span> user<span class="token punctuation">.</span>username <span class="token keyword">in</span> database<span class="token punctuation">:</span>         <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'User {} already exists.'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span>     database<span class="token punctuation">[</span>user<span class="token punctuation">.</span>username<span class="token punctuation">]</span> <span class="token operator">=</span> user   <span class="token keyword">def</span> <span class="token function">login_user</span><span class="token punctuation">(</span>username<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password_plaintext<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>     <span class="token keyword">if</span> username <span class="token keyword">not</span> <span class="token keyword">in</span> database<span class="token punctuation">:</span>         <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'User {} does not exist.'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token keyword">return</span> database<span class="token punctuation">[</span>username<span class="token punctuation">]</span><span class="token punctuation">.</span>verify_password<span class="token punctuation">(</span>password_plaintext<span class="token punctuation">)</span>   <span class="token keyword">def</span> <span class="token function">register_user</span><span class="token punctuation">(</span>username<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password_plaintext<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>     password_bytes<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> password_plaintext<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>     <span class="token comment"># The os.urandom function is used to obtain random bytes of a specified length</span>     <span class="token comment"># generate the salt bytes</span>     salt_bytes<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> os<span class="token punctuation">.</span>urandom<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span>     <span class="token comment"># set corresponding parameters</span>     n<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">4</span>     r<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">8</span>     p<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">16</span>     <span class="token comment"># Hash encryption</span>     password_hash<span class="token punctuation">:</span> <span class="token builtin">bytes</span> <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>scrypt<span class="token punctuation">(</span>password_bytes<span class="token punctuation">,</span> salt<span class="token operator">=</span>salt_bytes<span class="token punctuation">,</span> n<span class="token operator">=</span>n<span class="token punctuation">,</span> r<span class="token operator">=</span>r<span class="token punctuation">,</span> p<span class="token operator">=</span>p<span class="token punctuation">)</span>     <span class="token comment"># construct instance object</span>     User<span class="token punctuation">:</span> UserPassword <span class="token operator">=</span> UserPassword<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password_hash<span class="token punctuation">,</span> salt_bytes<span class="token punctuation">)</span>     <span class="token comment"># Add to database</span>     database_add_item<span class="token punctuation">(</span>User<span class="token punctuation">)</span>   <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>         <span class="token keyword">try</span><span class="token punctuation">:</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Usage:'</span><span class="token punctuation">)</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\tR - register a new user'</span><span class="token punctuation">)</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\tL - login with an existing user'</span><span class="token punctuation">)</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\tQ - exit'</span><span class="token punctuation">)</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>             command<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'Input command:'</span><span class="token punctuation">)</span>             <span class="token keyword">if</span> command <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span>                 exit<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>             <span class="token keyword">elif</span> command <span class="token operator">==</span> <span class="token string">'R'</span> <span class="token keyword">or</span> command <span class="token operator">==</span> <span class="token string">'L'</span><span class="token punctuation">:</span>                 username<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'Input username:'</span><span class="token punctuation">)</span>                 <span class="token comment"># password: str = getpass.getpass('Input password:') # will not work properly for PyCharm, IDLE, etc.</span>                 password<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'Input password:'</span><span class="token punctuation">)</span>                 <span class="token keyword">if</span> command <span class="token operator">==</span> <span class="token string">'R'</span><span class="token punctuation">:</span>                     register_user<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>                     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'User created successfully.'</span><span class="token punctuation">)</span>                 <span class="token keyword">elif</span> command <span class="token operator">==</span> <span class="token string">'L'</span><span class="token punctuation">:</span>                     login_valid<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> login_user<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>                     <span class="token keyword">if</span> login_valid<span class="token punctuation">:</span>                         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'User logged in successfully.'</span><span class="token punctuation">)</span>                     <span class="token keyword">else</span><span class="token punctuation">:</span>                         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Password verification failed. Can not logged in.'</span><span class="token punctuation">)</span>                 <span class="token keyword">else</span><span class="token punctuation">:</span>                     <span class="token keyword">assert</span> <span class="token boolean">False</span>             <span class="token keyword">else</span><span class="token punctuation">:</span>                 <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'Invalid command.'</span><span class="token punctuation">)</span>         <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Error: {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>  </code></pre> <h4> <a id="output_121" rel="nofollow"></a>output</h4> <pre><code class="prism language-txt">Usage: 	R - register a new user 	L - login with an existing user 	Q - exit  Input command:R Input username:timerring Input password:i love cryptography User created successfully. Usage: 	R - register a new user 	L - login with an existing user 	Q - exit  Input command:L Input username:timerring Input password:i love cryptography User logged in successfully. Usage: 	R - register a new user 	L - login with an existing user 	Q - exit  Input command:L Input username:timerring Input password:i love cipher Password verification failed. Can not logged in. Usage: 	R - register a new user 	L - login with an existing user 	Q - exit  Input command:L Input username:Who Input password:i love cryptography Error: User Who does not exist. Usage: 	R - register a new user 	L - login with an existing user 	Q - exit  Input command:Q  进程已结束，退出代码为 0  </code></pre> <p>由输出可知，系统功能一切正常。</p> <p>受于文本篇幅原因，本文相关算法实现工程例如环境及相关库，无法展示出来，现已将资源上传，可自行点击下方链接下载。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://download.csdn.net/download/m0_52316372/85982183"  rel="nofollow">python实现模拟身份验证服务器综合系统工程文件</a></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2450.htm">Spring 源码（9）Spring Bean的创建过程的前期准备_在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2452.htm">缓存与数据库的一致性思考</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2488.htm" title="一文搞定数据库连接池，太TM简单了，收藏！！！">一文搞定数据库连接池，太TM简单了，收藏！！！</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2483.htm" title="setTimeout、Promise、Async/Await 的区别">setTimeout、Promise、Async/Await 的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

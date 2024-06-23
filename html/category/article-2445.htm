@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2445.htm" />
+<title>图解：冒泡排序及其优化 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">图解：冒泡排序及其优化</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h3>一、什么是冒泡排序？</h3> <blockquote> <p><span style="color:#0d0016;"></span><span style="color:#fe2c24;">冒泡排序</span><span style="color:#0d0016;">（Bubble sort）,</span>是一种较简单的排序算法。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。（PS：来源百度百科）</p> </blockquote> <p style="text-align:center;"></p> <h3 id="%C2%A0%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">&nbsp;二、算法原理（升序）</h3> <ul> <li>&nbsp;1、比较相邻的两个元素。若第一个比第二个大，交换位置，反之位置不变。</li> <li>&nbsp;2、交换位置后，再与后面的一个两两比较。</li> <li>&nbsp;3、针对所有元素重复以上动作，最后一个除外。</li> </ul> <p>&nbsp;举例来说：<span style="color:#fe2c24;">36,26,27,2,4,19,50,48</span>来说，会有多趟排序（size - 1），每一趟要排多次（size - k）,<strong>这里列举出第一趟：</strong></p> <p style="text-align:center;"><img fetchpriority="high" decoding="async" alt="" height="470" src="http://img.555519.xyz/uploads/20221120/04c3b3ce58a8095be68a2f11346d054c.jpg"></p> <p><strong>多趟排序的后的结果总结是这样的：</strong></p> <p style="text-align:center;"><img decoding="async" alt="" height="481" src="http://img.555519.xyz/uploads/20221120/4af4d55dd1fd151898511fafd9c7a3d1.jpg"></p> <blockquote> <p>PS：这里留下一个思考，图里留了一个<span style="color:#fe2c24;"><strong>注意</strong></span>字样，在这里数组已经排序好了，但是还是会依次比较，你能想到什么方法优化吗？</p> </blockquote> <p><strong>它的动态执行过程如下动图所示：</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221120/6fdf238c7942d28f7806ab2b6a8d199c.jpg"></p> <p>PS：此动图来源于网络。</p> <table align="center" border="1" cellpadding="1" cellspacing="1" style="width:700px;"> <thead> <tr> <th style="width:156px;">&nbsp; &nbsp;最坏时间复杂度</th> <th style="width:175px;">&nbsp; &nbsp; &nbsp; &nbsp; 最好时间复杂度</th> <th style="width:203px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;空间复杂度</th> <th style="width:165px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否稳定</th> </tr> </thead> <tbody> <tr> <td style="width:156px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; O(n^2)</td> <td style="width:175px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; O(n)</td> <td style="width:203px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;O(1)</td> <td style="width:165px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 稳定</td> </tr> </tbody> </table> <h3>三、代码实现</h3> <pre><code class="language-java">public class BubbleSort {     public static void main(String[] args) {         // 直接定义一个数组         int[] nums = {36,26,27,2,4,19,50,48};         System.out.println("排序前的数组：" + Arrays.toString(nums));         sort(nums);         System.out.println("排序前的数组：" + Arrays.toString(nums));     }      /*     * 对数组进行冒泡排序     *     * @param nums 需要排序的数组     * */     private static void sort(int[] nums) {         // 数组长度 len         int len = nums.length;         // 临时变量 temp         int temp = 0;         // 外层循环控制排序趟数，len个进行len - 1趟         for (int i = 0; i &lt; len - 1; i++) {             System.out.println("第"+ (i + 1) +"趟：");             // 内层循环控制比较的次数，第i趟比较i-1次             for (int j = 0; j &lt; len - 1 - i; j++) {                 // 比较相邻的两个元素，若前面的数字大于后面的，交换位置                 if (nums[j] &gt; nums[j+1]) {                     temp = nums[j+1];                     nums[j+1] = nums[j];                     nums[j] = temp;                 }              System.out.println("    "+"第"+ (j + 1) +"次：" + Arrays.toString(nums));             }         }     } }</code></pre> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这里插一嘴，想起来自己刚接触冒泡排序的时候，感觉那个时候的自己就是一个菜逼，哈哈哈哈哈，不理解两个for的意义，写了好几遍之后还是不理解，似懂非懂。对了，当时还对交换数据位置哪里每次写都要纠结好久，想着怎么交换呀，拿笔在纸上比划半年，才写出来，后来找到了一个小技巧：<strong>起手临时变量，中间半交叉，收尾临时变量。</strong>仅供参考，大佬勿喷（小声BB）</p> </blockquote> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221120/6cb6562a8c84e2d15ecfde6563da5b50.jpg"></p> <p><strong>输出的结果：</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221120/c708780228fbca99548b7cb22864bfdf.jpg"></p> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从运行的结果可以看出，从红色标记开始，后面的排序的已经是有序的，但是代码还是要往后面执行，因此说明代码是可以进行优化，这里你可以思考一下怎么去优化这个问题。</p> </blockquote> <h3>4、优化：</h3> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加一个标志位，当每次发生交换的时候，就进行标记，如果没有发生交换，不标记，也就是说此时数组已经有序，直接跳出循环，于此同时再记录一下最后一次交换元素的位置，即可完成对这个排序的优化。</p> </blockquote> <p><strong>代码如下所示：</strong></p> <pre><code class="language-java">public class BubbleSort {     public static void main(String[] args) {         // 直接定义一个数组         int[] nums = {36,26,27,2,4,19,50,48};         System.out.println("排序前的数组：" + Arrays.toString(nums));         sort(nums);         System.out.println("排序前的数组：" + Arrays.toString(nums));     }      /*      * 对数组进行冒泡排序      *      * @param nums 需要排序的数组      * */     private static void sort(int[] nums) {         // 数组长度 len         int len = nums.length - 1;         // 记录最后一个交换的位置         int pos = 0;         // 临时变量 temp         int temp = 0;         // 外层循环控制排序趟数，len个进行len - 1趟         for (int i = 0; i &lt; nums.length - 1; i++) {             System.out.println("第" + (i + 1) + "趟：");             // 标记位             boolean flag = true;             // 内层循环控制比较的次数，第i趟比较i-1次             for (int j = 0; j &lt; len; j++) {                 // 比较相邻的两个元素，若前面的数字大于后面的，交换位置                 if (nums[j] &gt; nums[j + 1]) {                     temp = nums[j + 1];                     nums[j + 1] = nums[j];                     nums[j] = temp;                     // 如果能走到这里说明有有元素交换，还不是有序的，标记为false                     flag = false;                     // 最后一次交换元素的位置                     pos = j;                 }                 System.out.println("    第" + (j + 1) + "次：" + Arrays.toString(nums));             }             // 如果没有元素交换，直接跳出循环             if (flag) {                 break;             }             // 把最后一次交换元素的位置赋值给len,即下一次比较到记录位置             len = pos;         }     } }</code></pre> <p><strong>输出的结果：</strong></p> <h3 style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221120/a554697111029592bb2c68094d0af4a6.jpg"></h3> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于优化这块，我觉得并不具备普遍性，如果是在最坏的时间复杂度的情况下，优化与不优化输出的结果都是一样的，所以我们只需要了解冒泡的思想即可。另外加标志位这个思想在实际的开发中也很常用，需要我们多多思考。</p> </blockquote> <hr/> <p><strong>水平有限，写的不好的地方，希望大家指出。如果你感觉这篇文章对你有帮助，点赞支持一下</strong></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2444.htm">SpringBoot中异常处理_在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2446.htm">Java Web 部署了Tomcat之后无法使用servlet类 的解决方法</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2488.htm" title="一文搞定数据库连接池，太TM简单了，收藏！！！">一文搞定数据库连接池，太TM简单了，收藏！！！</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

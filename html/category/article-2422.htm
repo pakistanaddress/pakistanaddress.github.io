@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2422.htm" />
+<title>sparksql 操作hive - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">sparksql 操作hive</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>写在前面:hive的版本是1.2.1spark的版本是1.6.x</p> <p>http://spark.apache.org/docs/1.6.1/sql-programming-guide.html#hive-tables 查看hive和spark版本对应情况</p> <p>SparkSQL操作Hive中的表数据<br />spark可以通过读取hive的元数据来兼容hive，读取hive的表数据，然后在spark引擎中进行sql统计分析，从而，通过sparksql与hive结合实现数据分析将成为一种最佳实践。详细实现步骤如下：</p> <p>1、启动hive的元数据服务<br />hive可以通过服务的形式对外提供元数据读写操作，通过简单的配置即可<br /><strong>编辑 $HIVE_HOME/conf/hive-site.xml,增加如下内容</strong>:<br />&lt;property&gt;<br />&lt;name&gt;hive.metastore.uris&lt;/name&gt;<br />&lt;value&gt;thrift:// hdp-node-01:9083&lt;/value&gt;<br />&lt;/property&gt;</p> <p><strong>启动hive metastore</strong><br />[hadoop@hdp-node-01 ~]${HIVE_HOME}/bin/hive --service metastore&nbsp; 1&gt;/dev/null&nbsp; 2&gt;&amp;1&nbsp; &amp;</p> <p>&nbsp;&nbsp; &nbsp;查看 metastore:<br />[hadoop@hdp-node-01 ~] jobs<br />[1]+ Running hive --service metastore &amp;</p> <p>2、spark配置<br />&nbsp;&nbsp; &nbsp;将hive的配置文件拷贝给spark<br /><strong>将 $HIVE_HOME/conf/hive-site.xml copy $SPARK_HOME/conf/</strong></p> <p><strong>将mysql的jdbc驱动包拷贝给spark</strong><br />将 $HIVE_HOME/lib/mysql-connector-java-5.1.12.jar copy或者软链到$SPARK_HOME/lib/</p> <p>3、启动spark-sql的shell交互界面<br />spark-sql已经集成在spark-shell中，因此，只要启动spark-shell，就可以使用spakr-sql的shell交互接口：<br />[hadoop@hdp-node-01 spark] bin/spark-shell --master spark://hdp-node-01:7077</p> <div><img decoding="async" src="http://img.555519.xyz/uploads3/20220820/a8588550bf2af70e2ed1f80d6794e3f1.jpg" alt="sparksql 操作hive"></div> <p>或者，可以启动spark-sql界面，使用起来更方便<br />[hadoop@hdp-node-01 spark] bin/spark-sql --master spark://hdp-node-01:7077</p> <p>就可以使用hivesql了<br />由于在console中会打印很多info级别日志,所以可以改变spark的日志级别</p> <p>4、在交互界面输入sql进行查询<br />注：以下所用到的库和表，都是已经在hive中存在的库和表</p> <p>&nbsp;&nbsp; &nbsp;如果在spark-shell中执行sql查询，使用sqlContext对象调用sql()方法<br />scala&gt; sqlContext.sql("select remote_addr from dw_weblog.t_ods_detail group by remote_addr").collect.foreach(println)</p> <p>&nbsp;&nbsp; &nbsp;如果是在spark-sql中执行sql查询，则可以直接输入sql语句<br />scala&gt; show databases<br />scala&gt; use dw_weblog<br />scala&gt; select remote_addr from dw_weblog.t_ods_detail group by remote_addr</p> <p>5、在IDEA中编写代码使用hive-sql<br />如下所示：<br />val hiveContext = new HiveContext(sc)<br />&nbsp;&nbsp;&nbsp; import hiveContext.implicits._<br />&nbsp;&nbsp;&nbsp; import hiveContext.sql<br />&nbsp;&nbsp;&nbsp; //指定库<br />sql("use dw_weblog")<br />//执行标准sql语句<br />sql("create table sparksql as select remote_addr,count(*) from t_ods_detail group by remote_addr")<br />……<br />综上所述，sparksql类似于hive，可以支持sql语法来对海量数据进行分析查询，跟hive不同的是，hive执行sql任务的底层运算引擎采用mapreduce运算框架，而sparksql执行sql任务的运算引擎是spark core，从而充分利用spark内存计算及DAG模型的优势，大幅提升海量数据的分析查询速度<br />源码</p> <p>&nbsp;最后:</p> <p>sparksql 如果连接报错可能的原因是hive元数据库的编码不是utf8的,</p> <p>alter database hive character set latin1;<br />ALTER TABLE hive.* DEFAULT CHARACTER SET latin1;</p> <p>sparksql 执行创建表的时候报错</p> <p>org.apache.spark.sql.execution.QueryExecutionException: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. MetaException(message:file:/user/hive/warehouse/student2 is not a directory or unable to create one)</p> <p>可能是没有启动hive元数据服务</p> </div> <p>转载于:https://www.cnblogs.com/rocky-AGE-24/p/7345417.html</p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2421.htm">Spring boot使用druid 数据源 的监控页</a></p>
+                                        <p>下一个：<a href="/html/category/article-2423.htm">面向对象编程原则(03)——单一职责原则</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2477.htm" title="spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2492.htm" title="JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)">JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

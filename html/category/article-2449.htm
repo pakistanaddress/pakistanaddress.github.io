@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2449.htm" />
+<title>数据库事务四大特性、四大隔离级别以及解决的三种问题 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">数据库事务四大特性、四大隔离级别以及解决的三种问题</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><strong>一、数据库事务的四大特性：（ACID）</strong></p> <ul> <li><strong>原子性( Atomicity )</strong>：指的是事务是一个不可分割的工作单位，要不全部成功，要不全部回滚</li> <li><strong>一致性( Consistensy )</strong>：事务在执行前后数据库处于一致性。（如：AB之间转账，A少100，B必须要增加100）</li> <li><strong>隔离性( Isolation )：</strong>多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间数据要相互隔离</li> <li><strong>持久性( Durability )：</strong>指一个事务一旦被提交，他对数据库的影响是永久性的。</li> </ul> <p><strong>二、数据库事务隔离级别</strong><strong>与</strong><strong>数据（脏读，不可重复读，幻读）</strong></p> <p><strong>前提：事务并发情况下</strong></p> <p>由低到高依次为Read uncommitted 、Read committed 、Repeatable read 、Serializable ，这四个级别可以逐个解决脏读 、不可重复读 、幻读 这几类问题</p> <p><strong>1、读未提交（Read Uncommitted）</strong></p> <p>当隔离级别设置 read uncommittend时，容易出现数据的脏读。</p> <p>如：A向B还钱，但是该事务没有提交，此时B正好去查看发现多了100，觉得A可以啊，可是此时A 发现了多打了100，迅速回滚事务，修改金额，提交事务，最后B 心理有了落差感</p> <p><strong>脏读：读取到了未提交的数据</strong></p> <p><strong>2、读已提交（Read Committed ）</strong></p> <p>当隔离级别设置为 read committed 时，避免了脏读，但是可能会造成不可重复读。</p> <p>如：A与B 同时操作A的卡，A在进行插卡付款这个过程中，插卡时显示有500元，此时B在他付款前，把A中的 500 元全花了，导致A 付款失败，刷了一夜盘子</p> <p><strong>不可重复读：是指在一个事务内,多次读同一条数据。在这个事务还没有结束时,另一个事务对该数据进行了修改了，导致两次读取的数据不同</strong></p> <p>注意：大多数数据库的默认级别就是Read committed，比如Sql Server , Oracle。</p> <p><strong>3、可重复读 ( Repeatable Read )</strong></p> <p>当隔离级别设置为 repeatable read 时，避免了不可重复读，但是可能会造成幻读。</p> <p>如：当B 在查看A 的消费记录时，转了一下头，A此时买了一个裤衩，又新增了一条记录，回头时B发现怎么又多了一条记录，以为出现了幻觉</p> <p><strong>幻读：指的在一个事务内，前后查询同一范围内的数据，发现前后两次查询的数据不一样。</strong></p> <p>注意：Mysql的默认隔离级别是Repeatable read。</p> <p><strong>4、可串行化 ( Serialzable )</strong></p> <p>serializable是最高的事务隔离级别，在此级别下，事务顺序执行，不仅可以避免脏读，不可重复读，还避免了幻读，但是，性能很低，代价高昂，一般很少使用</p> <p>注意：脏读与不可重复读针对的都是同一条数据，幻读针对的是一部分数据</p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2448.htm">使用注解@Validated、@Valid和BindingResult对入参进行校验</a></p>
+                                        <p>下一个：<a href="/html/category/article-2450.htm">Spring 源码（9）Spring Bean的创建过程的前期准备_在线工具</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2518.htm" />
+<title>vue项目几个比较好的实践(路由模块化，打包dll优化，vuex) - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2><strong>一.路由的模块化和统一自动加载</strong></h2> <p>团队之间协作开发，为了防止对统一路由的修改，可以采用路由的模块化自动统一加载的方法，使用webpack的require.context来实现，项目的views目录结构如下：&nbsp;</p> <p><img fetchpriority="high" decoding="async" alt="" height="271" src="http://img.555519.xyz/uploads/20221230/dc7d737fced5645716371a7adaebc313.jpg"></p> <p>每个页面设置一个router的配置文件，内容如下：</p> <pre><code class="language-javascript">const IndexLayout = () =&gt; import("@/views/index.vue"); setRoutersPath(routers) {     var arryPath = [];     routers.keys().forEach((key) =&gt; {       console.log(key) // ./social.home.vue       var _keyarr = key.split(".");       arryPath.push({         path: _keyarr[1],         component: IndexLayout,         children: [{           path: _keyarr[2],           name: _keyarr[2],           component: routers(key).default,           meta: {             keepAlive: keep.keepAlives()[_keyarr[2]] || false, // 是否缓存             isBack: false  // 页面设置缓存后 刷新页面使用           }         }]       })     })     return arryPath;   }  let routers = require.context('./', false, /.vue/); export default setRoutersPath(routers);</code></pre> <p>然后再统一加载到router中：</p> <pre><code class="language-javascript">import Vue from 'vue'; import VueRouter from 'vue-router'; const Login = () =&gt; import('@/views/login/login.vue'); Vue.use(VueRouter); var rPaths = require.context("../views", true, /\.router\.js/); var arryRouters = []; rPaths.keys().forEach(key =&gt; {   arryRouters = arryRouters.concat(rPaths(key).default) }); const routes = [   {     path: '/',     redirect: '/login'   },   {     path: '/login',     name: "login",     component: Login   },   ...arryRouters ] const router = new VueRouter({   mode: 'hash',   base: process.env.BASE_URL,   routes }); export default router; </code></pre> <h2><strong>二.打包优化之dll优化</strong></h2> <p>打包时间的原则：</p> <ol> <li>模块处理数量决定的</li> <li>用了多少次处理</li> </ol> <p>为了节约打包时间，可以使用dll插件先将vue等第三方插件先预打包成dll文件，操作方式如下</p> <p>1.添加打包dll的webpack文件webpack.dll.config.js</p> <pre><code class="language-javascript">const path = require('path'); const DllPlugin = require('webpack/lib/DllPlugin'); const UglifyJsPlugin = require('uglifyjs-webpack-plugin');    //js压缩 module.exports = {   mode: 'production',   // 入口文件   entry: {     vendor: [       "vue",       "vue-router",       "vuex/dist/vuex.esm.js",       "axios"     ]   },   // 输出文件   output: {     // 文件名称     filename: '[name].dll.js',     // 将输出的文件放到dist目录下     path: path.resolve(__dirname, 'dll'),     library: '_dll_[name]'   },   module: {     rules: [       {         test: /\.vue$/,         loader: 'vue-loader'       },       {         test: /\.js$/,         loader: 'babel-loader',         exclude: /node_modules/       }     ]   },   plugins: [     // 使用插件 DllPlugin     new DllPlugin({       name: '_dll_[name]', //这里的名字应该和上面output的library的名字一直       /* 生成manifest文件输出的位置和文件名称 */       path: path.join(__dirname, 'dll/[name].manifest.json')     }),   ],   optimization: {     minimizer: [       //js压缩       new UglifyJsPlugin({         cache: true,         parallel: true,         sourceMap: false,         uglifyOptions: {           warnings: false,           compress: {             drop_console: true, // console             drop_debugger: false,             pure_funcs: ['console.log'] // 移除console           }         }       }),     ]   } };</code></pre> <p>&nbsp;2.在生产环境的打包webpack的配置中添加插件：</p> <pre><code class="language-javascript">config.plugins.push(    new webpack.DllReferencePlugin({      context: process.cwd(),      manifest: path.resolve(__dirname, `dll/vendor.manifest.json`) // 这里对应生成的manifest.json目录    }), );</code></pre> <p>3.配置package.json</p> <pre><code class="language-javascript">"scripts": {     "serve": "vue-cli-service serve",     "build": "vue-cli-service build",     "build:dll": "npx webpack --config webpack.dll.config.js" // 先运行这个生成dll文件   },</code></pre> <h2>三.vuex的实践</h2> <p>vuex分模块处理，并对需要持久化的模块使用VuexPersistence处理，目录结构如下：</p> <p><img decoding="async" alt="" height="189" src="http://img.555519.xyz/uploads/20221230/85f664f0f4d2579e878fafe8edaab63c.jpg"></p> <p>&nbsp;model目录下的每个文件夹代表一个vuex模块，每个模块的内容统一通过该目录下的index.js export出来。内容如下：</p> <pre><code class="language-javascript">// getters.js const getQhSize = (state) =&gt; state.qh_size; export default {   getQhSize };  // setters.js const setQhSize = (state, size) =&gt; {   state.qh_size = size } export default {   setQhSize, }  //index.js import getters from './getters'; import mutations from './mutations.js'; const state = {   qh_size: "" }; export default {   ispersist: true, // 是否需要持久化存储 true表示需要 false或者不写表示不需要   name: "qh_state",    // vuex 模块的名称 必须要制定   namespaced: true,   state,   getters,   mutations, }; </code></pre> <p>&nbsp;之后，通过最外层目录中的index.js统一装配成store:</p> <pre><code class="language-javascript">import Vue from 'vue'; import Vuex from 'vuex'; import VuexPersistence from 'vuex-persist'; Vue.use(Vuex);  const modelsFile = require.context("./model", true, /index.js$/); var models = {}, persist = []; modelsFile.keys().forEach((key) =&gt; {   // add persist storage   if (modelsFile(key).default.ispersist) {     persist.push(modelsFile(key).default.name)   }   var modelsname = {};   models[modelsFile(key).default.name] = modelsname;   for (var i in modelsFile(key).default) {     modelsname[i] = modelsFile(key).default[i]   } });  const vuexLocal = new VuexPersistence({   storage: window.localStorage,   modules: persist, }) export default new Vuex.Store({   modules: {     ...models   },   plugins: [vuexLocal.plugin] });</code></pre> <p>&nbsp;</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2517.htm">C#关键字Check简单介绍_C#教程</a></p>
+                                        <p>下一个：<a href="/html/category/article-2519.htm">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2481.htm" title="检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

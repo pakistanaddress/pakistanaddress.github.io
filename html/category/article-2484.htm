@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2484.htm" />
+<title>Gin-使用GORM操作mysql 数据库 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Gin-使用GORM操作mysql 数据库</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size: 16px;"> <p>本文已参与「新人创作礼」活动，一起开启掘金创作之路。</p> <h1>1、使用GORM操作mysql 数据库</h1> <h2>1、GORM概述</h2> <p>GORM是Golang的一个orm 框架(采用元数据来描述对象与关系映射的细节，元数据一般采用XML格式，并且存放在专门的对象一映射文件中)，功能齐全(具有关联、挂钩(hook)、支持预加载等)，对开发者非常友好。</p> <h2>2、Gin 中使用 GORM</h2> <p>### 1、毫无疑问，安装 ``` go get -u gorm.io/gorm </p> <p>go get -u gorm.io/driver/mysql ``` 如果使用了go mod 的管理，那就不需要了。 他自己会引</p> <p><code>go import ( "fmt" "gorm.io/driver/mysql" "gorm.io/gorm" ) </code> ### 2、使用GORM连接数据库</p> <p><code>go func init() { //passWord为数据库密码 dsn := "root:passWord@tcp(192.168.0.6:3306)/gin?charset=utf8mb4&amp;parseTime=True&amp;loc=L ocal" DB, err = gorm.Open(mysql.Open(dsn), &amp;gorm.Config{}) if err != nil { fmt.Println(err) } } </code></p> <h3>3、定义操作数据库的模型</h3> <p>#### 1、声明模型 模型是带有基本Go类型的普通结构，指针/别名，或者实现了Scanner和Valuer接口的自定义类型 ```go type User struct { ID uint Name string Email *string //指针 Age uint8 Birthday *time.Time //日期 MemberNumber sql.NullString ActivatedAt sql.NullTime CreatedAt time.Time</p> <p>} <code> 注意： </code> 1、结构体的名称必须<strong>首字母大写</strong> 2、结构体中的<strong>字段名称首字母必须大写</strong> 3、默认情况表名是结构体名称的复数形式 ```</p> <h2>4、约定( Conventions)</h2> <p>GORM 更喜欢约定而不是配置，默认情况下，GORM 使用<code>ID</code>作为主键，将结构名称复数<code>snake_cases</code>作为表名，<code>snake_case</code>作为列名，并使用<code>CreatedAt</code>,<code>UpdatedAt</code>来跟踪创建/更新时间。</p> <p>如果遵循 GORM 采用的约定，就会减少很多配置，不遵循的话就要自己配置</p> <h2>5、gorm.Model</h2> <p>GORM 定义了一个<code>gorm.Model</code>结构体，其中包括字段<code>ID</code>,&nbsp;<code>CreatedAt</code>,&nbsp;<code>UpdatedAt</code>,<code>DeletedAt</code></p> <p><code>go type Model struct { ID uint `gorm:"primaryKey"` CreatedAt time.Time UpdatedAt time.Time DeletedAt gorm.DeletedAt `gorm:"index"` } </code> 注意：<strong>我们可以将其嵌入到您的结构中以包含这些字段</strong> ### 嵌入式结构</p> <p><code>go //使用嵌入式 type User struct { gorm.Model Name string } //相当于(不) type User struct { ID uint `gorm:"primaryKey"` CreatedAt time.Time UpdatedAt time.Time DeletedAt gorm.DeletedAt `gorm:"index"` Name string } </code></p> <p>如果想了解的更加详细，可以去查看官方文档：https://gorm.io/docs/models.html#embedded_struct</p> </div></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2483.htm">setTimeout、Promise、Async/Await 的区别</a></p>
+                                        <p>下一个：<a href="/html/category/article-2485.htm">PDB调试方法</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

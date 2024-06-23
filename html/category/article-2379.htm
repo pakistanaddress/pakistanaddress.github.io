@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2379.htm" />
+<title>用 docker 部署kafka - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">用 docker 部署kafka</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>章节目录</h3> <ul> <li> <ul> <li><a href="#1__5" rel="nofollow">1. 参考链接</a></li> <li><a href="#2__14" rel="nofollow">2. 摘抄引用</a></li> <li> <ul> <li><a href="#21_Docker_16" rel="nofollow">2.1 Docker镜像选型</a></li> <li><a href="#22_wurstmeisterkafka_33" rel="nofollow">2.2 `wurstmeister/kafka`镜像简介的先决条件</a></li> <li><a href="#23__44" rel="nofollow">2.3 简单使用</a></li> </ul> </li> <li><a href="#3__55" rel="nofollow">3. 安装过程</a></li> <li> <ul> <li><a href="#31_Docker_57" rel="nofollow">3.1 安装Docker（略）</a></li> <li><a href="#32_Docker_Compose_59" rel="nofollow">3.2 安装Docker Compose（略）</a></li> <li><a href="#33_github_61" rel="nofollow">3.3 从github拉取最新打包资源</a></li> <li><a href="#34_dockercomposeymldockerip_96" rel="nofollow">3.4 更新`docker-compose.yml`中你docker主机ip</a></li> <li><a href="#35__171" rel="nofollow">3.5 启动集群</a></li> <li> <ul> <li><a href="#351_dockercompose_f_dockercomposeyml_up_d_185" rel="nofollow">3.5.1 当执行`docker-compose -f docker-compose.yml up -d`命令遇到错误</a></li> <li><a href="#352__193" rel="nofollow">3.5.2 分析脚本执行过程</a></li> <li><a href="#353_master2xxkafka_212" rel="nofollow">3.5.3 使用master分支的构建脚本启动`2.x.x`版本的kafka</a></li> </ul> </li> <li><a href="#36__219" rel="nofollow">3.6 开启单个节点</a></li> </ul> </li> <li><a href="#4_Kafka_Shell_234" rel="nofollow">4. Kafka Shell</a></li> <li><a href="#5__260" rel="nofollow">5. 测试</a></li> <li><a href="#6_MACKafkadocker_282" rel="nofollow">6. 在MAC电脑上运行Kafka-docker</a></li> <li><a href="#7__286" rel="nofollow">7. 故障排除</a></li> </ul> </li> </ul> </div> <h2> <a id="1__5" rel="nofollow"></a>1. 参考链接</h2> <ol> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/8ccd712e2599"  rel="nofollow">Docker快速搭建Kafka 1.x集群</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://wurstmeister.github.io/kafka-docker/"  rel="nofollow">Kafka Docker - Run multiple Kafka brokers in Docker</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.michael-noll.com/blog/2013/03/13/running-a-multi-broker-apache-kafka-cluster-on-a-single-node/"  rel="nofollow">Running a Multi-Broker Apache Kafka 0.8 Cluster on a Single Node</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://allthingshadoop.com/2013/12/07/using-vagrant-to-get-up-and-running-with-apache-kafka/"  rel="nofollow">Using Vagrant to get up and running with Apache Kafka</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_38251332/article/details/105638535"  rel="nofollow">kafka listeners 和 advertised.listeners 的区别及应用</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/26495e334613"  rel="nofollow">kafka配置KAFKA_LISTENERS和KAFKA_ADVERTISED_LISTENERS</a></li> </ol> <h2> <a id="2__14" rel="nofollow"></a>2. 摘抄引用</h2> <h3> <a id="21_Docker_16" rel="nofollow"></a>2.1 Docker镜像选型</h3> <p>Kafka是没有官方Docker镜像的，所以要么自己写一个Dockerfile，要么用第三方已经构建好的。</p> <p>自己写一个Dockerfile不是不可以，但不符合我要“最快”的目标，所以用第三方已经构建好的镜像那是最快的。</p> <p>由于是第三方镜像，希望已经用过的人越多越好，这样坑相对会比较少一些。</p> <p>带着上面的要求，开始寻找合适的第三方镜像，比较出名的有以下几个：</p> <ol> <li> <code>wurstmeister/kafka</code>特点：star数最多，版本更新到 Kafka 1.0，zookeeper与kafka分开于不同镜像。</li> <li> <code>spotify/kafka</code>特点：star数较多，有很多文章或教程推荐，zookeeper与kafka置于同一镜像中；但kafka版本较老（还停留在0.10.1.0）。</li> <li> <code>confluent/kafka</code>背景：Confluent是书中提到的哪位开发Kafka的Jay Kreps从LinkedLn离职后创立的新公司，Confluent Platform是一个流数据平台，围绕Kafka打造了一系列的产品。特点：大咖操刀，文档详尽，但是也和Confluent Platform进行了捆绑。</li> </ol> <p>上述三个项目中，最终选定使用<code>wurstmeister/kafka</code>，star最多，版本一直保持更新，用起来应该比较放心。</p> <h3> <a id="22_wurstmeisterkafka_33" rel="nofollow"></a>2.2 <code>wurstmeister/kafka</code>镜像简介的先决条件</h3> <ul> <li>安装<code>docker-compose</code> </li> <li>在<code>docker-compose.yml</code>配置文件中修改<code>KAFKA_ADVERTISED_HOST_NAME</code>去匹配你的docker主机IP（注意：如果你想要运行多broker集群，不要使用<code>localhost</code>或<code>127.0.0.1</code>作为主机ip）</li> <li>如果你想要添加自定义的Kafka参数，只需要将它们添加到<code>docker-compose.yml</code>。例如： <ul> <li>增加<code>message.max.bytes</code>参数，添加<code>KAFKA_MESSAGE_MAX_BYTES: 2000000</code>到<code>environment</code>部分。</li> <li>关闭自动主题创建集，配置<code>KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'</code> </li> </ul> </li> <li>Kafka可以通过添加环境变量前缀<code>LOG4J_</code>来自定义log4j用法。这些环境变量会映射到<code>log4j.properties</code>。例如：<code>LOG4J_LOGGER_KAFKA-AUTHORIZER_LOGGER=DEBUG,authorizerAppender</code> </li> </ul> <p>**注意：**配置网络有几个“问题”。如果你不知道的要求是什么，请查看<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/wurstmeister/kafka-docker/wiki/Connectivity"  rel="nofollow">连接指南</a></p> <h3> <a id="23__44" rel="nofollow"></a>2.3 简单使用</h3> <p>启动集群：</p> <ul> <li><code>docker-compose up -d</code></li> </ul> <p>添加更多brokers</p> <ul> <li><code>docker-compose scale kafka=3</code></li> </ul> <p>销毁一个集群</p> <ul> <li><code>docker-compose stop</code></li> </ul> <h2> <a id="3__55" rel="nofollow"></a>3. 安装过程</h2> <h3> <a id="31_Docker_57" rel="nofollow"></a>3.1 安装Docker（略）</h3> <h3> <a id="32_Docker_Compose_59" rel="nofollow"></a>3.2 安装Docker Compose（略）</h3> <h3> <a id="33_github_61" rel="nofollow"></a>3.3 从github拉取最新打包资源</h3> <pre><code class="prism language-shell"><span class="token comment"># 克隆docker制作脚本</span> <span class="token function">git</span> clone https://github.com/wurstmeister/kafka-docker.git  <span class="token comment"># 进入目录查看目录文件</span> <span class="token builtin class-name">cd</span> kafka-docker  <span class="token comment"># 查看所有标签，找到最新版本</span> <span class="token function">git</span> tag  <span class="token comment"># 切换到最新版本</span> <span class="token function">git</span> checkout <span class="token operator">&lt;</span>last_tag_name<span class="token operator">&gt;</span> </code></pre> <p>kafka-docker仓库目录文件展示：</p> <pre><code>[root@jiewli kafka-docker]# ll 总用量 72 -rwxr-xr-x. 1 root root   210 7月   7 17:18 broker-list.sh -rw-r--r--. 1 root root   969 7月   7 17:18 CHANGELOG.md -rwxr-xr-x. 1 root root  1221 7月   7 17:18 create-topics.sh -rw-r--r--. 1 root root   367 7月   7 17:08 docker-compose-single-broker.yml -rw-r--r--. 1 root root   705 7月   7 17:08 docker-compose-swarm.yml -rw-r--r--. 1 root root   324 7月   7 17:18 docker-compose.yml -rw-r--r--. 1 root root  1132 7月   7 17:18 Dockerfile -rwxr-xr-x. 1 root root   395 7月   7 17:18 download-kafka.sh -rw-r--r--. 1 root root 11325 7月   7 17:08 LICENSE -rw-r--r--. 1 root root  9887 7月   7 17:18 README.md -rwxr-xr-x. 1 root root  4591 7月   7 17:18 start-kafka.sh -rwxr-xr-x. 1 root root   131 7月   7 17:08 start-kafka-shell.sh drwxr-xr-x. 2 root root  4096 7月   7 17:18 test </code></pre> <h3> <a id="34_dockercomposeymldockerip_96" rel="nofollow"></a>3.4 更新<code>docker-compose.yml</code>中你docker主机ip</h3> <p>通过命令<code>vim docker-compose.yml</code>查看仓库目录中的<code>docker-compose.yml</code>配置文件。</p> <pre><code class="prism language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span> <span class="token key atrule">services</span><span class="token punctuation">:</span>   <span class="token key atrule">zookeeper</span><span class="token punctuation">:</span>     <span class="token key atrule">image</span><span class="token punctuation">:</span> wurstmeister/zookeeper     <span class="token key atrule">ports</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> <span class="token string">"2181:2181"</span>   <span class="token key atrule">kafka</span><span class="token punctuation">:</span>     <span class="token key atrule">build</span><span class="token punctuation">:</span> .     <span class="token key atrule">ports</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> <span class="token string">"9092"</span>     <span class="token key atrule">environment</span><span class="token punctuation">:</span>       <span class="token key atrule">DOCKER_API_VERSION</span><span class="token punctuation">:</span> <span class="token number">1.22</span>       <span class="token key atrule">KAFKA_ADVERTISED_HOST_NAME</span><span class="token punctuation">:</span> 192.168.99.100       <span class="token key atrule">KAFKA_ZOOKEEPER_CONNECT</span><span class="token punctuation">:</span> zookeeper<span class="token punctuation">:</span><span class="token number">2181</span>     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> /var/run/docker.sock<span class="token punctuation">:</span>/var/run/docker.sock </code></pre> <blockquote> <p>重要：<br /> kafka 0.9.x以后的版本新增了<code>advertised.listeners</code>配置<br /> kafka 0.9.x以后的版本不要使用 <code>advertised.host.name</code> 和 <code>advertised.host.port</code> 已经 deprecated<br /><code>host.name</code> 和 <code>port</code> 为 deprecated，使用 <code>listeners</code> 代替</p> <p>所以，<code>KAFKA_ADVERTISED_HOST_NAME</code>配置也要改成 <code>KAFKA_ADVERTISED_LISTENERS</code>， 而后者要求必须配置 <code>KAFKA_LISTENERS</code>，不然会抛异常：</p> <p><code>ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS</code></p> </blockquote> <pre><code class="prism language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span> <span class="token key atrule">services</span><span class="token punctuation">:</span>   <span class="token key atrule">zookeeper</span><span class="token punctuation">:</span>     <span class="token key atrule">image</span><span class="token punctuation">:</span> wurstmeister/zookeeper     <span class="token key atrule">ports</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> <span class="token string">"2181:2181"</span>   <span class="token key atrule">kafka</span><span class="token punctuation">:</span>     <span class="token key atrule">build</span><span class="token punctuation">:</span> .     <span class="token key atrule">ports</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> <span class="token string">"9092"</span>     <span class="token key atrule">environment</span><span class="token punctuation">:</span>       <span class="token key atrule">DOCKER_API_VERSION</span><span class="token punctuation">:</span> <span class="token number">1.22</span>       <span class="token key atrule">KAFKA_LISTENERS</span><span class="token punctuation">:</span> PLAINTEXT<span class="token punctuation">:</span>//<span class="token punctuation">:</span><span class="token number">9092</span>       <span class="token key atrule">KAFKA_ADVERTISED_LISTENERS</span><span class="token punctuation">:</span> PLAINTEXT<span class="token punctuation">:</span>//192.168.99.100<span class="token punctuation">:</span><span class="token number">9094</span>       <span class="token key atrule">KAFKA_ZOOKEEPER_CONNECT</span><span class="token punctuation">:</span> zookeeper<span class="token punctuation">:</span><span class="token number">2181</span>     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> /var/run/docker.sock<span class="token punctuation">:</span>/var/run/docker.sock </code></pre> <p>将上面<code>KAFKA_ADVERTISED_HOST_NAME</code>改为你的docker主机ip。</p> <p>如果你想要添加自定义的Kafka参数，只需要将它们添加到<code>docker-compose.yml</code>。例如：</p> <ul> <li>增加<code>message.max.bytes</code>参数，添加<code>KAFKA_MESSAGE_MAX_BYTES: 2000000</code>到<code>environment</code>部分。</li> <li>关闭自动主题创建集，配置<code>KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'</code> </li> </ul> <p>启动失败：</p> <pre><code class="prism language-shell"><span class="token punctuation">[</span>root@jiewli kafka-docker<span class="token punctuation">]</span><span class="token comment"># docker logs -f --tail=300 kafka-docker_kafka_1</span> ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS ERROR: Missing environment variable KAFKA_LISTENERS. Must be specified when using KAFKA_ADVERTISED_LISTENERS </code></pre> <h3> <a id="35__171" rel="nofollow"></a>3.5 启动集群</h3> <pre><code class="prism language-shell">$ <span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span> </code></pre> <p>例如，启动一个有两个<code>broker</code>的的集群</p> <pre><code class="prism language-shell">$ <span class="token function">docker-compose</span> scale <span class="token assign-left variable">kafka</span><span class="token operator">=</span><span class="token number">2</span> </code></pre> <p>这会启动一个单独的<code>zookeeper</code>实例，和两个<code>Kafka</code>实例。你可以使用<code>docker-compose ps</code>命令去显示正在运行的实例。<br /> 如果你想去添加更多的<code>Kafka</code> brokers，只需要通过命令<code>docker-compose scale kafka=n</code>增加值。</p> <h4> <a id="351_dockercompose_f_dockercomposeyml_up_d_185" rel="nofollow"></a>3.5.1 当执行<code>docker-compose -f docker-compose.yml up -d</code>命令遇到错误</h4> <pre><code>wget: server returned error: HTTP/1.1 404 Not Found The command '/bin/sh -c apk add --no-cache bash curl jq docker  &amp;&amp; mkdir /opt  &amp;&amp; chmod a+x /tmp/*.sh  &amp;&amp; mv /tmp/start-kafka.sh /tmp/broker-list.sh /tmp/create-topics.sh /usr/bin  &amp;&amp; sync &amp;&amp; /tmp/download-kafka.sh  &amp;&amp; tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt  &amp;&amp; rm /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz  &amp;&amp; ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka  &amp;&amp; rm /tmp/*  &amp;&amp; wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk  &amp;&amp; apk add --no-cache --allow-untrusted glibc-${GLIBC_VERSION}.apk  &amp;&amp; rm glibc-${GLIBC_VERSION}.apk' returned a non-zero code: 1 ERROR: Service 'kafka' failed to build </code></pre> <p>根据提示，是<code>wget</code>命令下载某个文件的时候遇到了404。</p> <h4> <a id="352__193" rel="nofollow"></a>3.5.2 分析脚本执行过程</h4> <p>从<code>Dockerfile</code>的<code>RUN</code>指令中可以找到：</p> <p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bl1RxCvO-1671541468359)(…/…/…/…/static/images/经验总结/工具/CentOS/centos/20210708095813.png)]</p> <p>经过一番排查，最终定位到<code>download-kafka.sh</code>这个脚本中的<code>wget</code>命令，我增加一行<code>echo</code>命令，将整个<code>wget</code>命令打印出来看看：</p> <pre><code class="prism language-shell"><span class="token comment"># echo打印结果</span> <span class="token function">wget</span> <span class="token parameter variable">-q</span> <span class="token string">"https://mirrors.tuna.tsinghua.edu.cn/apache/kafka/1.1.0/kafka_2.12-1.1.0.tgz"</span> <span class="token parameter variable">-O</span> <span class="token string">"/tmp/kafka_2.12-1.1.0.tgz"</span> </code></pre> <p>根据链接查找这个文件，发现是在“清华大学开源软件镜像站”中下载的，但是<code>1.1.0</code>这个目录都没有了，取而代之的是<code>2.x.x</code>的目录了。</p> <p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-sSU7wM4E-1671541468360)(…/…/…/…/static/images/经验总结/工具/CentOS/centos/20210707183404.png)]</p> <p>下载不了，很明显这个版本太落后了。一看仓库git-tag的创建时间居然是2018年，已经三年多没有发布新的tag版本了。</p> <h4> <a id="353_master2xxkafka_212" rel="nofollow"></a>3.5.3 使用master分支的构建脚本启动<code>2.x.x</code>版本的kafka</h4> <p>那么回到<code>master</code>分支看看，一看最新提交，2021年6月有提交过。仔细研究了一下master分支的脚本和Dockerfile，其实作者早已经将kafka版本调整到<code>2.x.x</code>，并且修改了下载地址。</p> <p>那么切换到master分支后，重新使用命令<code>$ docker-compose up -d</code>启动kafka集群就可以了。</p> <h3> <a id="36__219" rel="nofollow"></a>3.6 开启单个节点</h3> <pre><code class="prism language-shell"><span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> docker-compose-single-broker.yml up <span class="token parameter variable">-d</span> </code></pre> <p>开启容器如下所示：</p> <pre><code>[root@jiewli ~]# docker ps CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS       PORTS                                                NAMES 43fb3efd832f   kafka-docker_kafka          "start-kafka.sh"         24 hours ago    Up 4 hours   0.0.0.0:9092-&gt;9092/tcp                               kafka-docker_kafka_1 b8bc06090259   wurstmeister/zookeeper      "/bin/sh -c '/usr/sb…"   24 hours ago    Up 4 hours   22/tcp, 2888/tcp, 3888/tcp, 0.0.0.0:2181-&gt;2181/tcp   kafka-docker_zookeeper_1 </code></pre> <h2> <a id="4_Kafka_Shell_234" rel="nofollow"></a>4. Kafka Shell</h2> <p>进入docker容器交互命令行</p> <pre><code class="prism language-shell"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> kafka-docker_kafka_1 /bin/bash </code></pre> <p>查看 kafka 安装目录，找到脚本位置</p> <pre><code class="prism language-shell">bash-5.1<span class="token comment"># echo $KAFKA_HOME</span> /opt/kafka bash-5.1<span class="token comment"># cd $KAFKA_HOME</span> bash-5.1<span class="token comment"># ls</span> LICENSE    NOTICE     bin        config     libs       licenses   logs       site-docs </code></pre> <p>默认情况下，kafka 安装目录是 <code>/opt/kafka</code></p> <p>你可以通过Kafka Shell与你的Kafka集群进行交互。</p> <pre><code class="prism language-shell">$ <span class="token variable">$KAFKA_HOME</span>/bin/start-kafka-shell.sh <span class="token operator">&lt;</span>DOCKER_HOST_IP<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>ZK_HOST:ZK_PORT<span class="token operator">&gt;</span> </code></pre> <h2> <a id="5__260" rel="nofollow"></a>5. 测试</h2> <p>测试你的安装步骤。</p> <p>启动一个shell终端，创建一个topic和启动一个生产者。</p> <pre><code class="prism language-shell">$ <span class="token variable">$KAFKA_HOME</span>/bin/kafka-topics.sh <span class="token parameter variable">--create</span> <span class="token parameter variable">--topic</span> topic <span class="token punctuation">\</span> <span class="token parameter variable">--partitions</span> <span class="token number">4</span> <span class="token parameter variable">--zookeeper</span> <span class="token variable">$ZK</span> --replication-factor <span class="token number">2</span>  $ <span class="token variable">$KAFKA_HOME</span>/bin/kafka-topics.sh <span class="token parameter variable">--describe</span> <span class="token parameter variable">--topic</span> topic <span class="token parameter variable">--zookeeper</span> <span class="token variable">$ZK</span>  $ <span class="token variable">$KAFKA_HOME</span>/bin/kafka-console-producer.sh <span class="token parameter variable">--topic</span><span class="token operator">=</span>topic <span class="token punctuation">\</span> --broker-list<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>broker-list.sh<span class="token variable">`</span></span> </code></pre> <p>启动另一个shell终端，并启动一个消费者。</p> <pre><code class="prism language-shell">$ <span class="token variable">$KAFKA_HOME</span>/bin/kafka-console-consumer.sh <span class="token parameter variable">--topic</span><span class="token operator">=</span>topic <span class="token parameter variable">--zookeeper</span><span class="token operator">=</span><span class="token variable">$ZK</span> </code></pre> <h2> <a id="6_MACKafkadocker_282" rel="nofollow"></a>6. 在MAC电脑上运行Kafka-docker</h2> <p>安装<code>Docker Toolbox</code>，并将<code>docker-machine ip</code>命令返回的ip配置到<code>KAFKA_ADVERTISED_HOST_NAME</code></p> <h2> <a id="7__286" rel="nofollow"></a>7. 故障排除</h2> <ul> <li>默认情况下，Kafka broker使用1GB内存，因此如果您在启动代理是遇到问题，请检查<code>docker-compose logs</code>/<code>docker logs</code>查找容器并确保主机上有足够的可用内存。</li> <li>如果要运行多个broker，请不要使用<code>localhost</code>或<code>127.0.0.1</code>作为主机IP，否则broker将无法通信。</li> </ul> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2378.htm">Python中Pyyaml模块的使用</a></p>
+                                        <p>下一个：<a href="/html/category/article-2380.htm">Java的接口详解</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2520.htm" title="Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型">Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

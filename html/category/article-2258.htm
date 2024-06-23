@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2258.htm" />
+<title>一文搞懂js中的typeof用法_在线工具 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">一文搞懂js中的typeof用法_在线工具</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2 id="基础">基础</h2> <p><code>typeof</code> 运算符是 <code>javascript</code> 的基础知识点，尽管它存在一定的局限性（见下文），但在前端js的实际编码过程中，仍然是使用比较多的类型判断方式。<br /> 因此，掌握该运算符的特点，对于写出好的代码，就会起到很大的帮助作用。</p> <p><strong>typeof</strong> 返回一个字符串，表示该操作值的数据类型，基本语法：</p> <pre><code class="language-js">typeof operand typeof(operand) </code></pre> <p>可能返回的类型字符串有：<code>string</code>, <code>boolean</code>, <code>number</code>, <code>bigint</code>, <code>symbol</code>, <code>undefined</code>, <code>function</code>, <code>object</code>。</p> <h2 id="返回类型">返回类型</h2> <p>将根据可能的返回类型，进行以下的分类介绍，对typeof的使用方法一网打尽。</p> <h3 id="string-和-boolean">string 和 boolean</h3> <p>字符串、布尔值分别返回 <code>string</code>、<code>boolean</code>。<br /> 包括 <code>String()</code> 和 <code>Boolean()</code>。</p> <pre><code class="language-js">typeof '1' // 'string' typeof String(1) // 'string' typeof true // 'boolean' typeof Boolean() // 'boolean' </code></pre> <h3 id="number-和-bigint">number 和 bigint</h3> <p>数字返回 <code>number</code>，包括 <code>Number()</code>、<code>NaN</code> 和 <code>Infinity</code> 等，以及 <code>Math</code> 对象下的各个数学常量值。<br /><code>BigInt</code> 数字类型值返回 <code>bigint</code>，包括 <code>BigInt(1)</code>。</p> <pre><code class="language-js">typeof 1 // 'number' typeof NaN // 'number' typeof Math.PI // 'number' typeof 42n // 'bigint' typeof BigInt(1) // 'bigint' </code></pre> <h3 id="symbol">symbol</h3> <p><strong>symbol</strong> 值返回 <code>symbol</code>，包括 <code>Symbol()</code>。</p> <pre><code class="language-js">typeof Symbol() // 'symbol' typeof Symbol('foo') // 'symbol' typeof Symbol.iterator // 'symbol' </code></pre> <h3 id="undefined">undefined</h3> <p><strong>undefined</strong> 本身返回 <code>undefined</code>。<br /> 不存在的，或者定义了但未赋初值的变量，都会返回 <code>undefined</code>。<br /> 还有 <code>document.all</code> 等浏览器的非标准特性。</p> <pre><code class="language-js">typeof undefined // 'undefined' typeof ttttttt // 'undefined' typeof document.all // 'undefined' </code></pre> <h3 id="function">function</h3> <p>函数返回 <code>function</code>。<br /> 包括使用es6的 <code>class</code> 类声明的。<br /> 还有各个内置对象 <code>String</code>、<code>Number</code>、<code>BigInt</code>、<code>Boolean</code>、<code>RegExp</code>、<code>Error</code>、<code>Object</code>、<code>Date</code>、<code>Array</code>、<code>Function</code>、<code>Symbol</code> 本身。<br /> 以及 <code>Function()</code>，<code>new Function()</code>。</p> <pre><code class="language-js">function func () {} typeof func // 'function' typeof class cs {} // 'function' typeof String // 'function' typeof RegExp // 'function' typeof new Function() // 'function' </code></pre> <h3 id="object">object</h3> <p><code>对象</code>、<code>数组</code>、<code>null</code>、<code>正则表达式</code>，都返回 <code>object</code>。<br /> 包括 <code>Math</code>、<code>JSON</code> 对象本身。<br /> 还有使用 <code>new</code> 操作符的数据，除了 <code>Function</code> 以外。</p> <pre><code class="language-js">typeof {} // 'object' typeof [] // 'object' typeof null // 'object' typeof /d/ // 'object' typeof Math // 'object' typeof new Number(1) // 'object' </code></pre> <h3 id="其他">其他</h3> <p>关于其他大部分的 <code>javascript关键字</code>，得到的结果值都是 <code>object</code> 或 <code>function</code>。<br /> 注：<em>多数小写字母开头的是对象 <code>object</code>，多数大写字母开头的都是方法 <code>function</code>。常见的明确知道的方法不算，如 <code>alert</code>，<code>prompt</code> 等方法</em></p> <p>除此以外，还有各js环境下具体实现的宿主对象。</p> <h2 id="常见问题">常见问题</h2> <h3 id="引用错误">引用错误</h3> <p>在 <code>let</code> 和 <code>const</code> 块级作用域变量定义之前，使用 <code>typeof</code> 会抛错 <code>ReferenceError</code>。<br /> 因为块级作用域变量，会在头部形成 <code>暂存死区</code>，直到被初始化，否则会报引用错误。</p> <pre><code class="language-js">typeof t let t = 1 // VM327:1 Uncaught ReferenceError: t is not defined //    at &lt;anonymous&gt;:1:1 </code></pre> <p>如果是使用 <code>var</code> 定义变量，不会报错，返回 <code>undefined</code> 。<br /> 有变量提升，不会形成暂时死区。</p> <h3 id="typeof-null">typeof null</h3> <p>对于 <code>typeof null === 'object'</code> ，记住即可，可能的解释：<br /><em>在JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于null代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，typeof null 也因此返回 "object"。</em></p> <h3 id="typeof-的局限性">typeof 的局限性</h3> <p><code>typeof</code> 的局限性，在于无法精确判断出 <code>null、数组、对象、正则</code> 的类型。<br /> 所以如果要精准判断，还需要使用其他技术手段，或组合判断。<br /> 如下，判断数组类型：</p> <pre><code class="language-js">Object.prototype.toString.call([]) // '[object Array]'  [] instanceof Array // true  [].constructor === Array // true </code></pre> <p>其中，<code>Object.prototype.toString.call</code> 是javascript中用于准确判断数据类型的通用手段。</p> <h2 id="扩展bigint-类型">扩展：BigInt 类型</h2> <p><code>BigInt</code> 来自于 <code>ES11</code> 增加的一种最新的基础类型，可以用任意精度表示整数。<br /> 它提供了一种表示大于 <code>2^53 - 1</code> 整数的方法，能表示任意大的整数。<br /> 它是通过在整数末尾附加 <code>n</code> 或调用构造函数 <code>BigInt()</code> 来创建的。<br /><code>IE</code> 不支持。</p> <pre><code class="language-js">10n BigInt(99) // 99n </code></pre> <p><strong>注意点：</strong></p> <ul> <li> <code>BigInt</code> 能使用运算符 <code>+、*、-、**和%</code>。</li> <li>除 <code>&gt;&gt;&gt; （无符号右移）</code> 之外的 <code>位操作</code> 也可以支持。因为<code>BigInt</code> 都是有符号的。</li> <li> <code>BigInt</code> 不支持单目 (+) 运算符，会报类型错误。</li> <li>不能对 <code>BigInt</code> 使用 <code>Math</code> 对象中的方法。</li> <li> <code>BigInt</code> 不能与 <code>Number数字</code> 进行混合计算，否则，将抛出 <code>TypeError</code>。</li> <li>在将 <code>BigInt</code> 转换为 <code>Boolean</code> 时，它的行为类似 <code>Number数字</code> 。</li> <li> <code>BigInt</code> 变量在转换成 <code>Number</code> 变量时可能会丢失精度。</li> <li> <code>typeof</code> 操作时返回 <code>bigint</code>。</li> <li>使用 <code>Object、String</code> 等内置对象转换时，类似于 <code>Number数字</code>。</li> <li> <code>BigInt</code> 使用 <code>/</code> 除操作时，带小数的运算会被取整。</li> <li> <code>Number</code> 和 <code>BigInt</code> 可以进行比较，非严格相等。</li> <li> <code>JSON.stringify</code> 处理 <code>BigInt</code> 会引发类型错误。</li> </ul> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2257.htm">Windows配置kubectl,执行yaml配置文件</a></p>
+                                        <p>下一个：<a href="/html/category/article-2259.htm">使用SpringCache进行缓存数据库查询</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

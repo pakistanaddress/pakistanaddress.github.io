@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2367.htm" />
+<title>在Centos7上安装Redis6_在线工具 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">在Centos7上安装Redis6_在线工具</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h1 id="一背景">一、背景</h1> <p><code>Redis</code>是一个非常流行的NOSQL数据库，拥有的数据类型非常丰富，此处我们简单记录一下在<code>Centos7</code>上是如何安装<code>Redis6</code>的。Redis的安装是推荐使用源码进行安装的。</p> <h1 id="二安装步骤">二、安装步骤</h1> <h2 id="1安装gcc依赖">1、安装gcc依赖</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/d43fa77edbc5ee762502994063d5f1e9.jpg" alt="在Centos7上安装Redis6_在线工具"></p> <h2 id="2下载redis6">2、下载redis6</h2> <pre><code class="language-bash">wget https://download.redis.io/releases/redis-6.2.6.tar.gz </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/b14ba5e99db7cd1bb57c7b08b7f48911.jpg" alt="在Centos7上安装Redis6_在线工具"></p> <h2 id="3解压编译">3、解压编译</h2> <pre><code class="language-bash"># 解压 tar -zxvf redis-6.2.6.tar.gz # 进入解压后的目录 cd redis-6.2.6 # 执行编译，如果make出错，可以看下方 可能出现的错误 的这个标题 make </code></pre> <h2 id="4安装">4、安装</h2> <h3 id="1安装到默认的位置">1、安装到默认的位置</h3> <pre><code class="language-bash">make install </code></pre> <h3 id="2安装redis到指定的位置">2、安装redis到指定的位置</h3> <pre><code class="language-bash">make PREFIX=具体的路径 install </code></pre> <p><strong>此处我们安装到默认的路径下。</strong></p> <h2 id="5启动redis">5、启动redis</h2> <h2 id="1前台启动">1、前台启动</h2> <pre><code class="language-bash">redis-server </code></pre> <h2 id="2后台启动">2、后台启动</h2> <p><code>vim redis.conf</code>，这个文件默认在<code>redis-6.2.6/redis.conf</code><br /> 修改</p> <pre><code class="language-bash">daemonize yes </code></pre> <p>启动</p> <pre><code class="language-bash">redis-server redis.conf </code></pre> <h2 id="6防火墙放行6379端口">6、防火墙放行6379端口</h2> <pre><code class="language-bash">[root@centos01 redis-6.2.6]# firewall-cmd --zone=public --add-port=6379/tcp --permanent success [root@centos01 redis-6.2.6]# firewall-cmd --reload success </code></pre> <h2 id="7连接到redis">7、连接到redis</h2> <pre><code class="language-bash">[appuser@centos01 ~]$ redis-cli -h 127.0.0.1 -p 6379 127.0.0.1:6379&gt; </code></pre> <h1 id="三redis的简单配置">三、redis的简单配置</h1> <table> <thead> <tr> <th>配置项</th> <th>值</th> <th>解释</th> </tr> </thead> <tbody> <tr> <td>port</td> <td>6379</td> <td>客户端通讯端口,redis服务器启动的端口</td> </tr> <tr> <td>daemonize</td> <td>yes</td> <td>以后台的方式运行</td> </tr> <tr> <td>bind</td> <td>192.168.56.101</td> <td>redis服务启动时绑定的ip地址,是本地网卡的地址</td> </tr> <tr> <td>pidfile</td> <td>/var/run/redis_6379.pid</td> <td>当是以后台方式运行时，会产生一个pid文件</td> </tr> <tr> <td>logfile</td> <td>/var/log/redis_6379.log</td> <td>指定日志文件的路径</td> </tr> <tr> <td>dir</td> <td>./</td> <td>数据库的持久化文件保存的路径，必须是目录</td> </tr> <tr> <td>appendonly</td> <td>yes</td> <td>打开aof持久化</td> </tr> <tr> <td>appendfsync</td> <td>everysec</td> <td>aof每秒写入一次</td> </tr> <tr> <td>appendfilename</td> <td>appendonly.aof</td> <td>aof文件名</td> </tr> <tr> <td>requirepass</td> <td>123456</td> <td>设置一个redis的密码，可以设置的复杂一些</td> </tr> <tr> <td>maxclients</td> <td>10000</td> <td>设置最大可以有多少个连接连接到redis server</td> </tr> <tr> <td>maxmemory</td> <td>2GB</td> <td>设置redis最多可用的内存</td> </tr> </tbody> </table> <h1 id="四可能出现的错误">四、可能出现的错误</h1> <h2 id="1zmalloch5031-致命错误jemallocjemalloch没有那个文件或目录">1、zmalloc.h:50:31: 致命错误：jemalloc/jemalloc.h：没有那个文件或目录</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/8fd4f9fb1d18e7863a35e6800cf21962.jpg" alt="在Centos7上安装Redis6_在线工具"><br /> 经过百度，可知通过<code>make MALLOC=libc</code>命令解决。</p> <h2 id="2如果出现了connection-refused">2、如果出现了Connection refused</h2> <p>1、检查redis端口是否放行<br /> 2、检查redis.conf 中bind的值，默认只能通过127.0.0.1来访问。<br /> 学习测试可以配置成 <code>bind 0.0.0.0</code>，生产环境不可以。</p> <h2 id="3如果rdb保存失败时">3、如果rdb保存失败时</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/f730df0ff3921752da6748f1b5af3618.jpg" alt="在Centos7上安装Redis6_在线工具"><br /> 如果出现了如上日志，那么我们可以修改<code>vm.overcommit_memory=1</code>来解决。</p> <h1 id="五参考文档">五、参考文档</h1> <p>1、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://redis.io/topics/quickstart"  target="_blank"  rel="nofollow">Redis Quick Start</a></p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2366.htm">基于Python制作一个文本翻译器_python_</a></p>
+                                        <p>下一个：<a href="/html/category/article-2368.htm">Node 中的模块化 + module对象 + exports对象</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2477.htm" title="spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

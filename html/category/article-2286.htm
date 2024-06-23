@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2286.htm" />
+<title>Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1 id="如何保存和使用训练好的模型参数">如何保存和使用训练好的模型参数</h1> <h2 id="引言">引言</h2> <p>最近在学习Tensorflow 构建CNN，训练需要耗费时间，把训练好的各个参数保存下来是最简便的，网上有很多<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/u012235274/article/details/52588690"  target="_blank" rel="nofollow">教程</a>，但是跟着教程走不一定一帆风顺还是踩了一些坑，然后自己填了一下坑</p> <h2 id="如何保存好训练的结果">如何保存好训练的结果：</h2> <p>假设会话为sess，计算图为graph <br /> 网上看了很多资料，使用 </p> <pre class="prettyprint"><code class="hljs bash">saver=tf.train.Saver()  <span class="hljs-comment"># 不传入参数代表默认存入全部参数</span> file_name = <span class="hljs-string">'saved_model/model.ckpt'</span>  <span class="hljs-comment"># 将保存到当前目录下的的saved_model文件夹下model.ckpt文件</span> saver.saver(sess,file_name )  <span class="hljs-comment"># 保存好的模型文件</span></code></pre> <p>这样来保存模型，这样就行了吗？还不行 <br /> 但是按照这个方式，开始IDE总是会报错：No Variable to save</p> <hr/> <p>然后我的想法是：可能要把sess传给saver是吗？下面是我的代码，和一次尝试性的修改</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph()  <span class="hljs-comment"># 计算图</span> with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>     <span class="hljs-comment"># 以上是一些权重和卷积层的定义，这里就不贴出来了</span> sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 给定义saver一个sess作为输入，结果也是不行的</span> saver=tf.train.Saver(sess)  <span class="hljs-comment"># 不传入参数代表默认存入全部参数</span> saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>这样还是会报错：没有可以被用来保存的变量。我思来想去，可能要载入graph?</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span> sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 这次把graph传进来做参数</span> saver = tf.train.Saver(graph) saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>结果还是不行</p> <hr/> <p>多次尝试之后，终于修改正确了</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()  <span class="hljs-comment"># 默认存储上面全部定义参数，如果不想全部存下来，也可以输入你想要保存的参数</span>  sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 保存，这次就可以成功了</span> saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>保存成功，文件夹saved_model下会出现几个文件 <br /> checkpoint文件（这个文件很重要，记录了） 还有几个文件，它们的后缀分别是 .data , .index , .meta 。我们似乎可以不搭理这三个文件</p> <hr/> <h3 id="先小结一下">先小结一下</h3> <p>如果定义了子图，或者说自己定义graph而不使用tensorflow的默认计算图的时候，定义要在定义graph最后进行定义，想保存哪个子图的变量，就要在哪个子图定义相关的Saver，这样才能实现想要的效果。 <br /> Tensorflow的图graph和会话session还是有点抽象的，一不小心就整乱了。</p> <hr/> <p><strong>Notes</strong>: 假设没有使用with graph.as_graph():这种结构，直接在脚本上定义了tensorflow的变量，再使用saver()应该是没有问题的。</p> <hr/> <h2 id="读取和使用保存好的模型参数">读取和使用保存好的模型参数</h2> <p>那存好了之后，该怎么调用了 <br /> 假设我需要在另一个新的脚本，例如 ：test.py文件上使用我的代码做测试，要怎么使用保存好的模型参数呢</p> <p><strong>有两种方式：</strong></p> <hr/> <p>先把之前训练，构建计算图已经你定义网络参数的那些代码粘贴到test.py文件下</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()</code></pre> <p>特别注意，运行到上一步的时候</p> <p>然后再使用如下代码</p> <pre class="prettyprint"><code class="hljs python"><span class="hljs-keyword">with</span> tf.Session(graph=graph) <span class="hljs-keyword">as</span> sess:         check_point_path = <span class="hljs-string">'saved_model/'</span> <span class="hljs-comment"># 保存好模型的文件路径</span>         ckpt = tf.train.get_checkpoint_state(checkpoint_dir=check_point_path)  <span class="hljs-comment"># 从模型中恢复参数      saver.restore(sess,ckpt.model_checkpoint_path)  # 讀取成功，然后就可以使用模型参数进行预测，或者测试了。</span></code></pre> <hr/> <p>如果你觉得上面那个方式有点繁琐，可以直接<code>import train.py</code> <br /> 假设train.py这个脚本的代码是这样的：</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()</code></pre> <p>那么你在你的test.py中可以这样写</p> <pre class="prettyprint"><code class="hljs python"><span class="hljs-keyword">import</span> train <span class="hljs-comment"># 参考python的命名空间方法</span> graph = train.graph sess = train.sess  <span class="hljs-keyword">with</span> tf.Session(graph=graph) <span class="hljs-keyword">as</span> sess:         check_point_path = <span class="hljs-string">'saved_model/'</span> <span class="hljs-comment"># 保存好模型的文件路径</span>         ckpt = tf.train.get_checkpoint_state(checkpoint_dir=check_point_path)  <span class="hljs-comment"># 从模型中恢复参数      saver.restore(sess,ckpt.model_checkpoint_path)  </span> </code></pre> <hr/> <p><strong>Notes</strong>: 在使用<code>saver.restore(sess,ckpt.model_checkpoint_path)</code> 后，这个时候，就不需要再次使用sess.run(init) 对参数进行初始化了（否则会覆盖掉训练好的参数），如果你在前面使用run，进行初始化，权重会根据你的定义进行初始化，但是你使用这个语句后，模型中的参数会把它覆盖掉</p> <hr/> <h2 id="最后再说一下">最后再说一下</h2> <p>好像高级的使用方法，可以根据选择不同迭代次数更新时候的权重，这里只做简单总结一下，以后学习到了再更新吧</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2285.htm">Neo4j数据和Cypher查询语法笔记 &#8211; Milton _在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2287.htm">关于encodeURI和encodeURIComponent的使用场景</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

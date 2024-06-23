@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2380.htm" />
+<title>Java的接口详解 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Java的接口详解</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1><a id="_0" rel="nofollow"></a>接口</h1> <h2><a id="1_2" rel="nofollow"></a>1.什么是接口？</h2> <p>一、咱们看什么是接口之前，咱们比较一下普通类、抽象类、接口三者之间的区别</p> <ul> <li>普通类：只有具体实现（普通方法）</li> <li>抽象类：具体实现（普通方法）和规范（抽象方法）都有！</li> <li>接口：只有规范（抽象方法）</li> </ul> <p>二、咱们简单解释一下接口</p> <ol> <li>接口就是规范，定义的是一组规则，体现了显示世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞；如果你是汽车，则必须能跑；如果你是好人，则必须干掉坏人；如果你是坏人，则必须欺负好人。</li> <li>接口的本质是契约，就像我们人间的法律一样，制定好后大家都去遵守。</li> <li>接口的精髓，是对对象的抽象，最能体现这一点的就是接口</li> </ol> <p>注：声明类的关键字是class,声明接口的关键字是interface</p> <h2><a id="2_18" rel="nofollow"></a>2.怎么用接口？</h2> <ul> <li>咱们创建一个接口，接口的关键字是interface，代码如下：</li> </ul> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">interface</span> userservice<span class="token punctuation">{<!-- --></span><span class="token comment">//接口中的所有定义其实都是抽象的,都是public abstract的。</span><span class="token keyword">public</span><span class="token keyword">abstract</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//public abstract是可以不用写的</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">jump</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">smile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>public abstract是可以不用写的，接口中的所有定义都是抽象的，普通方法是无法写的。</p> <ul> <li>咱们再创建一个类，来实现这个接口，不能再用extents了，因为extents是单继承，而implements是多继承，可以继承多个接口，所以要用implements。</li> </ul> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">class</span> userserviceIMPl<span class="token keyword">implements</span> userservice<span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token comment">//重写</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token comment">//重写</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token comment">//重写</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">jump</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token comment">//重写</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">smile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token comment">//重写</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>他所继承的接口中，接口中的每一个抽象方法，都必须被子类重写，否则子类报错。</p> <ul> <li> <p>它可以继承多个接口，代码如下：</p> <p>咱们编写一个新的接口</p> </li> </ul> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">interface</span> test<span class="token punctuation">{<!-- --></span><span class="token keyword">void</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>咱们用子类继承上面两个接口</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">class</span> userserviceIMPl<span class="token keyword">implements</span> userservice<span class="token punctuation">,</span>test<span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">jump</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">smile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>少重写两个接口中的一个抽象方法都不行，都会爆红。</p> <p>看到这里，要记住一个东西，java是单继承的，但是可以通过 接口 实现多继承！</p> <ul> <li>在接口里面定义的属性都是常量。</li> </ul> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">interface</span> test<span class="token punctuation">{<!-- --></span><span class="token comment">//常量，由public static final 来修饰</span><span class="token keyword">public</span><span class="token keyword">static</span><span class="token keyword">final</span><span class="token keyword">int</span> age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">;</span><span class="token keyword">int</span> year<span class="token operator">=</span><span class="token number">233</span><span class="token punctuation">;</span><span class="token comment">//同样public static final 可以省略不写。</span><span class="token punctuation">}</span></code></pre> <h2><a id="_140" rel="nofollow"></a>接口的作用</h2> <ol> <li>约束</li> <li>定义一些方法，让不同的人实现。</li> <li>接口中的方法都是public abstract的。</li> <li>接口中的常量都是public static final的。</li> <li>接口不能被实例化 因为接口中没有构造方法。</li> <li>可以实现继承多个接口，通过implement 实现。</li> </ol> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2379.htm">用 docker 部署kafka</a></p>
+                                        <p>下一个：<a href="/html/category/article-2381.htm">异步请求与中断 ( XHR,Axios,Fetch对比 )</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2481.htm" title="检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

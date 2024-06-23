@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2255.htm" />
+<title>.Net项目在Docker容器中开发部署_实用技巧_ - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">.Net项目在Docker容器中开发部署_实用技巧_</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<p>.NET多年以前已经开始支持Docker，但由于国内.net现状，生产过程中几乎用不到docker支持，趁着有点时间捣鼓下。</p> <h3>先期工作</h3> <p>1、首先安装Docker Desktop</p> <p>2、安装Visual Studio</p> <h3>创建项目</h3> <p>使用VS分别创建一个ASP.NET Core Api（WebApplication1）与 ASP.NET Core 应用（WebApplication2）</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/485088e7280ec8574c709da226d7a008.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/15d013e0996f80e734eafb79f18fa8f9.jpg"></p> <p>如果项目已经存在，可以选中项目，右键点击-&gt;选择添加Docker支持。</p> <p>在弹出对话框中选择Linux。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/eaa095fd2e91c47088dafde296d50bf5.jpg"></p> <p>项目支持docker后，会在项目下生成一个Dockerfile文件(用来构建Docker镜像的构建文件)</p> <p>内容如下：</p> <div class="ay1code"> <pre class="brush:plain;">#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.  #使用“小型”仅运行时基础映像开始一个阶段，将其称为“基础”，以供参考  FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base  # 在映像中创建 /app 目录 。  WORKDIR /app  # 公开端口 80 。  EXPOSE 80  #使用“大型”映像开始用于生成/发布的新阶段。将其称为“生成” ，以供参考。  FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build  #在映像中创建目录 /src 。  WORKDIR /src  #复制引用的 .csproj 项目文件，以便之后能够还原包 。  COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]  #还原项目和引用项目的包 。  RUN dotnet restore "WebApplication1/WebApplication1.csproj"  COPY . .  #将解决方案的所有目录树（.dockerignore 文件中包含的文件/目录除外）复制到映像中的 /src/项目 目录 。  WORKDIR "/src/WebApplication1"  #生成项目（和其他项目依赖项）并输出到映像中的 /app/build 目录 。  RUN dotnet build "WebApplication1.csproj" -c Release -o /app/build     #开始一个从“生成”继续的新阶段。将它称为“发布” 以进行引用。  FROM build AS publish     # 发布项目（和依赖项）并输出到映像中的 /app/publish 目录 。  RUN dotnet publish "WebApplication1.csproj" -c Release -o /app/publish     # 开始一个从“基础”继续的新阶段，并将其称为“最终”  FROM base AS final  #将当前目录更改为 /app  WORKDIR /app     #将 /app 目录从阶段“发布”复制到当前目录  COPY --from=publish /app/publish .     #定义启动容器时要运行的命令  ENTRYPOINT ["dotnet", "WebApplication1.dll"]</pre> </div> <p>以上说明参考.net官方文档，机器翻译不是很友好，但结合命令应该能看懂。</p> <h3>单容器运行</h3> <p>1、VS启动docker调试：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/9b94f529ca85e3cc035f48299dd1de83.jpg"></p> <p>2、使用命令生成与启动镜像</p> <p>(1)编译镜像</p> <div class="ay1code"> <pre class="brush:ps;">docker build -f .\WebApplication1\Dockerfile -t webapi .  #此处注意Dockerfile文件所在的目录</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/b70a6611edd5bfd00977cddf00a060e1.jpg"></p> <p>(2)生成容器</p> <div class="ay1code"> <pre class="brush:ps;">docker run --name webapi -d -p 8060:80 api     --name 容器名  -d 后台运行  -p 端口映射</pre> </div> <p>此时访问接口：localhost:8060</p> <p>返回值：</p> <div class="ay1code"> <pre class="brush:js;">[      {          "date": "2022-03-17T09:25:15.9478769+08:00",          "temperatureC": -2,          "temperatureF": 29,          "summary": "Freezing"      },      {          "date": "2022-03-18T09:25:15.9490679+08:00",          "temperatureC": -7,          "temperatureF": 20,          "summary": "Bracing"      },      {          "date": "2022-03-19T09:25:15.9490738+08:00",          "temperatureC": 15,          "temperatureF": 58,          "summary": "Warm"      },      {          "date": "2022-03-20T09:25:15.9490742+08:00",          "temperatureC": 26,          "temperatureF": 78,          "summary": "Mild"      },      {          "date": "2022-03-21T09:25:15.9490743+08:00",          "temperatureC": -15,          "temperatureF": 6,          "summary": "Chilly"      }  ]</pre> </div> <h3>容器运行</h3> <p>1、右键点击WebApplication1应用，选择添加“容器业务流程协调程序支持”</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/e62440a741781eb89ee7d45feb560cc3.jpg"></p> <p>选择：“Linux”。</p> <p>添加完成后，解决方案中会自动生成：docker-compose项目，</p> <p>主要包含：docker-compose.yml文件，.dockerignore文件。</p> <ul> <li> <p>.dockerignore 文件包含你不希望 Docker 在容器中包含的文件类型和扩展名。这些文件通常与开发环境和源代码管理相关联，并不属于正在开发的应用或服务。</p> </li> <li> <p> docker-compose.yml是docker-compose的配置文件，docker-compose是docker提供的一个命令行工具，可以用于定义和运行多容器组成的应用。</p> </li> </ul> <p>  docker-compose.yml中生成的内容：</p> <div class="ay1code"> <pre class="brush:plain;">version: '3.4'   services:     webapplication1:      image: ${DOCKER_REGISTRY-}webapplication1      build:        context: .        dockerfile: WebApplication1/Dockerfile</pre> </div> <p>同样的操作为：WebApplication2添加“容器业务流程协调程序支持”</p> <p>最终docker-compose.yml内容为：</p> <div class="ay1code"> <pre class="brush:plain;">version: '3.4'     services:    webapplication2:      image: ${DOCKER_REGISTRY-}webapplication2      build:        context: .        dockerfile: WebApplication2/Dockerfile       webapplication1:      image: ${DOCKER_REGISTRY-}webapplication1      build:        context: .        dockerfile: WebApplication1/Dockerfile</pre> </div> <p>2、修改WebApplication2的HomeController：</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task&lt;IActionResult&gt; Index()  {    ViewData["Message"] = "Hello from webfrontend";       using (var client = new System.Net.Http.HttpClient())    {      var request = new System.Net.Http.HttpRequestMessage();      request.RequestUri = new Uri("http://WebApplication1/WeatherForecast");      var response = await client.SendAsync(request);      ViewData["Message"] += " and " + await response.Content.ReadAsStringAsync();    }    return View();  }</pre> </div> <div class="ay1code"> <pre class="brush:csharp;">//因为 docker compose 在其自己的网络中设置主机名，  //以便服务名作为主机名显示给其他服务，  //所以这里使用的是主机名请求。  request.RequestUri = new Uri("http://WebApplication1/WeatherForecast");</pre> </div> <p>3、解决方案的启动项目设置为 docker-compose</p> <p>4、管理Docker Compose启动项</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/521ba10caa962e6767c5cde3526ea5f8.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/37c433ff238a3dc8cef7f56ba3da3fa7.jpg"></p> <p>配置完成后会将配置保存在docker-compose 项目中的launchSettings.json中:</p> <div class="ay1code"> <pre class="brush:js;">{    "profiles": {      "Docker Compose": {        "commandName": "DockerCompose",        "composeLaunchAction": "LaunchBrowser",        "composeLaunchServiceName": "webapplication2",        "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",        "commandVersion": "1.0",        "serviceActions": {          "webapplication1": "StartWithoutDebugging",          "webapplication2": "StartDebugging"        }      }    }  }</pre> </div> <p>5、F5启动项目</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/8faa0487a09e217c18e964fefbd1f334.jpg"></p> <h3>常见问题</h3> <p>首次启动可能会出现错误：</p> <div class="ay1code"> <pre class="brush:plain;">“error CTC1023: Dockerfile“...\Dockerfile”的调试程序路径“C:\Users\Administrator\vsdbg\vs2017u5”无效。”</pre> </div> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/1507291a2c5eaea9b4e9b2c256b596fa.jpg"></p> <p>解决办法：手动下载.zip包，如果浏览器下载太慢，可以考虑使用下载工具</p> <div class="ay1code"> <pre class="brush:plain;">https://vsdebugger.azureedge.net/vsdbg-17-0-10712-2/vsdbg-linux-x64.zip #其中17-0-10712-2（其中 17.0.10712.2 “.”替换成“-”）  https://vsdebugger.azureedge.net/vsdbg-17-0-10712-2/vsdbg-linux-musl-x64.zip #其中17-0-10712-2（其中 17.0.10712.2 “.”替换成“-”）  如果其他版本的，可以参考该方式，拼接URL下载</pre> </div> <p>以上两个包下载完毕后，按照以下步骤操作</p> <div class="ay1code"> <pre class="brush:plain;">1、将vsdbg-linux-x64.zip 解压到 %USERPROFILE%\vsdbg\vs2017u5 目录  (vs2017)  2、%USERPROFILE%\vsdbg\vs2017u5 目录,添加两个文件  success_rid.txt 内容填写：linux-x64  success_version.txt 内容填写：17.0.10712.2      3、将vsdbg-linux-musl-x64.zip 解压到 %USERPROFILE%\\vsdbg\vs2017u5\linux-musl-x64 目录 (vs2017,其他版本参考相似路径)  4、%USERPROFILE%\vsdbg\vs2017u5\linux-musl-x64 目录,添加两个文件  success_rid.txt 内容填写：linux-musl-x64  success_version.txt 内容填写：17.0.10712.2</pre> </div> <p>到此，项目算是跑起来了。</p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>下一个：<a href="/html/category/article-2256.htm">pyqt5入门到基本按钮弹窗，多窗口实现等</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2483.htm" title="setTimeout、Promise、Async/Await 的区别">setTimeout、Promise、Async/Await 的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

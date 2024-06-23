@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2476.htm" />
+<title>Shiro介绍及解析 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Shiro介绍及解析</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>一、明白什么是认证和授权</p> <p>从百度百科上理解的，感觉非常通俗易懂</p> <p>你要登机，你需要出示你的 passport 和源 ticket，passport 是为了证明你张三确实是你百张三，这就是 认证；而机票是为了证明你张三确实买度了票可以上飞机，这就是 授权。</p> <p> 二、shiro的概念<br /> 1.什么是shiro</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/41a62c114e3431e9316f969c5cb09ad5.jpg"></p> <p>&nbsp;</p> <p>2.shiro的特性</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/161b4545448eec135d0a0a0f6976fe98.jpg"><br /> 3.shiro的核心组件</p> <p>&nbsp;<img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/c247749fe444502753bdd198d92ef671.jpg"></p> <p> 三、shiro实战debug解析（token是用户输入的，info是从缓存和数据库中查出来的，<br /> 认证主要做token和info中密码的判等；授权主要是将注解上的权限或者角色与从数据库中查出来的权限做判等）</p> <p>1.首先先配置一个Realm类</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/cab020566fa4d675e25b40c21dc33484.jpg">&nbsp;</p> <p>1.1 然后配置认证的方法，因为配置了拦截路径，所以当用户调用sub.login(token)的方法的时候</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/4e8d6f110b116422e8d60f92fd5d9c35.jpg"><br /> 会先去AuthenticatingRealm类中调用getAuthenticationInfo方法，如下图所示</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/1e7e077a78c01d070eb96cca82d923ff.jpg"></p> <p>之后开始回调实现类也就是咱自己实现的doGetAuthenticationInfo这个方法，方法的逻辑大致是获取用户输入框中输入的token中的principal，然后根据principal去数据库或者缓存中查相应的用户的信息。之后将token中的principal以及数据库中查询到的password还有自己实现的AuthRealm类的全路径传入到authenticationInfo对象中去，如下图所示</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/b486b41fc2945969e625aefebd2e2aed.jpg">&nbsp;构造完之后返回info对象，接着走下边的assertCredentialsMath方法（），如下图所示</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/ddcbd882872161215add0889a20582dd.jpg"><br /> assertCredentialsMath方法（）里边会针对token（用户输入的要验证的“用户”）以及info（从数据库里边查的实际的“用户”）里边的密码进行校验，如果对比成功则返回true</p> <p>&nbsp;<img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/1a656db28d56280deb220aefc551bddb.jpg"></p> <p>&nbsp;1.2 然后配置授权的方法，也就是说当调用到具体方法的时候会去回调这个方法</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/aa913ad269e1d74f802599b30a236f00.jpg"></p> <p>&nbsp;2.然后配置ShiroConfig类</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/7d62127b20fb30de7a07669ca1f02698.jpg"><br /> 2.1首先配置SecurityManager类，一般都是这几行代码，其中的入参就是第一步配的那个AuthRealm</p> <p>&nbsp;<img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/928cc6a53dfd28daf91a6cb39996d509.jpg"></p> <p>&nbsp;2.2然后配置shiro的过滤规则，其中入参就是上一步配置的SecurityManager。里边分别都是登录路径（如果不设置默认会自动寻找Web工程根目录下的"/login"页面），认证成功后的路径以及没有认证的路径</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/90dcba2bfc7ed833130bafa52ef250cd.jpg">2.3 配置Filter的权限控制规则</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/49fdb8eac2b3b05429701f3640c5fe9b.jpg"><br /> 3.之后配置/login的登陆的认证，划红线的都是重点，里边首先生成一个Subject对象，然后生成touken，并且利用这个token传入到sub.login方法中，这个方法会将token传到SecurityManager，SecurityManager然后传给AuthRealm的认证方法doGetAuthenticationInfo，之后这个方法里边开始校验账号和密码的逻辑，并且利用XXXMatcher方法校验。</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/2b280c151cb3403ff43b648738136eb1.jpg"></p> <p>&nbsp;4.校验通过后，可以成功登录到success页面，形成一个闭环</p> <p>5.用户开始进行相关操作，比如进行查询操作，上边的有注解@RequiresRoles和@RequiresPermissions，分别用来控制角色和权限，粒度不一样</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/d10205c9334af5e69e19448aa2d4c0e8.jpg"><br /> 6.之后会回调AuthRealm的doGetAuthorizationInfo方法，进行校验，形成一个闭环。</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230109/21dd8d51b851c12731bb0c65a934bc46.jpg"></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2475.htm">VUEJS实现网页进度条加载效果</a></p>
+                                        <p>下一个：<a href="/html/category/article-2477.htm">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

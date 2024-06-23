@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2339.htm" />
+<title>一步一步生成滑动验证码图片详解 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">一步一步生成滑动验证码图片详解</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2 id="图片准备">图片准备</h2> <table> <thead> <tr> <th>图片</th> <th>名称</th> <th>尺寸</th> </tr> </thead> <tbody> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194058652-1999387479.jpg" alt="一步一步生成滑动验证码图片详解"></td> <td>bg.jpg</td> <td>552 * 344</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194356514-1712042113.png" alt="一步一步生成滑动验证码图片详解"></td> <td>hole.png</td> <td>110 * 110</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194440229-300505845.png" alt="一步一步生成滑动验证码图片详解"></td> <td>slider.png</td> <td>110 * 110</td> </tr> </tbody> </table> <blockquote> <p>hole.png和slider.png为png是因为图片带有透明度。</p> </blockquote> <p></p> <h2 id="合成目标">合成目标</h2> <p>最终为前端生成两张图片：</p> <table> <thead> <tr> <th>图片</th> <th>名称</th> <th>尺寸</th> </tr> </thead> <tbody> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413195051086-218511065.png" alt="一步一步生成滑动验证码图片详解"></td> <td>out_bg.jpg</td> <td>552 * 344</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413195103783-1663722283.png" alt="一步一步生成滑动验证码图片详解"></td> <td>out_slider.png</td> <td>110 * 344</td> </tr> </tbody> </table> <blockquote> <p><strong>out_slider.png高度为344</strong>与背景图等高。</p> </blockquote> <p>也可以打开滑动验证<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.sunseeyou.com/"  target="_blank" rel="nofollow">Demo</a>页面，F12来观察图片。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/2c210ee701cc4afe69147237a8248a37.jpg" alt="一步一步生成滑动验证码图片详解"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f24cd2d785899b0c0d92b7864e61b362.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p></p> <h2 id="实现">实现</h2> <p>本机环境为.net 6.0.300-preview.22204.3, 装有Vscode。</p> <h3 id="1创建项目">1.创建项目</h3> <p>创建console项目</p> <pre><code>mkdir SlideImageGenerator cd SlideImageGenerator dotnet new console</code></pre> <h3 id="2添加imagesharp">2.添加ImageSharp</h3> <pre><code>dotnet add package SixLabors.ImageSharp dotnet add package SixLabors.ImageSharp.Drawing --prerelease</code></pre> <h3 id="3vscode打开">3.vscode打开</h3> <pre><code>code .</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d433a12c55eeb1de6d013b7e3b5a1c40.jpg" alt="一步一步生成滑动验证码图片详解"></p> <h3 id="4引入图片">4.引入图片</h3> <p>创建Images目录, 并放入bg.jpg，hole.png，slider.png</p> <pre><code>mkdir Images</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/99df045c3bf56cdb2d794b344b5ecc5a.jpg" alt="一步一步生成滑动验证码图片详解"></p> <h3 id="5生成out_bgjpg">5.生成out_bg.jpg</h3> <p>out_bg.jpg生成比较简单，直接将hole.png"叠加"到bg.jpg。hole.png灰色区域是半透明的，因此能够隐约看到背景。开始!<br /> 清空Program.cs，引入命名空间</p> <pre><code class="language-c#">using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;</code></pre> <p>生成随机坐标，代表绘制凹槽的起始位置:</p> <pre><code class="language-c#">// 生成随机坐标 int randomX = 100, randomY = 120;</code></pre> <p>加载图片</p> <pre><code class="language-csharp">using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");</code></pre> <p>"叠加"holeTemplateImage到backgroundImage。用ImageSharp来说就是以backgroundImage为底，从位置randomX，randomY开始绘制holeTemplateImage。</p> <pre><code class="language-csharp">backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");</code></pre> <p>运行</p> <pre><code>dotnet run</code></pre> <p>运行后可以在目录看到out_bg.jpg<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/be864fe9a57bbd9cf6990c72c9a21b07.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>全部代码：</p> <pre><code class="language-c#">using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;  // 生成随机坐标 int randomX = 100, randomY = 120;  // 加载图片 using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");  // "叠加"holeTemplateImage到backgroundImage backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");</code></pre> <h3 id="6生成out_sliderpng">6.生成out_slider.png</h3> <p>out_slider.png生成需要三步:<br /> a. 从背景图中扣出凹槽区域，形成holeMattingImage。<br /> b. 将slider.png"叠加"到抠图holeMattingImage。<br /> c. 将b生成的图形"叠加"到一个高为344,宽为110的透明区域，最终生成out_slider.<br /> 以下具体讲解：<br /> a步骤我直接上代码，其实就一个裁剪操作:</p> <pre><code class="language-c#">// backgroundImage已做修改，这里重新加载背景 using var backgroundImage2 = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeMattingImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, sliderTemplateImage.Height); // 110 * 110 // 根据透明度计算凹槽图轮廓形状(形状由不透明区域形成) var holeShape = CalcHoleShape(holeTemplateImage); // 生成凹槽抠图 holeMattingImage.Mutate(x =&gt; {     // 可以这样理解：     //   将holeShape想象成一幅110X110的图片     //   p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)则表示     //   从holeShape的-randomX, -randomY开始绘制backgroundImage2(相当于backgroundImage2左移randomX，上移randomY)     //   然后将holeShape绘制结果叠加到holeMattingImage上     x.Clip(holeShape, p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)); }); holeMattingImage.SaveAsJpegAsync("out_holeMatting.jpg");</code></pre> <p>裁剪注意传入的负坐标，注释是我个人的理解。凹槽的形状通过CalcHoleShape实现的，原理是一行行扫描图像，每行连续不透明区域（包含半透明）形成一个或多个n*1的矩形。最后将所有小矩形组合形成一个组合形状ComplexPolygon</p> <pre><code class="language-c#">Func&lt;Image&lt;Rgba32&gt;, ComplexPolygon&gt; CalcHoleShape = (holeTemplateImage) =&gt; {      int temp = 0;     var pathList = new List&lt;IPath&gt;();     holeTemplateImage.ProcessPixelRows(accessor =&gt;     {         for (int y = 0; y &lt; holeTemplateImage.Height; y++)         {             var rowSpan = accessor.GetRowSpan(y);             for (int x = 0; x &lt; rowSpan.Length; x++)             {                 ref Rgba32 pixel = ref rowSpan[x];                 if (pixel.A != 0)                 {                     if (temp == 0)                     {                         temp = x;                     }                 }                 else                 {                     if (temp != 0)                     {                         pathList.Add(new RectangularPolygon(temp, y, x - temp, 1));                         temp = 0;                     }                 }             }         }     });      return new ComplexPolygon(new PathCollection(pathList)); };</code></pre> <p>运行,形成out_holeMatting.jpg</p> <pre><code class="language-c#">dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3eac7ce63ddc6ead1f1e70816a22769e.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>b. 将slider.png"叠加"到抠图holeMattingImage，代码比较简单</p> <pre><code class="language-c#">// 叠加拖块模板 holeMattingImage.Mutate(x =&gt; x.DrawImage(sliderTemplateImage, new Point(0, 0), 1)); holeMattingImage.SaveAsJpegAsync("out_holeMatting2.jpg");</code></pre> <p>运行,形成out_holeMatting2.jpg</p> <pre><code>dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/45c070d1f2d3559662c3624c128a0b4f.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>c. 将out_holeMatting2叠加到"叠加"到一个高为344,宽为110的透明区域</p> <pre><code class="language-c#">using var sliderBarImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, backgroundImage2.Height); // 绘制拖块条 sliderBarImage.Mutate(x =&gt; x.DrawImage(holeMattingImage, new Point(0, randomY), 1)); sliderBarImage.SaveAsJpegAsync("out_slider.jpg");</code></pre> <p>运行,形成out_slider.jpg</p> <pre><code>dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fdef8fc038e07088102d9377c5dfc564.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>全部代码</p> <pre><code>using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;  // 生成随机坐标 int randomX = 100, randomY = 120;  // 加载图片 using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");  // "叠加"holeTemplateImage到backgroundImage backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");  Func&lt;Image&lt;Rgba32&gt;, ComplexPolygon&gt; CalcHoleShape = (holeTemplateImage) =&gt; {      int temp = 0;     var pathList = new List&lt;IPath&gt;();     holeTemplateImage.ProcessPixelRows(accessor =&gt;     {         for (int y = 0; y &lt; holeTemplateImage.Height; y++)         {             var rowSpan = accessor.GetRowSpan(y);             for (int x = 0; x &lt; rowSpan.Length; x++)             {                 ref Rgba32 pixel = ref rowSpan[x];                 if (pixel.A != 0)                 {                     if (temp == 0)                     {                         temp = x;                     }                 }                 else                 {                     if (temp != 0)                     {                         pathList.Add(new RectangularPolygon(temp, y, x - temp, 1));                         temp = 0;                     }                 }             }         }     });      return new ComplexPolygon(new PathCollection(pathList)); };  // backgroundImage已做修改，这里重新加载背景 using var backgroundImage2 = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeMattingImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, sliderTemplateImage.Height); // 110 * 110 // 根据透明度计算凹槽图轮廓形状(形状由不透明区域形成) var holeShape = CalcHoleShape(holeTemplateImage); // 生成凹槽抠图 holeMattingImage.Mutate(x =&gt; {     // 可以这样理解：     //   将holeShape想象成一幅110X110的图片     //   p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)则表示     //   从holeShape的-randomX, -randomY开始绘制backgroundImage2(相当于backgroundImage2左移randomX，上移randomY)     //   然后将holeShape绘制结果叠加到holeMattingImage上     x.Clip(holeShape, p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)); }); holeMattingImage.SaveAsJpegAsync("out_holeMatting.jpg");  // 叠加拖块模板 holeMattingImage.Mutate(x =&gt; x.DrawImage(sliderTemplateImage, new Point(0, 0), 1)); holeMattingImage.SaveAsJpegAsync("out_holeMatting2.jpg");  using var sliderBarImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, backgroundImage2.Height); // 绘制拖块条 sliderBarImage.Mutate(x =&gt; x.DrawImage(holeMattingImage, new Point(0, randomY), 1)); sliderBarImage.SaveAsJpegAsync("out_slider.jpg");</code></pre> <h2 id="最后"></h2> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2338.htm">spring boot 整合 druid 监控界面</a></p>
+                                        <p>下一个：<a href="/html/category/article-2340.htm">c++引用折叠</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2488.htm" title="一文搞定数据库连接池，太TM简单了，收藏！！！">一文搞定数据库连接池，太TM简单了，收藏！！！</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2265.htm" />
+<title>tomcat服务器项目迁移到另外一台tomcat服务器 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">tomcat服务器项目迁移到另外一台tomcat服务器</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="_0" rel="nofollow"></a>流程</h2> <ol> <li>打开虚拟机, 访问需要迁移的服务器(账号密码请向领导或运维索要)</li> <li>找到需要迁移的项目, 一般在所在tomcat盘符/公司名/项目名, 例如我所在的公司服务放置在 D:\tomcat\tomcat-epc-10100</li> <li>复制tomcat下的项目</li> <li>访问被迁移到的服务器, 将数据拷贝进去</li> <li>安装并且配置好jdk</li> <li>将数据拷贝之后, 启动其目录下的bin/startup.sh, 如果成功启动, 则迁移成功</li> </ol> <h2><a id="_8" rel="nofollow"></a>出现问题</h2> <ol> <li>没有赋予startup.sh deploy.sh和Catalina.sh权限<br /> 解决方法 : chmod u+x startup.sh u为当前用户, x为可执行权限 + 文件名</li> <li>项目复制失败, 有些文件丢失, 可以重新复制</li> <li>一开始我的是启动startup.sh，运行一会闪退，一开始以为是没有配置tomcat服务器，这篇文字很好的解释了<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/qq765065332/p/7694775.html"  rel="nofollow">tomcat服务器配置</a>(https://www.cnblogs.com/qq765065332/p/7694775.html)。可以查看项目所在的logs日志，查找错误原因，我的是没有修改server.xml的配置文件的路径地址Context reloadable=“false” debug=“0” docBase=“你当前的tomcat的路径\webapps\hzlzpj”</li> <li>启动了多个tomcat服务器，端口号冲突</li> </ol> <h2><a id="_15" rel="nofollow"></a>总结</h2> <p>这个小问题弄了很久，以后有这个问题直接查看logs日志查找问题就好了</p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2264.htm">windows环境下VSCode配置C++教程（使用msvc编译器）</a></p>
+                                        <p>下一个：<a href="/html/category/article-2266.htm">vue项目如何刷新当前页面</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2481.htm" title="检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

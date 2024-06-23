@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2288.htm" />
+<title>机器学习基础：奇异值分解（SVD） - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">机器学习基础：奇异值分解（SVD）</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2 id="svd-原理">SVD 原理</h2> <p>奇异值分解（Singular Value Decomposition）是线性代数中一种重要的矩阵分解，也是在机器学习领域广泛应用的算法，它不光可以用于降维算法中的特征分解，还可以用于推荐系统，以及自然语言处理等领域。</p> <p>有一个????×????的实数矩阵????，我们想要把它分解成如下的形式：$A  = U\Sigma V^T$</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/37dc4d6dee8d9c182c224a574f33df6a.jpg" alt="机器学习基础：奇异值分解（SVD）"></p> <p>其中????和????均为单位正交阵，即有$????????<sup>????=????$和$????????</sup>????=????$，????称为左奇异矩阵，????称为右奇异矩阵，Σ仅在主对角线上有值，我们称它为奇异值，其它元素均为0。</p> <p>上面矩阵的维度分别为$U \in R^{m\times m}$,$\ \Sigma \in R^{m\times n}$,$\ V \in R^{n\times n}$。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/befe5c7bfb148e0845642ad60d015337.jpg" alt="机器学习基础：奇异值分解（SVD）"></p> <p>一般地Σ有如下形式<br /> $$<br /> \Sigma =<br /> \left[<br /> \begin{matrix}<br /> \sigma_1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\<br /> 0 &amp; \sigma_2 &amp; 0 &amp; 0 &amp; 0\<br /> 0 &amp; 0 &amp; \ddots &amp; 0 &amp; 0\<br /> 0 &amp; 0 &amp; 0 &amp; \ddots &amp; 0\<br /> \end{matrix}<br /> \right]_{m\times n}<br /> $$</p> <p>$????_????$ 越大意味着对应的 $????′????$ 的特征值 $\sigma_j^2$ 越大, 从而其主成分 (principal component) $????????_????$ 的样本方差越大, 我们把方差大视为提供了更多信息.</p> <h2 id="求解u-σ-v">求解U, Σ, V</h2> <p>假设我们的矩阵A是一个m×n的矩阵，则$A^TA$是方阵，求其特征值及特征向量：</p> <p>$(A^TA)v_i = \lambda_i v_i$</p> <p>得到矩阵$A^TA$的n个特征值和对应的n个特征向量$v$</p> <p>因<br /> $A<sup>TA=V\Sigma</sup>TU^TU\Sigma V^T$ =$V\Sigma^T\Sigma V^T= V\Sigma<sup>2V</sup>T$</p> <p>将特征向量$v$张成一个$n×n$的矩阵$V$，就是SVD公式里面的$V$矩阵,$V$中的每个特征向量叫做$A$的右奇异向量。</p> <p>同理：$(AA^T)u_i = \lambda_i u_i$，可得$U$矩阵。</p> <p>求得$U ， V$，然后求Σ，因Σ为奇异值矩阵，所以只需要求出每个奇异值$σ$即可。</p> <p>$A=U\Sigma V^T \Rightarrow AV=U\Sigma V^TV \Rightarrow $</p> <p>$AV=U\Sigma \Rightarrow  Av_i = \sigma_i u_i  \Rightarrow  \sigma_i=Av_i / u_i$</p> <p>其实特征值矩阵等于奇异值矩阵的平方，也就是说特征值和奇异值满足如下关系：</p> <p>$\sigma_i = \sqrt{\lambda_i}$</p> <p>所以不用$\sigma_i =  Av_i / u_i$也可以通过求出$A^TA$的特征值取平方根来求奇异值。</p> <h2 id="svd算法">SVD算法</h2> <hr/> <p><strong>输入</strong>：样本数据<br /><strong>输出</strong>：左奇异矩阵，奇异值矩阵，右奇异矩阵</p> <p><strong>1</strong> 计算特征值： 特征值分解$AA^T$，其中$A \in \mathbf{R}^{m\times n}$为原始样本数据<br /> $AA^T=U\Sigma \Sigma<sup>TU</sup>T$</p> <p>得到左奇异矩阵$U \in \mathbf{R}^{m \times m}$和奇异值矩阵$\Sigma' \in \mathbf{R}^{m \times m}$</p> <p><strong>2</strong> 间接求部分右奇异矩阵： 求$V' \in \mathbf{R}^{m \times n}$</p> <p>利用A=UΣ′V′可得</p> <p>$V' = (U\Sigma')^{-1}A = (\Sigma')<sup>{-1}U</sup>TA$</p> <p><strong>3</strong> 返回U, Σ′, V′，分别为左奇异矩阵，奇异值矩阵，右奇异矩阵。</p> <hr/> <h2 id="python-求解svd">Python 求解SVD</h2> <pre><code>from numpy import array from numpy import diag from numpy import zeros from scipy.linalg import svd # define a matrix A = array([ 	[1,2,3,4,5,6,7,8,9,10], 	[11,12,13,14,15,16,17,18,19,20], 	[21,22,23,24,25,26,27,28,29,30]]) print(A)</code></pre> <pre><code>&gt;&gt;&gt; A array([[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10],        [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],        [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]])</code></pre> <pre><code># Singular-value decomposition U, s, VT = svd(A) # create m x n Sigma matrix Sigma = zeros((A.shape[0], A.shape[1])) # populate Sigma with n x n diagonal matrix Sigma[:A.shape[0], :A.shape[0]] = diag(s) # select n_elements = 2 Sigma = Sigma[:, :n_elements] VT = VT[:n_elements, :] # reconstruct B = U.dot(Sigma.dot(VT)) print(B)</code></pre> <pre><code>&gt;&gt;&gt; B array([[ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.],        [11., 12., 13., 14., 15., 16., 17., 18., 19., 20.],        [21., 22., 23., 24., 25., 26., 27., 28., 29., 30.]])</code></pre> <pre><code># transform T = U.dot(Sigma) print(T)</code></pre> <pre><code>&gt;&gt;&gt; T array([[-18.52157747,   6.47697214],        [-49.81310011,   1.91182038],        [-81.10462276,  -2.65333138]])</code></pre> <pre><code>T = A.dot(VT.T) print(T)</code></pre> <pre><code>[[-18.52157747   6.47697214]  [-49.81310011   1.91182038]  [-81.10462276  -2.65333138]]</code></pre> <p>参考：<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/pinard/p/6251584.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/pinard/p/6251584.html</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/endlesscoding/p/10033527.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/endlesscoding/p/10033527.html</a></p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2287.htm">关于encodeURI和encodeURIComponent的使用场景</a></p>
+                                        <p>下一个：<a href="/html/category/article-2289.htm">我们如何获得排序的MySQL输出？</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2488.htm" title="一文搞定数据库连接池，太TM简单了，收藏！！！">一文搞定数据库连接池，太TM简单了，收藏！！！</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

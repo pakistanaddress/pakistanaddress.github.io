@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2375.htm" />
+<title>Source Generator实战 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Source Generator实战</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2 id="前言">前言</h2> <p>最近刷B站的时候浏览到了老杨的关于Source Generator的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1CZ4y1Q7oK"  title="简介视频" target="_blank" rel="nofollow">简介视频</a>。其实当初.Net 6刚发布时候看到过微软介绍这个东西，但并没有在意。因为粗看觉得这东西限制蛮多的，毕竟C#是强类型语言，有些动态的东西不好操作，而且又有Fody、Natasha这些操作IL的库。</p> <p>最近写前端比较多，看到<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/antfu/unplugin-auto-import"  target="_blank" rel="nofollow">这个</a>和<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/unjs/unimport"  target="_blank" rel="nofollow">这个</a>，都是自动引入相关包，极大的提高了我开发前端的舒适度。又联想到隔壁Java的有Lombok，用起来都很香。搜了一下也没看到C#有相关的东西，于是决定自己动手开发一个，提高C#开发体验。</p> <h2 id="实现一个source-generator">实现一个Source Generator</h2> <p>这里不对Source Generator做基本的使用介绍，直接实操。如果需要了解相关信息，建议直接看<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview"  target="_blank" rel="nofollow">官方文档</a>或者去搜索相关文章。</p> <p>首先我们看一下效果，假如我的代码是</p> <pre><code class="language-c#">namespace SourceGenerator.Demo {     public partial class UserClass     {         [Property]         private string _test;     } }</code></pre> <p>那么，最终生成的应该是</p> <pre><code class="language-c#">// Auto-generated code namespace SourceGenerator.Demo {     public partial class UserClass     {         public string Test { get =&gt; _test; set =&gt; _test = value; }     } }</code></pre> <p>我们按最简单的实现来考虑，那么只需要</p> <ol> <li>在语法树中找到field</li> <li>找到字段的class、namespace</li> <li>生成代码</li> </ol> <h3 id="第一步">第一步</h3> <p>首先我们来看第一步。第一步需要找到field，这个我们借助Attribute的特性，能够很快的找到，在SourceGenerator中只需要判断一下Attribute的名字即可<br /> 定义一个SyntaxReciver，然后在SourceGenerator中注册一下</p> <pre><code class="language-csharp">// file: PropertyAttribute.cs using System;  namespace SourceGenerator.Common {     [AttributeUsage(AttributeTargets.Field)]     public class PropertyAttribute : Attribute     {         public const string Name = "Property";     } } // file: AutoPropertyReceiver.cs public class AutoPropertyReceiver : ISyntaxReceiver {     public List&lt;AttributeSyntax&gt; AttributeSyntaxList { get; } = new List&lt;AttributeSyntax&gt;();      public void OnVisitSyntaxNode(SyntaxNode syntaxNode)     {         if (syntaxNode is AttributeSyntax cds &amp;&amp; cds.Name is IdentifierNameSyntax identifierName &amp;&amp;             (                 identifierName.Identifier.ValueText == PropertyAttribute.Name ||                 identifierName.Identifier.ValueText == nameof(PropertyAttribute))            )         {             AttributeSyntaxList.Add(cds);         }     } }  // file: AutoPropertyGenerator.cs [Generator] public class AutoPropertyGenerator : ISourceGenerator {     public void Initialize(GeneratorInitializationContext context)     {         context.RegisterForSyntaxNotifications(() =&gt; new AutoPropertyReceiver());     }      // other code     ... }</code></pre> <h3 id="第二步">第二步</h3> <p>第二步就是SyntaxTree的查找，熟悉SyncaxTree的话比较容易完成</p> <pre><code class="language-csharp">public void Execute(GeneratorExecutionContext context) {     var syntaxReceiver = (AutoPropertyReceiver)context.SyntaxReceiver;     var attributeSyntaxList = syntaxReceiver.AttributeSyntaxList;      if (attributeSyntaxList.Count == 0)     {         return;     }      // 保存一下类名，因为一个类中可能有有多个字段生成，这里去掉重复     var classList = new List&lt;string&gt;();     foreach (var attributeSyntax in attributeSyntaxList)     {         // 找到class，并且判断一下是否有parital字段         var classDeclarationSyntax = attributeSyntax.FirstAncestorOrSelf&lt;ClassDeclarationSyntax&gt;();         if (classDeclarationSyntax == null ||             !classDeclarationSyntax.Modifiers.Any(m =&gt; m.IsKind(SyntaxKind.PartialKeyword)))         {             continue;         }          // 找到namespace         var namespaceDeclarationSyntax =             classDeclarationSyntax.FirstAncestorOrSelf&lt;BaseNamespaceDeclarationSyntax&gt;();          if (classList.Contains(classDeclarationSyntax.Identifier.ValueText))         {             continue;         }          // 找到field         var fieldDeclarationList = classDeclarationSyntax.Members.OfType&lt;FieldDeclarationSyntax&gt;().ToList();         if (fieldDeclarationList.Count == 0)         {             continue;         }         // 其他代码         ...     } }</code></pre> <h3 id="第三步">第三步</h3> <p>第三步就是简单粗暴的根据第二步中拿到的信息，拼一下字符串。</p> <p>当然其实拼字符串是很不好的行为，最好是用模板去实现，其次就算是拼字符串也理应用<code>StringBuilder</code>，但这里只是做一个Demo，无所谓了</p> <pre><code class="language-csharp">public void Execute(GeneratorExecutionContext context) {         ...         // 上面是第二步的代码         // 拼源代码字符串         var source = $@"// Auto-generated code  namespace {namespaceDeclarationSyntax.Name.ToString()} {{ public partial class {classDeclarationSyntax.Identifier} {{";         var propertyStr = "";         foreach (var fieldDeclaration in fieldDeclarationList)         {             var variableDeclaratorSyntax = fieldDeclaration.Declaration.Variables.FirstOrDefault();              var fieldName = variableDeclaratorSyntax.Identifier.ValueText;             var propertyName = GetCamelCase(fieldName);              propertyStr += $@" public string {propertyName} {{ get =&gt; {fieldName}; set =&gt; {fieldName} = value; }}";         }          source += propertyStr;         source += @" } } ";         // 添加到源代码，这样IDE才能感知         context.AddSource($"{classDeclarationSyntax.Identifier}.g.cs", source);         // 保存一下类名，避免重复生成         classList.Add(classDeclarationSyntax.Identifier.ValueText);     } }</code></pre> <h3 id="使用">使用</h3> <p>写一个测试类</p> <pre><code class="language-csharp">using SourceGenerator.Common;  namespace SourceGenerator.Demo;  public partial class UserClass {     [Property] private string _test = "test";      [Property] private string _test2; }</code></pre> <p>然后重启IDE，可以看到效果，并且直接调用属性是不报错的<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4df308b46d6afba4248bb71016be6d6e.jpg" alt="Source Generator实战"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5a338e1f337622878e0331e7c84b91f0.jpg" alt="Source Generator实战"></p> <h3 id="结尾">结尾</h3> <p>这里仅演示了最基本的Source Generator的功能，限于篇幅也无法深入讲解，上面的代码可以在<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Weilence/SourceGenerator/tree/8776f50bef8093bf05726aa0d64022f4a2d4ffe3"  target="_blank" rel="nofollow">这里</a>查看，目前最新的代码还实现了字段生成构造函数，appsettings.json生成AppSettings常量字段类。</p> <p>如果你只是想使用，可以直接nuget安装<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.nuget.org/packages/SourceGenerator.Library/"  target="_blank" rel="nofollow">SourceGenerator.Library</a>。</p> <h3 id="以下为个人观点">以下为个人观点</h3> <p>Source Generator在我看来最大的价值在于提供开发时的体验。至于性能，可以用Fody等库Emit IL代码，功能更强大更完善，且没有分部类的限制。但此类IL库最大的问题在Design-Time时无法拿到生成后的代码，导致需要用一些奇奇怪怪的方法去用生成代码。</p> <p>Source Generator未来可以做的事情有很多，比如</p> <ol> <li>ORM实体映射<br /> 如果数据库是Code First，那么其实还好。但如果说是Db First，主流的ORM库都是通过命令去生成Model的，但命令通常我记不住，因为用的频率并不高。<br /> 如果后期加字段，要么我重新生成一次，我又得去找这个命令。要么我手动去C#代码中加这个字段，我能保证自己可以写正确，但是团队其他成员呢？</li> <li>结合Emit IL技术<br /> 上面其实说了Emit是无法在Design-Time中使用的，但如果我们使用Source Generator创建一些空的方法，然后用IL去改写，应该可以解决这个问题</li> <li>依赖注入<br /> 目前而言我们在Asp.net Core中创建了服务，那么我们需要AddSingleton等方法添加进去，这个其实很痛苦，因为首先会显得代码很长，其次这个操作很无聊且容易遗漏。<br /> 现在主流的框架都是通过Assembly扫描的方式去动态注册，避免手动去添加服务。但如果通过Source Generator扫码这些类，就可以在编译时添加进DI容器</li> <li>对象映射<br /> Java里面有个库叫做<code>MapStruct</code>，原理是用maven插件生成静态的java代码，然后按字段赋值。C#里面我好像没有看到这种方法，目前我用过的Automapper和Tinymapper都是先去做Bind，然后再使用。（插个题外话，Tinymapper以前的版本是不需要Bind，直接用的，但后来就要了，似乎是为了解决多线程的问题）<br /> Bind其实很痛苦，我很讨厌写这种样板代码，以至于我根本就不想用这类Mapper，直接Json Copy。</li> </ol> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2374.htm">Docker安装confluence企业版wiki</a></p>
+                                        <p>下一个：<a href="/html/category/article-2376.htm">使用Proftpd支持FTP/SFTP权限管控</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2492.htm" title="JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)">JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

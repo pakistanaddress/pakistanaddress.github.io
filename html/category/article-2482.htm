@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2482.htm" />
+<title>mysql中的时间字段用什么数据类型 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">mysql中的时间字段用什么数据类型</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><strong>Mysql中用来存储日期的数据类型有三种：Date、Datetime、Timestamp</strong></p> <p><strong>Date</strong>数据类型：用来存储没有时间的日期。Mysql获取和显示这个类型的格式为“YYYY-MM-DD”。</p> <p>按照标准的SQL，不允许其他格式。在UPDATE表达式以及SELECT语句的WHERE子句中应使用该格式。例如：</p> <p><span style="color:#000000;">mysql&gt;<strong>SELECT * FROM<em>tbl_name</em>WHERE date &gt;= '2003-05-05';</strong></span></p> <p>支持的范围为'1000-01-01'到'9999-12-31'。MySQL以'YYYY-MM-DD'格式显示DATE值，但允许使用字符串或数字为DATE列分配值。</p> <p><strong>Datetime</strong>类型：日期和时间的组合。支持的范围是'1000-01-01 00:00:00'到'9999-12-31 23:59:59'。MySQL以'YYYY-MM-DD HH:MM:SS'格式显示DATETIME值，但允许使用字符串或数字为DATETIME列分配值。</p> <p><strong>Timestamp</strong>类型：</p> <p>时间戳。范围是'1970-01-01 00:00:00'到2037年。</p> <p>TIMESTAMP列用于INSERT或UPDATE操作时记录日期和时间。如果你不分配一个值，表中的第一个TIMESTAMP列自动设置为最近操作的日期和时间。也可以通过分配一个NULL值，将TIMESTAMP列设置为当前的日期和时间。</p> <p>TIMESTAMP值返回后显示为'YYYY-MM-DD HH:MM:SS'格式的字符串，显示宽度固定为19个字符。如果想要获得数字值，应在TIMESTAMP 列添加+0。</p> <p>所有不符合上面所述格式的数据都会被转换为相应类型的0值。（0000-00-00或者0000-00-00 00:00:00）</p> <p>_________________________________________________________________________________________________</p> <p>二、在mysql中，DATE_FORMAT(date, format) 函数根据format字符串格式化date值。</p> <p>%M 月名字(January……December)<br /> %W 星期名字(Sunday……Saturday)<br /> %D 有英语前缀的月份的日期(1st, 2nd, 3rd, 等等。）<br /> %Y 年, 数字, 4 位<br /> %y 年, 数字, 2 位<br /> %a 缩写的星期名字(Sun……Sat)<br /> %d 月份中的天数, 数字(00……31)<br /> %e 月份中的天数, 数字(0……31)<br /> %m 月, 数字(01……12)<br /> %c 月, 数字(1……12)<br /> %b 缩写的月份名字(Jan……Dec)<br /> %j 一年中的天数(001……366)<br /> %H 小时(00……23)<br /> %k 小时(0……23)<br /> %h 小时(01……12)<br /> %I 小时(01……12)<br /> %l 小时(1……12)<br /> %i 分钟, 数字(00……59)<br /> %r 时间,12 小时(hh:mm:ss [AP]M)<br /> %T 时间,24 小时(hh:mm:ss)<br /> %S 秒(00……59)<br /> %s 秒(00……59)<br /> %p AM或PM<br /> %w 一个星期中的天数(0=Sunday ……6=Saturday ）<br /> %U 星期(0……52), 这里星期天是星期的第一天<br /> %u 星期(0……52), 这里星期一是星期的第一天<br /> %% 一个文字“%”。</p> <p><strong>把字符串转为日期格式</strong></p> <pre>SELECT DATE_FORMAT('2011-09-20 08:30:45',   '%Y-%m-%d %H:%i:%S');</pre> <p><strong>把日期转为字符串格式</strong></p> <pre>SELECT DATE_FORMAT(NOW(),   '%Y-%m-%d %H:%i:%S');</pre> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2481.htm">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></p>
+                                        <p>下一个：<a href="/html/category/article-2483.htm">setTimeout、Promise、Async/Await 的区别</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

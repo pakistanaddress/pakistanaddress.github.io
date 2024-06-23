@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2412.htm" />
+<title>maven打包web项目时同时打包为war和jar文件 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">maven打包web项目时同时打包为war和jar文件</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>首先在pom.xml文件中指定war的打包方式，war</strong></p> <pre class="prettyprint"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>war<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span></code></pre> <p>上述代码在eclipse中执行maven install时， 会默认打成war，并放入本地仓库。</p> <p><strong>web项目时同时打包为war和jar文件</strong><br /> 1、首先添加在pom.xml中添加插件 maven-jar-plugin ， 使得 在调用命令mvn package install 或者 mvn package deploy 先生成 jar包。或者使用mvn package生成jar包。该插件生成的架包会放在工程的target文件夹下。</p> <p>2、然后配置maven-install-plugin 插件， 使得在eclipse中执行maven install时, 同时生成jar和war到本地仓库。</p> <p>3、再配置org.apache.maven.plugins插件， 使得在eclipse中执行deploy 时, 同时，生成jar和war到远程仓库。</p> <p>源码如下：</p> <pre class="prettyprint"><code class="hljs xml"><span class="hljs-comment">&lt;!--  package jar on package --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>maven-jar-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">phase</span>&gt;</span>compile<span class="hljs-tag">&lt;/<span class="hljs-title">phase</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goal</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">goal</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span><span class="hljs-comment">&lt;!--  install jar to local repository --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>maven-install-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">phase</span>&gt;</span>install<span class="hljs-tag">&lt;/<span class="hljs-title">phase</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goal</span>&gt;</span>install-file<span class="hljs-tag">&lt;/<span class="hljs-title">goal</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">configuration</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>${project.artifactId}<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>${project.groupId}<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${project.version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">file</span>&gt;</span>                                 ${project.build.directory}/${project.artifactId}-${project.version}.jar<span class="hljs-tag">&lt;/<span class="hljs-title">file</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">configuration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span><span class="hljs-comment">&lt;!--  deploy jar to remote repository --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>maven-deploy-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">phase</span>&gt;</span>deploy<span class="hljs-tag">&lt;/<span class="hljs-title">phase</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">goal</span>&gt;</span>deploy-file<span class="hljs-tag">&lt;/<span class="hljs-title">goal</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">goals</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">configuration</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">generatePom</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">generatePom</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">url</span>&gt;</span>${project.distributionManagement.repository.url}<span class="hljs-tag">&lt;/<span class="hljs-title">url</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>${project.artifactId}<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>${project.groupId}<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>${project.version}<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">file</span>&gt;</span>${project.build.directory}/${project.artifactId}.jar<span class="hljs-tag">&lt;/<span class="hljs-title">file</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">configuration</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">execution</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">executions</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span></code></pre> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2411.htm">MySQL EXTRACT()函数中可以使用哪种复合单位？</a></p>
+                                        <p>下一个：<a href="/html/category/article-2413.htm">JavaScript使用AND运算符合并布尔数组方法详解</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2488.htm" title="一文搞定数据库连接池，太TM简单了，收藏！！！">一文搞定数据库连接池，太TM简单了，收藏！！！</a></li>
+                        <li class="py-2"><a href="/html/category/article-2483.htm" title="setTimeout、Promise、Async/Await 的区别">setTimeout、Promise、Async/Await 的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2520.htm" title="Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型">Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

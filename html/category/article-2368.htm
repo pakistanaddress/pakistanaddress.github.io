@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2368.htm" />
+<title>Node 中的模块化 + module对象 + exports对象 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Node 中的模块化 + module对象 + exports对象</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1><a id="_0" rel="nofollow"></a>学习目标</h1> <p>◆ 能够说出模块化的好处</p> <p>◆ 能够知道 CommonJS 规定了哪些内容</p> <p>◆ 能够说出 Node.js 中模块的三大分类各自是什么</p> <p>◆ 能够了解模块的加载机制</p> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#_0" rel="nofollow">学习目标</a></li> <li><a href="#_12" rel="nofollow">一、模块化</a></li> <li><a href="#Node__18" rel="nofollow">二、Node 中的模块化</a></li> <li> <ul> <li><a href="#1__require__27" rel="nofollow">1. 使用 require 方法加载模块</a></li> <li><a href="#2_module__48" rel="nofollow">2. module 对象</a></li> <li> <ul> <li><a href="#moduleexports__51" rel="nofollow">module.exports 对象</a></li> </ul> </li> <li><a href="#3_exports__80" rel="nofollow">3. exports 对象</a></li> <li><a href="#4_CommonJS__89" rel="nofollow">4. CommonJS 模块化规范</a></li> </ul> </li> </ul> </div> <h1><a id="_12" rel="nofollow"></a>一、模块化</h1> <ol> <li>模块化是指解决一个复杂问题时，自顶向下逐层<strong>把系统划分成若干模块的过程</strong>。对于整个系统来说，<strong>模块是可组合、分解和更换的单元</strong></li> <li>编程领域中的模块化，就是<strong>遵守固定的规则</strong>，把一个<strong>大文件</strong>拆成<strong>独立并互相依赖的多个小模块</strong></li> </ol> <p></p> <h1><a id="Node__18" rel="nofollow"></a>二、Node 中的模块化</h1> <p><code>Node.js</code> 中根据模块来源的不同，将模块分为了<strong>3 大类</strong>，分别是：</p> <ol> <li> <p><strong>内置模块</strong>（内置模块是由<code>Node.js</code> 官方提供的，例如<code>fs</code>、<code>path</code>、<code>http</code> 等）</p> </li> <li> <p><strong>自定义模块</strong>（用户创建的每个<code>.js</code> 文件，都是自定 义模块）</p> </li> <li> <p><strong>第三方模块</strong>（由第三方开发出来的模块，并非官方提供的内置模块，也不是用户创建的自定义模块，<strong>使用前需要先下载</strong>）</p> </li> </ol> <h2><a id="1__require__27" rel="nofollow"></a>1. 使用 require 方法加载模块</h2> <p>使用强大的<code>require()</code> 方法，可以加载需要的<strong>内置模块</strong>、<strong>用户自定义模块</strong>、<strong>第三方模块</strong>进行使用</p> <pre><code class="prism language-javascript"><span class="token comment">// 1. 加载内置的 fs 模块</span><span class="token keyword">const</span> fs<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token comment">// 2. 加载用户的自定义模块</span><span class="token keyword">const</span> custom<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./custom.js'</span><span class="token punctuation">)</span><span class="token comment">// 3. 加载第三方模块，(使用第三方模块，下面会进行讲解)</span><span class="token keyword">const</span> moment<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span></code></pre> <p><strong>注意</strong></p> <ol> <li>使用 require() 方法加载其他模块时，会执行被加载模块中的代码</li> <li>在使用<code>require</code> 加载用户自定义模块期间，可以省略<code>.js</code> 后缀名</li> </ol> <p><strong>模块作用域的好处：</strong> 和函数作用域类似，在自定义模块中定义的变量、方法等成员，只能在当前模块内被访问，外部文件是访问不到的，这种模块级别的访问限制，叫做模块作用域</p> <p></p> <h2><a id="2_module__48" rel="nofollow"></a>2. module 对象</h2> <p>在每个<code>.js</code> 自定义模块中都有一个<code>module</code> 对象，它里面存储了和当前模块有关的信息</p> <h3><a id="moduleexports__51" rel="nofollow"></a>module.exports 对象</h3> <ol> <li> <p>在自定义模块中，可以使用<code>module.exports</code> 对象，将模块内的成员共享出去，供外界使用</p> </li> <li> <p>外界用<code>require()</code> 方法导入自定义模块时，得到的就是<code>module.exports</code> 所指向的对象</p> </li> </ol> <p><strong>module.exports 向外共享成员</strong></p> <pre><code class="prism language-javascript"><span class="token comment">// 加载模块.js</span><span class="token keyword">const</span> mo<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./被加载的模块.js'</span><span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mo<span class="token punctuation">)</span></code></pre> <pre><code class="prism language-javascript"><span class="token comment">// 被加载的模块.js</span><span class="token comment">// 向 module.exports 对象上挂载 username 属性</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>username<span class="token operator">=</span><span class="token string">'zs'</span><span class="token comment">// 向 module.exports 对象上挂载 sayHello 方法</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span><span class="token function-variable function">sayHello</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hellp'</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre> <p><strong>共享成员时的注意点</strong><br /> 使用<code>require()</code> 方法导入模块时，导入的结果，永远以<code>module.exports</code> 指向的对象为准</p> <p></p> <h2><a id="3_exports__80" rel="nofollow"></a>3. exports 对象</h2> <p>默认情况下，<code>exports</code> 和<code>module.exports</code> 指向同一个对象，最终共享的结果，还是以<code>module.exports</code> 指向的对象为准</p> <p><strong>exports 和 module.exports 的使用误区</strong></p> <ol> <li>时刻谨记，<code>require()</code> 模块时，得到的永远是<code>module.exports</code> 指向的对象</li> <li><strong>注意：为了防止混乱，建议大家不要在同一个模块中同时使用<code>exports</code> 和<code>module.exports</code></strong></li> </ol> <p></p> <h2><a id="4_CommonJS__89" rel="nofollow"></a>4. CommonJS 模块化规范</h2> <ol> <li> <p>Node.js<code>遵循了</code>CommonJS<code>模块化规范，</code>CommonJS `规定了<strong>模块的特性和各模块之间如何相互依赖</strong></p> </li> <li> <p><code>CommonJS</code> 规定：</p> <ul> <li>每个模块内部，<code>module</code> 变量代表当前模块</li> <li><code>module</code> 变量是一个对象，它的<code>exports</code> 属性（即<code>module.exports</code>）是对外的接口</li> <li>加载某个模块，其实是加载该模块的<code>module.exports</code> 属性，<code>require()</code> 方法用于加载模块</li> </ul> </li> </ol> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2367.htm">在Centos7上安装Redis6_在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2369.htm">Linux 环境Skywalking部署Elasticsearch</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

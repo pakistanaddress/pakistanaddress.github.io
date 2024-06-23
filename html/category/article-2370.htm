@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2370.htm" />
+<title>详细讲解springboot如何实现异步任务_java - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">详细讲解springboot如何实现异步任务_java</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">Spring Boot介绍</a></li> <li><a href="#_label1" rel="nofollow">Spring Boot特点</a></li> <li><a href="#_label2" rel="nofollow">异步任务</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>Spring Boot介绍</h2> <p>Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化新 Spring 应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是 Spring Boot 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 Maven 整合了所有的 Jar 包，Spring Boot 整合了所有的框架。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>Spring Boot特点</h2> <p>1）创建独立的Spring应用程序；</p> <p>2）直接嵌入Tomcat，Jetty或Undertow，无需部署WAR文件；</p> <p>3）提供推荐的基础POM文件（starter）来简化Apache Maven配置；</p> <p>4）尽可能的根据项目依赖来自动配置Spring框架；</p> <p>5）提供可以直接在生产环境中使用的功能，如性能指标，应用信息和应用健康检查；</p> <p>6）开箱即用，没有代码生成，不需要配置过多的xml。同时也可以修改默认值来满足特定的需求。</p> <p>7）其他大量的项目都是基于Spring Boot之上的，如Spring Cloud。</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>异步任务</h2> <p>实例：</p> <p>在service中写一个hello方法，让它延迟三秒</p> <div class="ay1code"> <pre class="brush:java;">@Service  public class AsyncService {      public void hello(){          try {              Thread.sleep(3000);          } catch (InterruptedException e) {              e.printStackTrace();          }          System.out.println("数据正在处理！");      }  }  </pre> </div> <p>让Controller去调用这个业务</p> <div class="ay1code"> <pre class="brush:java;">@RestController  public class AsyncController {      @Autowired      AsyncService asyncService;      @GetMapping("/hello")      public String hello(){          asyncService.hello();          return "ok";      }  }  </pre> </div> <p>启动SpringBoot项目，我们会发现三秒后才会响应ok。</p> <p>所以我们要用异步任务去解决这个问题，很简单就是加一个注解。</p> <p>在hello方法上@Async注解</p> <div class="ay1code"> <pre class="brush:java;">@Service  public class AsyncService {      //异步任务      @Async      public void hello(){          try {              Thread.sleep(3000);          } catch (InterruptedException e) {              e.printStackTrace();          }          System.out.println("数据正在处理！");      }  }  </pre> </div> <p>在SpringBoot启动类上开启异步注解的功能</p> <div class="ay1code"> <pre class="brush:java;">@SpringBootApplication  //开启了异步注解的功能  @EnableAsync  public class Sprintboot09TestApplication {        public static void main(String[] args) {          SpringApplication.run(Sprintboot09TestApplication.class, args);      }    }  </pre> </div> <p>问题解决，服务端瞬间就会响应给前端数据！</p> <p>树越是向往高处的光亮，它的根就越要向下，向泥土向黑暗的深处。</p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2369.htm">Linux 环境Skywalking部署Elasticsearch</a></p>
+                                        <p>下一个：<a href="/html/category/article-2371.htm">LVGL PC模拟器安装步骤详解_安装教程</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2520.htm" title="Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型">Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

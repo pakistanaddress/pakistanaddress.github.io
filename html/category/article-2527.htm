@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2527.htm" />
+<title>Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2>1、首先我们了解一下什么叫SQL注入问题</h2> <p style="text-indent:33px;">SQL注入是一个很古老的系统安全问题，黑客可以通过构造字符串，尝试改变实际执行的SQL语句，从而达到绕过系统认证，或者提取系统中自己没有权限的数据来脱库。出现这个问题的根本原因是开发者在使用SQL的时候，采用的是拼接字符串的方式来实现SQL语句的参数传值，当然这种问题在ORM框架盛行的今天其实出现概率已经很小了，具体例子如下：</p> <ul> <li> <p><strong>SQL注入绕过认证原理，如下代码就存在绕过认证的安全问题：</strong></p> </li> </ul> <ul> <li> <p><strong>正常情况下，使用正确和错误的用户名和密码都能够限制认证</strong></p> </li> </ul> <p>&nbsp; &nbsp; &nbsp; &nbsp;数库数据：</p> <p><img fetchpriority="high" decoding="async" alt="" height="114" src="http://img.555519.xyz/uploads/20221230/f554d47cd0d9ffd36701f000d01933e6.jpg"></p> <pre><code class="language-python"># 建立数据库连接 def login(userName, userPwd):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     # sql = "select * from t_user where username='%s' and userpwd='%s'" % (userName, userPwd)     sql = "select * from t_user where username='"+ userName +"' and userpwd='" + userPwd +"'"     print(sql)     # 执行查询操作     result = cursor.execute(sql)     connection.commit()     userInfo = cursor.fetchone()     connection.close() #     return userInfo</code></pre> <pre><code class="language-python"># 普通登录，正确的用户名和密码登录成功 user = login('xiaojiejie', '123456') if user:     print("登录成功")  # 普通登录，错误的用户名或密码登录失败 user = login('xiaojiejie', '111111') if user:     print("登录成功") else:     print("登录失败")</code></pre> <p style="text-indent:33px;">如下，第一次正确的用户名和密码，提示成功，第二密码是错误的，提示失败</p> <p><img decoding="async" alt="" height="136" src="http://img.555519.xyz/uploads/20221230/770ca07e59541d0c4b44cf8e622d3812.jpg"></p> <ul> <li><strong>SQL注入情况，通过传入特殊构造的参数，从而达到改变实际执行SQL语句绕过认证的目的</strong></li> </ul> <pre><code class="language-python"># 构造特殊的字符串，达到SQL注入的目的 user = login("xiaojiejie", "1' or '1'='1") if user:     print("绕过认证，登录成功") else:     print("登录失败")</code></pre> <p style="text-indent:33px;">以上在传入参数的时候，密码特殊处理了，1' or '1'='1，从而使得密码和原始SQL在字符串拼接的时候，构成了如下的SQL</p> <pre><code class="language-sql">select * from t_user where username='xiaojiejie' and userpwd='1' or '1'='1'</code></pre> <p style="text-indent:33px;">引入&nbsp;or '1'='1'是恒成真的，所以可以绕过认证。</p> <p style="text-indent:33px;"><strong>问题的根本原因就在于SQL语句：</strong></p> <p style="text-indent:33px;"><strong><span style="color:#f33b45;">&nbsp;sql = "select * from t_user where username='"+ userName +"' and userpwd='" + userPwd +"'"&nbsp;</span></strong></p> <p style="text-indent:33px;"><span style="color:#f33b45;"><strong>是通过字符串拼接出来的，这样就让一些别有用心的人有机可趁。</strong></span></p> <p style="text-indent:33px;">&nbsp;</p> <h2 style="text-indent:0px;">2、SQL语句参数化是解决这类问题的通用方案</h2> <p style="text-indent:33px;">SQL语句参数化是数据库技术里通用的解决SQL注入的最佳解决方案，其实就是在程序向数据库发送SQL执行的时候将SQL语句和参数分开传递，需要补充的动态参数在SQL语句中使用占位符占位，然后在数据库端在填入参数执行，这样既规避了SQL注入的问题，同时也一定程度提高了数据库执行SQL的效率。就像Java中JDBC支持preparedStatement，Python也支持SQL参数化。实现如下：</p> <pre><code class="language-python">def loginParams(params=[]):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     sql = "select * from t_user where username=%s and userpwd=%s"     print(sql)     # 执行查询操作     result = cursor.execute(sql, params)     connection.commit()     userInfo = cursor.fetchone()     connection.close() #     return userInfo </code></pre> <ul> <li> <h3 style="text-indent:33px;">再次尝试绕过认证：</h3> </li> </ul> <pre><code class="language-python"># 构造特殊的字符串，参数化后无法达到SQL注入的目的 user = loginParams(["xiaojiejie", "1' or '1'='1"]) print(user) if user:     print("绕过认证，登录成功") else:     print("绕过认证，登录失败")</code></pre> <p><strong>绕过失败：</strong></p> <p><img decoding="async" alt="" height="101" src="http://img.555519.xyz/uploads/20221230/85b0d097813cc7188d43ea82f7accff5.jpg"></p> <h1><strong>3.最后介绍一个简单的利用SQL注入拖库的安全技术</strong></h1> <p style="text-indent:33px;">通常Web系统都可以使用id来获得用户的个人信息，那么如果要看到别人的个人信息或者系统中所有用户的信息，就是一个拖库方法，SQL具有采用字符串拼接也会引起这样的安全问题，例如：</p> <pre><code class="language-python">def profile(userId):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     sql = "select * from t_user where userid=" +str(userId)     print(sql)     # 执行查询操作     result = cursor.execute(sql)     connection.commit()     userInfo = cursor.fetchall()     connection.close()  #     return userInfo     pass  userInfo = profile(1) print(userInfo)</code></pre> <p style="text-indent:33px;">根据个人userid能够读取自己的信息</p> <p style="text-indent:33px;"><img loading="lazy" decoding="async" alt="" height="69" src="http://img.555519.xyz/uploads/20221230/bdd2e54851648fbc671eacb23bbf8ee6.jpg"></p> <p style="text-indent:33px;">对于一个普通用户来说，他并不具读取其他用户的个人信息的权限，我们改一下参数：</p> <pre><code class="language-python"># 越权读取了表中全部用户的信息 userInfo = profile("1 or 1=1") print(userInfo)</code></pre> <p style="text-indent:0;"><img loading="lazy" decoding="async" alt="" height="160" src="http://img.555519.xyz/uploads/20221230/4e4e28f14ea1dcc310195346c4b64430.jpg"></p> <p style="text-indent:33px;">以上可以看到执行的通过传入的参数，实际执行的SQL是：</p> <p style="text-indent:33px;">select * from t_user where userid=1 or 1=1</p> <p style="text-indent:33px;">从而实现了拖库，是不是很危险</p> <h1 style="text-indent:0px;">综上所述，大家在开发代码的过程中一定不要使用拼接字符串的方式拼接SQL语句，避免留下安全漏洞，以上内容主要是写给新手程序猿。</h1> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2526.htm">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2528.htm">算法：在一个集合中选取所有符合条件的元素组合</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

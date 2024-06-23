@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2421.htm" />
+<title>Spring boot使用druid 数据源 的监控页 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Spring boot使用druid 数据源 的监控页</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>第一步 引入依赖</p> <pre><code class="prism language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>--        引入 druid 数据源--<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com.alibaba<span class="token operator">&lt;</span>/groupId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>druid<span class="token operator">&lt;</span>/artifactId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.1</span>.2<span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>/version<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>/dependency<span class="token operator">&gt;</span> </code></pre> <p>首先开启 druid 的配置文件</p> <pre><code class="prism language-bash">package com.spring.bootinit.config<span class="token punctuation">;</span>  <span class="token function">import</span> com.alibaba.druid.pool.DruidDataSource<span class="token punctuation">;</span> <span class="token function">import</span> com.alibaba.druid.support.http.StatViewServlet<span class="token punctuation">;</span> <span class="token function">import</span> com.alibaba.druid.support.http.WebStatFilter<span class="token punctuation">;</span> <span class="token function">import</span> org.springframework.boot.context.properties.ConfigurationProperties<span class="token punctuation">;</span> <span class="token function">import</span> org.springframework.boot.web.servlet.FilterRegistrationBean<span class="token punctuation">;</span> <span class="token function">import</span> org.springframework.boot.web.servlet.ServletRegistrationBean<span class="token punctuation">;</span> <span class="token function">import</span> org.springframework.context.annotation.Bean<span class="token punctuation">;</span> <span class="token function">import</span> org.springframework.context.annotation.Configuration<span class="token punctuation">;</span>  <span class="token function">import</span> javax.sql.DataSource<span class="token punctuation">;</span> <span class="token function">import</span> java.sql.SQLException<span class="token punctuation">;</span> <span class="token function">import</span> java.util.Arrays<span class="token punctuation">;</span>  /**  * @User: Json  * @Date: <span class="token number">2022</span>/9/6  **/ @Configuration public class DruidConfig <span class="token punctuation">{<!-- --></span>      // 自己设置一个 数据源     // 当容器中 没有 自定义数据源  会导入 HikariPool 数据源     @ConfigurationProperties<span class="token punctuation">(</span><span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>     // 写上这个注解 表示  这个 Druid 数据源的 配置参数 从配置文件中里面 spring.datasource 获取     @Bean     public DataSource dataSource<span class="token punctuation">(</span><span class="token punctuation">)</span> throws SQLException <span class="token punctuation">{<!-- --></span>         DruidDataSource druidDataSource <span class="token operator">=</span> new DruidDataSource<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         // 数据源配置信息 配置在这也不合适  一般会写在 配置文件中 //        druidDataSource.setUsername<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //        druidDataSource.setPassword<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //        等等         druidDataSource.setFilters<span class="token punctuation">(</span><span class="token string">"stat,wall"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> // <span class="token function">stat</span> 开启sql监控功能 // wall 开启sql防火墙         //像这种 写法 都可以写在配置文件中          <span class="token builtin class-name">return</span>  druidDataSource<span class="token punctuation">;</span>     <span class="token punctuation">}</span>     /**      * 配置 Druid 的监控页      * */     @Bean     public ServletRegistrationBean <span class="token function-name function">servletRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>          StatViewServlet statViewServlet <span class="token operator">=</span> new StatViewServlet<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         ServletRegistrationBean<span class="token operator">&lt;</span>StatViewServlet<span class="token operator">&gt;</span> statViewServletServletRegistrationBean <span class="token operator">=</span> new ServletRegistrationBean<span class="token operator">&lt;&gt;</span><span class="token punctuation">(</span>statViewServlet, <span class="token string">"/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         statViewServletServletRegistrationBean.addInitParameter<span class="token punctuation">(</span><span class="token string">"loginUsername"</span>,<span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  //给监控页设置 登录密码         statViewServletServletRegistrationBean.addInitParameter<span class="token punctuation">(</span><span class="token string">"loginPassword"</span>,<span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token builtin class-name">return</span> statViewServletServletRegistrationBean<span class="token punctuation">;</span>     <span class="token punctuation">}</span>      /**      *  WebStatFilter 用于采集 web -jdbc 关联监控的数据      *      * **/     @Bean     public FilterRegistrationBean <span class="token function-name function">webStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         WebStatFilter webStatFilter <span class="token operator">=</span> new WebStatFilter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         FilterRegistrationBean<span class="token operator">&lt;</span>WebStatFilter<span class="token operator">&gt;</span> webStatFilterFilterRegistrationBean <span class="token operator">=</span>                 new FilterRegistrationBean<span class="token operator">&lt;</span>WebStatFilter<span class="token operator">&gt;</span><span class="token punctuation">(</span>webStatFilter<span class="token punctuation">)</span><span class="token punctuation">;</span>         //采集哪个路径         webStatFilterFilterRegistrationBean.setUrlPatterns<span class="token punctuation">(</span>Arrays.asList<span class="token punctuation">(</span><span class="token string">"/*"</span><span class="token punctuation">))</span><span class="token punctuation">;</span>         //排除那些路径 不采集         //exclusions 你要排除 路径的 关键字         webStatFilterFilterRegistrationBean.addInitParameter<span class="token punctuation">(</span><span class="token string">"exclusions"</span>,<span class="token string">"*.js,/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token builtin class-name">return</span> webStatFilterFilterRegistrationBean<span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span>  </code></pre> <p>然后访问 自己的 的域名<br /> http://127.0.0.1:8080/druid/</p> <p>测试结果<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/8a2eeea8295840c0b5ea3a5966f70599.jpg" alt="Spring boot使用druid 数据源 的监控页"></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2420.htm">并发编程基础底层原理学习_在线工具</a></p>
+                                        <p>下一个：<a href="/html/category/article-2422.htm">sparksql 操作hive</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

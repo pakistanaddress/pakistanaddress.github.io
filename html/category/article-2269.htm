@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2269.htm" />
+<title>Java笔记-使用BindingResult把表单错误传出来 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Java笔记-使用BindingResult把表单错误传出来</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="-toc" style="margin-left:0px;">&nbsp;</p> <p id="%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-toc" style="margin-left:0px;"><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5" rel="nofollow">基本概念</a></p> <p id="%E6%BC%94%E7%A4%BA%E5%8F%8A%E4%BB%A3%E7%A0%81-toc" style="margin-left:0px;"><a href="#%E6%BC%94%E7%A4%BA%E5%8F%8A%E4%BB%A3%E7%A0%81" rel="nofollow">演示及代码</a></p> <hr id="hr-toc"/> <p>&nbsp;</p> <h1 id="%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</h1> <p>这里在特别是在提交表单数据的数据很常见，当提交的数据不完整的时候，也要回Json，并且把错误代码发出来，这里就的使用</p> <p>BindingResult。</p> <p>&nbsp;</p> <h1 id="%E6%BC%94%E7%A4%BA%E5%8F%8A%E4%BB%A3%E7%A0%81">演示及代码</h1> <p>正确的例子：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="572" src="http://img.555519.xyz/uploads/20230112/de9b3c0d499a818ec970ada29770cada.jpg"></p> <p>当少一个key和value时：</p> <p><img decoding="async" alt="" class="has" height="737" src="http://img.555519.xyz/uploads/20230112/f7fa547a5799ed0bc7f363f5c6f7f024.jpg"></p> <p>此时会有Message。</p> <p>服务器里面：</p> <p><img decoding="async" alt="" class="has" height="368" src="http://img.555519.xyz/uploads/20230112/c8f1c329b2148f10bf5049a8a4aa11d4.jpg"></p> <p>使用异常，这样也增强了程序的方便，和健壮，方便使用。</p> <p>程序结构如下：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="336" src="http://img.555519.xyz/uploads/20230112/f80892bbb95fd72d3d3365b0cd8726e7.jpg"></p> <p>代码如下：</p> <p>TestController.java</p> <pre class="has"><code class="language-java">package parademo.demo.controller;  import org.springframework.validation.BindingResult; import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController; import parademo.demo.enums.ResultEnum; import parademo.demo.exception.TestException; import parademo.demo.form.TestForm;  import javax.validation.Valid;  @RestController @RequestMapping("/test") public class TestController {      @PostMapping("/create")     public String create(@Valid TestForm form,                          BindingResult bindingResult){          if(bindingResult.hasErrors()){              throw new TestException(ResultEnum.ERROR_ONE.getCode(),                     bindingResult.getFieldError().getDefaultMessage());         }         System.out.println(form);          return "呵呵哒";     }      @PostMapping("/create2")     public String create2(@RequestParam("name") String name,                           @RequestParam("phone") String phone){          System.out.println("name: " + name + "   " + "phone: " + phone);         return "呵呵呵";     } } </code></pre> <p>ResultEnum.java</p> <pre class="has"><code class="language-java">package parademo.demo.enums;  import lombok.Getter;  @Getter public enum  ResultEnum {      ERROR_ONE(1, "错误一"),     ERROR_TWO(2, "错误二"),     ERROR_THREE(3, "错误三"),     ERROR_FOUR(4, "错误四");      private Integer code;     private String message;      ResultEnum(Integer code, String message){          this.code = code;         this.message = message;     } } </code></pre> <p>TestException.java</p> <pre class="has"><code class="language-java">package parademo.demo.exception;  public class TestException extends RuntimeException{      private Integer code;     public TestException(){      }      public TestException(Integer code, String message){          super(message);         this.code = code;     } }</code></pre> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2268.htm">QT下载安装和Visual Studio环境配置</a></p>
+                                        <p>下一个：<a href="/html/category/article-2270.htm">virtualenv介绍及基本使用</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

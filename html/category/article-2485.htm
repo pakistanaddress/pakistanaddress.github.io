@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2485.htm" />
+<title>PDB调试方法 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">PDB调试方法</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>本文目录</h3> <ul> <li><a href="#PDB_1" rel="nofollow">PDB调试</a></li> <li> <ul> <li> <ul> <li><a href="#_8" rel="nofollow">两种方式调试</a></li> <li><a href="#_19" rel="nofollow">具体操作</a></li> </ul> </li> </ul> </li> </ul> </div> <h1> <a id="PDB_1" rel="nofollow"></a>PDB调试</h1> <p>笔者的项目涉及了大量的环境、shell脚本等，用IDE调试非常麻烦，因此学着使用PDB调试，记录分享给大家。</p> <p>pdb调试是为了在远程服务器上，无界面的模式下，进行的。<br /> 由于工业界的正版IDE很贵，当然也可以使用VSCODE进行调试。</p> <blockquote> <p>大佬的话：最好的调试方法是打印.</p> </blockquote> <h3> <a id="_8" rel="nofollow"></a>两种方式调试</h3> <ol> <li>非侵入式方法<br /><code>python3 -m pdb filename.py</code> 如果还有后续的参数，直接加在它后面。</li> </ol> <p>如果是要调试Pytorch的神经网络，如下命令：<br /><code>torchrun -m pdb filename.py</code> : <strong>注意调试的时候使用一个GPU， 一个线程来调试最好。</strong></p> <ol start="2"> <li>侵入式方法（<strong>推荐这个</strong>）<br /> 需要在运行的文件中增加一行<br /><code>import pdb;pdb.set_trace()</code> </li> </ol> <h3> <a id="_19" rel="nofollow"></a>具体操作</h3> <ul> <li> <p>查看源代码：<code>l</code> 查看当前位置前后11行。<br /><code>ll</code>,查看当前函数的所有代码</p> </li> <li> <p>添加断点：</p> </li> </ul> <pre><code>b               # 单独使用可以用来显示目前已经具有的所有断点 b lineno        # 给第几行添加断点 b filename:lineno        # 给某个函数的第几行添加断点 b functionname    # 给某个函数添加断点 </code></pre> <ul> <li>添加临时断点</li> </ul> <pre><code>tbreak tbreak lineno tbreak filename:lineno tbreak functionname </code></pre> <ul> <li>清除断点</li> </ul> <pre><code>cl             						# 清楚所有断点 cl filename:lineno  cl bpnumber [bpnumber ...] </code></pre> <ul> <li>打印变量值</li> </ul> <pre><code>p expression  p param # 如果变量是个复杂的对象，可以先打印查看变量的属性。 p dir(param) # 然后查看变量的某个属性值  p param.xxx　　 </code></pre> <ul> <li>逐行调试命令</li> </ul> <pre><code>s          # 执行下一行，能够进入函数体 n          # 执行下一行，不进入函数体 r          # 执行下一行，如果在函数中，直接运行到函数返回处   c          # 持续执行程序，直到遇到一个断点 unt lineno  # 持续执行直到运行到指定行 j lineno     # 直接跳转到指定行  </code></pre> <ul> <li>查看函数参数</li> </ul> <pre><code>a         # 在函数中时打印函数的参数和参数的值 </code></pre> <ul> <li>打印变量类型</li> </ul> <pre><code>whatis expression             # 打印表达式类型，也可以用来打印变量值 </code></pre> <ul> <li>启动交互式解释器</li> </ul> <pre><code>interact               # 启动一个python的交互式解释器，使用(ctrl + d)返回pdb </code></pre> <ul> <li>打印堆栈信息</li> </ul> <pre><code>w                      # 打印堆栈信息，最新的帧在最底部 </code></pre> <ul> <li>忽略某段代码<br /> 直接跳转到line_number开始</li> </ul> <pre><code>j line_number </code></pre> <ul> <li>退出pdb</li> </ul> <pre><code>q </code></pre> <p>注意，这里的退出pdb是退出了整个debugger系统。<br /> 如果要重新开始下一次调试：(即保留断点设置和debugger设置)</p> <pre><code>restart </code></pre> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2484.htm">Gin-使用GORM操作mysql 数据库</a></p>
+                                        <p>下一个：<a href="/html/category/article-2486.htm">Java实习生面试题汇总</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

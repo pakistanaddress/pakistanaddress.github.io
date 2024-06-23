@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2495.htm" />
+<title>js中数组常用遍历，VUE 中数组常用遍历 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">js中数组常用遍历，VUE 中数组常用遍历</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>js中数组常用遍历，VUE 中 数组常用遍历方法</p> <p>1，filter() 遍历数组<br /> ①filter遍历数组会返回一个新的数组，<br /> ②循环次数：数组的长度</p> <pre><code> /*     1,filter 循环 会返回一个新的数组     2,循环次数为是整个数组的长度      */     let filArr = [1,2,3,4,5,6]     let newFilArr = filArr.filter( (item,i) =&gt;{         console.log("循环==i==",i);        return item &gt;= 3     } )     console.log("newFilArr==",newFilArr)</code></pre> <p>运行效果图如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/ef32cbd108be48313007adea84ba41f7.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"><br /> 2，some()函数进行循环 找到符合条件的便会终止循环，否则会遍历整个数组。<br /> ①符合条件时返回ture,否则返回false<br /> ②循环次数：小于等于数组长度；<br /> ③当条件满足时，就会终止循环，并返回ture,如果没有满足判断条件，会遍历整个循环</p> <pre><code> /*  1,some 循环 会返回一个true 或false  2,当条件满足时，就会终止循环，并返回ture,如果没有满足判断条件，会遍历整个循环   */     let someArr = [1,2,3,4,5,6]      let newSomeArr = someArr.some( (item,i) =&gt;{         console.log("some循环==i==",i);         return item &gt;= 3     } )     console.log("newSomeArr==",newSomeArr)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/64045bc50df55f2d5fa0e8dc2388744c.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <p>3 map()循环<br /> ①会遍历整个数组的循环<br /> ②会得到一个新的数组（返回数组是什么取决于map函数中的调用用法），如下两个例子</p> <pre><code>let mapArr = ['one','two','three']     let newMapArr = mapArr.map((item,i) =&gt; {         console.log("map循环==i==",i);         return item === 'two'     })     console.log("mapArr==",mapArr)     console.log("newMapArr==",newMapArr)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/23b0f633a8ef1f5f40d92ce477e2083b.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <pre><code> let mapArr = ['one','two','three']     let newMapArr = mapArr.map((item,i) =&gt; item += ',haha')     console.log("mapArr==",mapArr)     console.log("newMapArr==",newMapArr)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/07cb0dfe14265141602e50b37bd8b6cd.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <p>4，forEach() 函数<br /> ①无任何返回，可改变原来数组中的内容<br /> ②循环次数：数组的长度<br /> ③不支持return，不需要return语句</p> <p>如下案例：给每个对象中添加age属性</p> <pre><code>    let forArr = [{name:'tom',sex:'man'},{name:'linda',sex:'woman'},]      forArr.forEach((item,i) =&gt; {         console.log("forEach循环==i==",i);          item.age = 27     })      console.log("forArr==遍历后===",forArr)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/49d6584f9abfef53d365276a468fa60e.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <p>5，find()函数<br /> ①有返回值，符合条件会返回一个数组中的项，比如对象<br /> ②循环次数：小于等于数组长度</p> <pre><code>如下面3个案例所示   //案例1： 返回uundefined     let findArr = [{name:'tom',sex:'man'},{name:'linda',sex:'woman'},{name:'Join',sex:'man'},]     let perObj = findArr.find((item,i) =&gt; {         console.log("findArr循环==i==",i);         return item.name === 'linda3'     })     console.log("perObj===",perObj)      //案列2     let ages = [3, 10, 18, 20];     let newAge =    ages.find(item =&gt; item&gt;10)     console.log("最后数据==",newAge);      //案列3     const arr = [{name:"Jim",age:"20"},{name:"Lily",age:"18"},{name:"Mei",age:"18"},]     let age18s =  arr.find((item,i)=&gt;{         console.log("findArr循环222==i==",i);         return item.name === 'Lily'     })     console.log("age18s==",age18s);</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/e26b67cb13b03fcd4567c2be319b09fe.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <p>6 findIndex()<br /> ①会返回符合对象或项所在的索引值，否则返回-1<br /> ②循环次数：小于等于数组的长度</p> <pre><code>  const arrIndex = [{name:"Jim",age:"20"},{name:"Lily",age:"18"},{name:"Mei",age:"18"},]     let index =  arrIndex.findIndex((item,i)=&gt;{         console.log("findIndex==循环次数i==",i);         return item.name === 'Lily'     })     console.log("index==",index);</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/d6fe4165591cbed90d9e9733936ca54c.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"></p> <p>7 every()函数<br /> ①用于检测所有数组项中是否都符合某个条件，如果都符合则返回true，只要有一项不符合则返回false，后面的元素则不遍历<br /> ②循环次数：小于等于数组长度</p> <pre><code> let everyArr = [{name:'tom',sex:'man'},{name:'linda',sex:'woman'},{name:'Join',sex:'man'},]     let isEvery = everyArr.every((item,i) =&gt; {         console.log("every循环次数==i==",i);         return item.sex === 'woman'     })     console.log("isEvery===",isEvery)</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/cdfc819384cf27754530f922a0957d0e.jpg" alt="js中数组常用遍历，VUE 中数组常用遍历"><br /> some() 和every() 有点类似</p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2494.htm">flink调优之RocksDB设置</a></p>
+                                        <p>下一个：<a href="/html/category/article-2496.htm">.NET Core(.NET6)中gRPC使用</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2492.htm" title="JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)">JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

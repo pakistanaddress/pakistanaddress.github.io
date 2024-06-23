@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2500.htm" />
+<title>JavaScript 进阶第二章（循环结构 ） - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">JavaScript 进阶第二章（循环结构 ）</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2>while循环结构</h2> <p>1.语法：</p> <blockquote> <p>while(条件 true/false){<!-- --></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 循环体/需要重复执行的代码;<br /> &nbsp; &nbsp; }</p> </blockquote> <ul> <li> <p>执行步骤：</p> <ul> <li> <p>1.判断条件是否成立</p> <ul> <li> <p>1.1 如果成立，执行循环体代码，然后重复步骤1</p> </li> <li> <p>1.2 如果不成立，结束循环，执行大括号后面的代码</p> </li> </ul> </li> </ul> </li> <li> <p>3.注意点</p> <ul> <li> <p>（1）小括号中的语句，无论结果是什么都会转换成布尔类型来判断是否成立</p> </li> <li> <p>（2）避免写一个死循环</p> </li> </ul> </li> </ul> <h3>代码演示：</h3> <pre><code class="language-javascript">&lt;script&gt;      // 需求：打印 3 次 '你好呀，海海'      // 复制粘贴弊端：（1）代码冗余  （2）不便于维护     // console.log ( "你好呀，海海" );     // console.log ( "你好呀，海海" );     // console.log ( "你好呀，海海" );           /*     1.循环结构 ： 代码重复执行      2. 语法         while(条件 true/false){             循环体 ：需要重复执行的代码         };      执行步骤         1. 判断条件是否成立             2.1 成立：执行循环体代码。 重复步骤1             2.2 不成立，循环语句结束，执行大括号后面的代码      */     let i = 1; // 循环变量，记录循环次数     while( i &lt;= 3 ){         console.log ( "你好呀，海海" );        i++; // 循环变量自增  自增的目的是为了控制循环的次数，否则这是一个死循环     }     console.log('111'); // 大括号外的代码与循环结构没有关系，还是顺序执行      // 循环语句注意点：     // 循环语句注意点：     // (1)小括号中的语句，无论结果是什么都会转换成布尔类型来判断是否成立     // (2)避免写一个死循环     // let num = 1;     // while(num &lt; 10){     //     console.log ( num );     //     num++; // 改变循环变量的值，可以避免死循环     // }  &lt;/script&gt;</code></pre> <h2>do-while循环结构</h2> <p>1.语法</p> <blockquote> <p>do{<!-- --><br /> &nbsp; &nbsp; 循环体;<br /> }while( 条件 );</p> </blockquote> <ul> <li> <p>2.执行过程</p> <ul> <li> <p>1.先执行循环体代码</p> </li> <li> <p>2.执行条件语句</p> <ul> <li> <p>如果结果为true，执行循环体代码</p> </li> <li> <p>如果为false，循环结束</p> </li> </ul> </li> <li> <p>3.重复步骤2</p> </li> </ul> </li> <li> <p>3.do-while和while实现的循环其实是一样的，只有一个不同点：do-while循环不管怎样先执行一次循环体代码，然后再判断条件</p> <ul> <li> <p>while循环：先奏后斩（先判断条件再执行循环体）</p> </li> <li> <p>do-while循环：先斩后奏（不管怎样先执行一次循环体代码，然后再判断条件）</p> </li> </ul> </li> </ul> <h3>代码演示：</h3> <pre><code class="language-javascript">&lt;script&gt;      //1.while循环:     //let i = 1;     // while(i &gt; 5){     //     // 循环条件不成立，循环体一次都不执行     //     console.log ( "哈哈哈哈" );     //     i++     // }      //2.do-while循环     /**      do-while语法：(用的很少)       do{             循环体;         }while( 条件 );       特点：无论如何先执行一次循环体，然后再去判断条件      */     let i = 1;         do{             console.log ( "嘿嘿嘿" );             i++;         }while (i &gt; 5);        // while循环：先奏后斩（先判断条件再执行循环体）     // do-while循环：先斩后奏（不管怎样先执行一次循环体代码，然后再判断条件）      // 3.do-while循环与while循环应用场景     // 无论如何需要先执行一次循环体，使用do-while代码更简洁      // 例子：让用户输入账号和密码，如果输入正确就登陆成功，如果输入错误就让他一直输入      // while循环实现     // let username = prompt('请输入账号');     // let password = prompt('请输入密码');     //     // while(username != 'admin' || password != '123456'){     //     username = prompt('请输入账号');     //     password = prompt('请输入密码');     // }      //do-while实现     do{         let username = prompt('请输入账号');         let password = prompt('请输入密码');     }while(username != 'admin' || password != '123456')  &lt;/script&gt;</code></pre> <h2>循环结构总结</h2> <ul> <li> <p>1.原则上，三种循环结构语句之间可以互转，只不过每一种语句的适用场景不一样</p> </li> <li> <p>2.最常用：for循环：适合循环次数固定</p> </li> <li> <p>3.while循环：适合循环次数不固定</p> </li> <li> <p>4.do-while循环：适合循环次数不固定，但是循环体代码至少要执行一次</p> </li> </ul> <h1>上一章：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/m0_56344602/article/details/119919792?spm=1001.2014.3001.5501"  rel="nofollow">JavaScript 进阶第一章（分支结构）</a>&nbsp;</h1> <h1>下一章：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/m0_56344602/article/details/119960330"  rel="nofollow">JavaScript 进阶第三章（数组排序-冒泡算法）</a><br /> </h1> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2499.htm">我们如何解析Java中的嵌套JSON对象？</a></p>
+                                        <p>下一个：<a href="/html/category/article-2501.htm">Android Studio之菜单栏制作</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

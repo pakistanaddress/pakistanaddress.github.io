@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2256.htm" />
+<title>pyqt5入门到基本按钮弹窗，多窗口实现等 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">pyqt5入门到基本按钮弹窗，多窗口实现等</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>首先很重要的是，我们的工具！！！！</strong><br /> 本文使用的所有东西，python3.7，pycharm，pyqt5，designer</p> <p><strong>一、首先粗暴的pip我们需要的东西</strong></p> <pre><code class="prism language-python">pip install PyQt5 pip install pyqt5<span class="token operator">-</span>tools   <span class="token triple-quoted-string string">"""关乎到designer这个工具,一定要下载哦"""</span> </code></pre> <p>然后按住win键，然后搜designer<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/3e55242c90240879a7bafde129c84ecc.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /> 出现这个工具说明ok，工具上你已经成功了一半<br /> 请拉到桌面，后面要用</p> <p><strong>二、建立pycharm里的外部工具PyUIC</strong><br /> 这个工具有什么用？<br /> 直接把我们设计的设计的ui界面转换为py文件，你说方便不<br /> 具体操作，直接截图了，在外部工具里添加就好<br /> 注意几个点：<br /> 1.名字随意起，建议PyUIC<br /> 2.Program：python安装位置<br /> 3.Arguments：</p> <blockquote> <p><code>-m PyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py</code></p> </blockquote> <p>4.working dir：<code>$FileDir$</code></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230205/01430bfddd82102f521cbe7b4812aa8d.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /><strong>三、打开designer，开始设计框架</strong><br /> 打开designer<br /> 首先创建窗体咯<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/4e62c8cddcb0b26a2aefed7b1216c27e.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /> 然后随便设计一下，把需要的控件拖进去就好。<br /> 然后就是关键了，主要就是拖动pushbutton进去，刚入门，先学按钮事件吧。<br /> 我设计的第一个窗体new.ui<br /> 1、第一个界面<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/3fa413b57bff89182cef53730ddbf3bf.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /> 很简单，就两个按钮，完事。<br /> 2、第二个界面<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/7cd874465645be0b24e1c8396a6c715d.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"></p> <p>3、第三个界面<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/422803fa3c80674aa8aca37c070e338e.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /><strong>四、.ui文件转换为.py文件</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/d81dc99b9264992033f4102a41bd9952.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /> 直接使用外部工具点击完会生成一个.py文件的<br /><strong>五、让界面显示</strong><br /> 直接生成的.py文件运行，并不会显示，因为还没有实例化。<br /> 常用的实例化过程（绝对让你少走弯路）：<br /> 上面我们有3个窗口所以用完pyuic后有3个.py文件，分别是（<br /> 1、new.py<br /> 2、 login.py<br /> 3、second.py）<br /> ，我们先放着，不要乱动它的源码。新建一个python文件，main.py（我们的操作都在这里进行）<br /> 以下是main.py源码：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> sys <span class="token keyword">from</span> PyQt5<span class="token punctuation">.</span>QtWidgets <span class="token keyword">import</span> QMainWindow<span class="token punctuation">,</span> QTextEdit<span class="token punctuation">,</span> QAction<span class="token punctuation">,</span> QFileDialog<span class="token punctuation">,</span> QApplication<span class="token punctuation">,</span> QMessageBox<span class="token punctuation">,</span>QDialog <span class="token keyword">from</span> new <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">import</span> new <span class="token keyword">as</span> n <span class="token keyword">import</span> login <span class="token keyword">as</span> l <span class="token keyword">import</span> second <span class="token keyword">as</span> s  <span class="token keyword">class</span> <span class="token class-name">chuang_1</span><span class="token punctuation">(</span>QMainWindow<span class="token punctuation">,</span> n<span class="token punctuation">.</span>Ui_MainWindow<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token triple-quoted-string string">"""继承类"""</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> parent<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment">#继承QMainWindow</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>chuang_1<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>parent<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>setupUi<span class="token punctuation">(</span>self<span class="token punctuation">)</span>   <span class="token keyword">class</span> <span class="token class-name">chuang_2</span><span class="token punctuation">(</span>QMainWindow<span class="token punctuation">,</span> l<span class="token punctuation">.</span>Ui_Form<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> parent<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>chuang_2<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>parent<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>setupUi<span class="token punctuation">(</span>self<span class="token punctuation">)</span>   <span class="token keyword">class</span> <span class="token class-name">chuang_3</span><span class="token punctuation">(</span>QtWidgets<span class="token punctuation">.</span>QMainWindow<span class="token punctuation">,</span> s<span class="token punctuation">.</span>Ui_Form<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>parent<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment">#实例化窗口</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>chuang_3<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>parent<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>setupUi<span class="token punctuation">(</span>self<span class="token punctuation">)</span>   <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     app <span class="token operator">=</span> QApplication<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>     <span class="token comment"># 实例化第一个窗口</span>     c1 <span class="token operator">=</span> chuang_1<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># 第二个</span>     c2 <span class="token operator">=</span> chuang_2<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># 第三个</span>     c3 <span class="token operator">=</span> chuang_3<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">#全部显示出来</span>     c1<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>     c2<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>     c3<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>     sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>这样就显示我们的3个窗口了<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/9ada49e1fc9ce88206b9a8a9ff178a0c.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"><br /> 接下来就是对按钮等进行一些设置，让多个窗口可以切换起来<br /><strong>六、界面切换（按钮事件）</strong></p> <p>首先设置让第一个界面点击“登录”可以跳转到第二个界面<br /> 记一下语法：</p> <pre><code class="prism language-python">self<span class="token punctuation">.</span>pushubutton<span class="token punctuation">.</span>clicked<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>hanshu<span class="token punctuation">)</span> </code></pre> <p>以下示范一下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/5d94c19cbe4055eab4add1c24ac7468f.jpg" alt="pyqt5入门到基本按钮弹窗，多窗口实现等"></p> <p>下次有空再继续详细说一下别的操作</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2255.htm">.Net项目在Docker容器中开发部署_实用技巧_</a></p>
+                                        <p>下一个：<a href="/html/category/article-2257.htm">Windows配置kubectl,执行yaml配置文件</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

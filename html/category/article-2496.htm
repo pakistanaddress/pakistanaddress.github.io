@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2496.htm" />
+<title>.NET Core(.NET6)中gRPC使用 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">.NET Core(.NET6)中gRPC使用</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h1>一、简介</h1> <p>简单解析一下gRPC，gRPC 是一个由Google开源的，跨语言的，高性能的远程过程调用（RPC）框架。</p> <p>特点：</p> <ul> <li>跨语言</li> <li>内容protobuf格式（比json体积小）,网络传输快</li> <li>使用HTTP/2进行传输</li> </ul> <p>适合高性能轻量的微服务，一般对外的接口用restful api，内部服务的调用用gRPC。gRPC是一个分布式服务框架，和以前的WebService，WCF类似。</p> <h1>二、创建gRPC服务端</h1> <h2>1.创建gRPC项目</h2> <p>新建一个gRPC模板的项目</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f63aacfe1a7c2b43fb14cbd2b62188ad.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b23cf2a6bc2768016ffa80482204147b.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a3bcd94291b411c77e5feb3c6251a4ec.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;特别的地方就这里4点。</p> <p>1.基于http2来通信。</p> <p>2.proto协议文件，greet.proto是项目默认给我们的一个hello world的示例。它会根据协议自动生成需要的类。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/1c9d1382fad6ce5e68be2b648d4613c7.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>3.服务类，Greeter.GreeterBase来自于2中的proto文件自动生成的类，生成的类在\obj\Debug\net6.0\Protos 目录下。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7f8cdf8790e2e064546976c43a226bdf.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;自动生成的类：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/2832054773a0cd7ca782c9bdfc818d33.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;4.Program.cs添加了gRPC服务，和把GreeterService注册到管道中。</p> <h2>2.编写自己的服务</h2> <p>怎么样写自己的调用服务呢？</p> <p><strong>&nbsp;1.创建proto文件</strong></p> <p>参照上面的示例创建自己的Proto文件</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6f11c112e1793c0fb609e127041d46ab.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;代码:</p> <div class="cnblogs_code"> <pre>syntax =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">proto3</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;  option csharp_namespace</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">GrpcDemo.Service</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;  package order;</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 订单服务定义</span><span style="color: rgba(0, 0, 0, 1)">service Order {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 创建订单</span><span style="color: rgba(0, 0, 0, 1)">  rpc CreateOrder (CreateRequest) returns (CreateResult);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">查询订单</span><span style="color: rgba(0, 0, 0, 1)">  rpc QueryOrder (QueryRequest) returns (QueryResult); }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">创建订单请求参数</span><span style="color: rgba(0, 0, 0, 1)">message CreateRequest {</span><span style="color: rgba(0, 0, 255, 1)">string</span> orderNo =<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">string</span> orderName=<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">double</span> price=<span style="color: rgba(128, 0, 128, 1)">3</span><span style="color: rgba(0, 0, 0, 1)">; }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">创建订单返回结果</span><span style="color: rgba(0, 0, 0, 1)">message CreateResult {</span><span style="color: rgba(0, 0, 255, 1)">bool</span> result =<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">string</span> message=<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)">; }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">查询订单请求参数</span><span style="color: rgba(0, 0, 0, 1)">message QueryRequest{</span><span style="color: rgba(0, 0, 255, 1)">int</span> id=<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">; }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">查询订单返回结果</span><span style="color: rgba(0, 0, 0, 1)">message QueryResult{</span><span style="color: rgba(0, 0, 255, 1)">int</span> id=<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">string</span> orderNo=<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">string</span> orderName=<span style="color: rgba(128, 0, 128, 1)">3</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">double</span> price=<span style="color: rgba(128, 0, 128, 1)">4</span><span style="color: rgba(0, 0, 0, 1)">; }</span></pre> </div> <p>生成一下就能看到对应的类已经生成了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e6e42cc34e5712073d806c36476f6f8d.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p><strong>&nbsp;2.实现定义的服务</strong></p> <p>&nbsp;创建OrderService.cs</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> OrderService:Order.OrderBase     {</span><span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 255, 1)">readonly</span> ILogger&lt;GreeterService&gt;<span style="color: rgba(0, 0, 0, 1)"> _logger;</span><span style="color: rgba(0, 0, 255, 1)">public</span> OrderService(ILogger&lt;GreeterService&gt;<span style="color: rgba(0, 0, 0, 1)"> logger)         {             _logger</span>=<span style="color: rgba(0, 0, 0, 1)"> logger;         }</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> 创建订单</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="request"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="context"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;returns&gt;&lt;/returns&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">override</span> Task&lt;CreateResult&gt;<span style="color: rgba(0, 0, 0, 1)"> CreateOrder(CreateRequest request, ServerCallContext context)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">报存数据库 todo</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> CreateResult             {                 Result</span>=<span style="color: rgba(0, 0, 255, 1)">true</span><span style="color: rgba(0, 0, 0, 1)">,                 Message</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">订单创建成功</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">             });         }</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> 查询订单</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="request"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="context"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;returns&gt;&lt;/returns&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">override</span> Task&lt;QueryResult&gt;<span style="color: rgba(0, 0, 0, 1)"> QueryOrder(QueryRequest request, ServerCallContext context)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">查询数据库</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">todo</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> QueryResult             {                 OrderInfo</span>=<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> OrderInfo                 {                     Id</span>=<span style="color: rgba(0, 0, 0, 1)"> request.Id,                     OrderNo</span>= DateTime.Now.ToString(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">yyyyMMddHHmmss</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">),                     OrderName</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">冰箱</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                     Price</span>=<span style="color: rgba(128, 0, 128, 1)">1288</span><span style="color: rgba(0, 0, 0, 1)">                 }             });         }     }</span></pre> </div> <p>继承的Order.OrderBase 是上面的proto文件生成的，然后实现了proto里面定义的两个服务。</p> <p>然后在program.cs里面把服务注入管道。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f7cd7cfd4d794a687c0a471297eef2c6.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;到这里服务端就完成了，就可以启动服务端了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/90bc1ddb6b14647c8068c3d7b130e906.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;浏览器访问不了，要通过gRPC客户端才能访问，下面就建一个gRPC客户端。</p> <h1>三、创建gRPC客户端</h1> <h2>1.创建客户端项目</h2> <p>1.1、这里创建一个控制台程序。</p> <p>1.2、然后添加Nuget包</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">Google.Protobuf Grpc.Net.Client Grpc.Tools<br/>Grpc.Net.clientFactory<br/></span></pre> </div> <p>1.3、把服务端的proto文件拷贝过来</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8894ee305e4f8182b2855bd30f9aab50.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;1.4、编辑项目文件，把proto里面的内容替换掉，默认是服务端的配置</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b3eaca616267d64508c2770b9f6685ea.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <div class="cnblogs_code"> <pre>  &lt;Protobuf Include=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Protos\greet.proto</span><span style="color: rgba(128, 0, 0, 1)">"</span> GrpcServices=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Client</span><span style="color: rgba(128, 0, 0, 1)">"</span> /&gt;       &lt;Protobuf Include=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Protos\order.proto</span><span style="color: rgba(128, 0, 0, 1)">"</span> GrpcServices=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Client</span><span style="color: rgba(128, 0, 0, 1)">"</span> /&gt;</pre> </div> <p>生成的时候，客户端也生成了对应proto的类</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/dbc2ce88fc5401686e8aa3fd07ae235d.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <h2>2.grPC服务https的调用</h2> <p>因为服务端提供了http和https的端口，这里先调用https的</p> <p>创建GrpcRequestTest.cs类</p> <div class="cnblogs_code"> <pre><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> gRPC请求测试</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> GrpcRequestTest     {</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> CreateOrder()         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">常规使用，https</span><span style="color: rgba(0, 0, 255, 1)">string</span> url =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">https://localhost:7246</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">using</span>(<span style="color: rgba(0, 0, 255, 1)">var</span> channel=<span style="color: rgba(0, 0, 0, 1)">GrpcChannel.ForAddress(url))             {</span><span style="color: rgba(0, 0, 255, 1)">var</span> client =<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> Order.OrderClient(channel);</span><span style="color: rgba(0, 0, 255, 1)">var</span> reply = client.CreateOrder(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> CreateRequest()                 {                     OrderNo</span>= DateTime.Now.ToString(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">yyyMMddHHmmss</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">),                     OrderName</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">冰箱22款</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                     Price</span>=<span style="color: rgba(128, 0, 128, 1)">1688</span><span style="color: rgba(0, 0, 0, 1)">                 });                  Console.WriteLine($</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">结果:{reply.Result},message:{reply.Message}</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);             }             Console.ReadKey();         }     }</span></pre> </div> <p>结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/995707dfde538cccafe1197356754882.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <h2>3.gRPC内网http调用</h2> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> CreateOrder()         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">使用http</span>             AppContext.SetSwitch(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport</span><span style="color: rgba(128, 0, 0, 1)">"</span>,<span style="color: rgba(0, 0, 255, 1)">true</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 0, 255, 1)">string</span> url =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">http://localhost:5246</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">;</span><span style="color: rgba(0, 0, 255, 1)">using</span>(<span style="color: rgba(0, 0, 255, 1)">var</span> channel=<span style="color: rgba(0, 0, 0, 1)">GrpcChannel.ForAddress(url))             {</span><span style="color: rgba(0, 0, 255, 1)">var</span> client =<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> Order.OrderClient(channel);</span><span style="color: rgba(0, 0, 255, 1)">var</span> reply = client.CreateOrder(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> CreateRequest()                 {                     OrderNo</span>= DateTime.Now.ToString(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">yyyMMddHHmmss</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">),                     OrderName</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">冰箱22款</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                     Price</span>=<span style="color: rgba(128, 0, 128, 1)">1688</span><span style="color: rgba(0, 0, 0, 1)">                 });                  Console.WriteLine($</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">结果:{reply.Result},message:{reply.Message}</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);             }             Console.ReadKey();         }</span></pre> </div> <p>比起https，前面多了一行。结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/81676af4e7b5a681eb063a6e2416a6f3.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <h2>4.IOC注入的方式调用gRPC</h2> <p>4.1、program.cs里面注入gRPCClient</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> See</span><span style="color: rgba(0, 128, 0, 1); text-decoration: underline">https://aka.ms/new-console-template</span><span style="color: rgba(0, 128, 0, 1)"> for more information</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> GrpcDemo.Client;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> GrpcDemo.Service;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> Microsoft.Extensions.DependencyInjection;  Console.WriteLine(</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Hello, World!</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);  IServiceCollection services</span>=<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> ServiceCollection(); services.AddTransient</span>&lt;GrpcRequestTest&gt;<span style="color: rgba(0, 0, 0, 1)">();</span><span style="color: rgba(0, 0, 255, 1)">#region</span> gRPC Client注册<span style="color: rgba(255, 0, 0, 1)"> AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true); services.AddGrpcClient&lt;Order.OrderClient&gt;(options =&gt; {     options.Address = new Uri("http://localhost:5246"); }).ConfigureChannel(grpcOptions =&gt; {     //可以完成各种配置，比如token });</span><span style="color: rgba(0, 0, 255, 1)">#endregion</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">构建容器</span> IServiceProvider serviceProvider =<span style="color: rgba(0, 0, 0, 1)"> services.BuildServiceProvider();</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">解析grpc请求测试</span><span style="color: rgba(0, 0, 255, 1)">var</span> grpcRequestTest = serviceProvider.GetService&lt;GrpcRequestTest&gt;<span style="color: rgba(0, 0, 0, 1)">();</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">执行</span> grpcRequestTest.CreateOrder();</pre> </div> <p>grpcRequestTest里代码：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> gRPC请求测试</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> GrpcRequestTest     {</span><span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 0, 1)"> Order.OrderClient _orderClient;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> GrpcRequestTest(Order.OrderClient orderClient)         {             _orderClient</span>=<span style="color: rgba(0, 0, 0, 1)"> orderClient;         }</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> CreateOrder()         {</span><span style="color: rgba(0, 0, 255, 1)">var</span> reply = _orderClient.CreateOrder(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> CreateRequest()             {                 OrderNo</span>= DateTime.Now.ToString(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">yyyMMddHHmmss</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">),                 OrderName</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">冰箱22款</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                 Price</span>=<span style="color: rgba(128, 0, 128, 1)">1688</span><span style="color: rgba(0, 0, 0, 1)">             });             Console.WriteLine($</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">结果:{reply.Result},message:{reply.Message}</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);             Console.ReadKey();         }     }</span></pre> </div> <p>结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/dc4ebf7a398bf983413e52cb571057f4.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <h1>四、webapi中加入gRPC</h1> <p>通常我们的服务有对外提供对外接口，又要对内提供gRPC服务，那怎么做呢，下面在webapi中加入gRPC服务</p> <p><strong>1.创建asp.net core mvc项目</strong></p> <p><strong>2.安装nuget包</strong></p> <div class="cnblogs_code"> <pre>Grpc.AspNetCore</pre> </div> <p><strong>3.添加protebuf文件</strong></p> <p>把上面的proto文件复制过来</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b52d8966d2538f1fc8243cd02d7c17fe.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p><strong>4.添加Service</strong></p> <p><strong><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6821a20fd5c8f78052e8b1a09a0d3f83.jpg" alt=".NET Core(.NET6)中gRPC使用"></strong></p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> OrderService : Order.OrderBase     {</span><span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 255, 1)">readonly</span> ILogger&lt;OrderService&gt;<span style="color: rgba(0, 0, 0, 1)"> _logger;</span><span style="color: rgba(0, 0, 255, 1)">public</span> OrderService(ILogger&lt;OrderService&gt;<span style="color: rgba(0, 0, 0, 1)"> logger)         {             _logger</span>=<span style="color: rgba(0, 0, 0, 1)"> logger;         }</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> 创建订单</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="request"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="context"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;returns&gt;&lt;/returns&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">override</span> Task&lt;CreateResult&gt;<span style="color: rgba(0, 0, 0, 1)"> CreateOrder(CreateRequest request, ServerCallContext context)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">报存数据库 todo</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> CreateResult             {                 Result</span>=<span style="color: rgba(0, 0, 255, 1)">true</span><span style="color: rgba(0, 0, 0, 1)">,                 Message</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">订单创建成功</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">             });         }</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(0, 128, 0, 1)"> 查询订单</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;/summary&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="request"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;param name="context"&gt;&lt;/param&gt;</span><span style="color: rgba(128, 128, 128, 1)">///</span><span style="color: rgba(128, 128, 128, 1)">&lt;returns&gt;&lt;/returns&gt;</span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 255, 1)">override</span> Task&lt;QueryResult&gt;<span style="color: rgba(0, 0, 0, 1)"> QueryOrder(QueryRequest request, ServerCallContext context)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">查询数据库</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">todo</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> QueryResult             {                 OrderInfo</span>=<span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> OrderInfo                 {                     Id</span>=<span style="color: rgba(0, 0, 0, 1)"> request.Id,                     OrderNo</span>= DateTime.Now.ToString(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">yyyyMMddHHmmss</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">),                     OrderName</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">冰箱</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                     Price</span>=<span style="color: rgba(128, 0, 128, 1)">1288</span><span style="color: rgba(0, 0, 0, 1)">                 }             });         }     }</span></pre> </div> <p><strong>5.注册gRPC服务</strong></p> <p>在Program.cs文件中</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/256ef37376bdc494e8c63e7ec73b3c59.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>到这里，就把gRPC加入到webapi里面了。</p> <p><strong>6.验证</strong></p> <p>启动asp.net core mvc程序</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bf45c43a0936a55e9074e874631f31cf.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>浏览器能访问，证明&nbsp;restful api是没问题的。</p> <p>然后再用上面的客户端访问一下gRPC的服务。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d8962ebf2713fefc62113109da245de2.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;结果：<img decoding="async" src="http://img.555519.xyz/uploads3/20220510/499abc02be7f58baa89120ade42a8692.jpg" alt=".NET Core(.NET6)中gRPC使用"></p> <p>&nbsp;这样就成功对外提供api接口和对内提供gRPC服务了。</p> <p>源码地址：https://github.com/weixiaolong325/GrpcDemo.Service</p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2495.htm">js中数组常用遍历，VUE 中数组常用遍历</a></p>
+                                        <p>下一个：<a href="/html/category/article-2497.htm">PHP表达式详解</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2483.htm" title="setTimeout、Promise、Async/Await 的区别">setTimeout、Promise、Async/Await 的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

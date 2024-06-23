@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2407.htm" />
+<title>MySQL碎片整理小节&#8211;实例演示 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">MySQL碎片整理小节&#8211;实例演示</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h2 id="mysql之磁盘碎片整理">MYSQL之磁盘碎片整理</h2> <p><strong>清澈，细流涓涓的爱</strong></p> <blockquote> <p>数据库引擎以InnoDB为主</p> </blockquote> <h3 id="1磁盘碎片是什么">1.磁盘碎片是什么</h3> <p>	InnoDB表的数据存储在页中，每个页可以存放多条记录，这些记录以树形结构组织，这棵树称为B+树。</p> <p><img decoding="async" src="https://img2.baidu.com/it/u=3930227158,3950520161&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=613&amp;h=500" alt="img" loading="lazy"/></p> <p>	聚簇索引的叶子结点包含行中所有字段的值，辅助索引的叶子结点包含索引列和主键列。</p> <p>	在InnoDB中，删除一些行，这些行只是被标记<strong>已删除</strong>，而不会立即删除，<strong>个人认为和电脑的清除磁盘相同，之后可以通过覆盖旧数据实现删除</strong>，InnDB的Purge线程会异步的清理这些没用的索引键和行。但是依然不会把这些释放出来的空间还给操作系统重新使用，因此会导致页面中存在很多空洞，如果表结构中包含动态长度字段，这些空间甚至无法被InnoDB重新用来存储新的行。</p> <p>	另外严重的问题是删除数据会导致页page中出现空白空间，大量随机的Delete操作必然会在数据文件中造成不连续的空白空间，当插入数据时，这些空白空间则会被利用起来，<strong>造成了数据的物理存储顺序和逻辑的排序顺序不同</strong>，这就是数据碎片。</p> <pre><code class="language-mysql">-- 查看全局变量Purge show variables like 'innodb_purge_threads';</code></pre> <blockquote> <p>InnoDB后台线程：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/abclife/p/5062008.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/abclife/p/5062008.html</a></p> <p>解释磁盘碎片的英文博客：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://lefred.be/content/overview-of-fragmented-mysql-innodb-tables/"  target="_blank" rel="nofollow">https://lefred.be/content/overview-of-fragmented-mysql-innodb-tables/</a></p> <p>上面这是个大能的博客，写的pretty good！</p> </blockquote> <hr/> <h3 id="2实验">2.实验</h3> <p>我们首先创建一个具有一百条数据的表来进行实验：</p> <pre><code class="language-mysql">delimiter // create procedure insertt() begin 	declare i int DEFAULT 0; 	while i&lt;1000000 do 		insert into temp values(null,'a',1); 		set i:=i+1; 	end while; end; // delimiter ; drop PROCEDURE insertt; -- 尝试插入一百万条数据  call insertt()  -- mysql版本5.7.36 &gt; OK &gt; 时间: 838.706s</code></pre> <p>创建后的磁盘存储大小：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/13e13e68a0fd1cb44855427eafe3026a.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p><strong>DB：information_scheme中存放我们表的信息，通过下列命令来查看我们的磁盘碎片最大的前五名</strong></p> <pre><code class="language-mysql">-- 别人的博客中copy的，我的猪脑写不出来 SELECT CONCAT(table_schema, '.', table_name) as 'TABLE',         ENGINE, CONCAT(ROUND(table_rows / 1000000, 2), 'M')  ROWS,         CONCAT(ROUND(data_length / ( 1024 * 1024 * 1024 ), 2), 'G') DATA,         CONCAT(ROUND(index_length / ( 1024 * 1024 * 1024 ), 2), 'G') IDX,         CONCAT(ROUND(( data_length + index_length ) / ( 1024 * 1024 * 1024 ), 2), 'G') 'TOTAL SIZE',         ROUND(index_length / data_length, 2)  IDXFRAC, CONCAT(ROUND(( data_free / 1024 / 1024),2), 'MB') AS data_free  FROM information_schema.TABLES   ORDER BY data_length + index_length desc LIMIT 5;</code></pre> <p>result:<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/5111352c1ffe36690541449eead5bd5a.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p>我们可以看到data_free，我们最高的free空间只有6MB</p> <blockquote> <p>innodb_ruby工具可以直接在linux系统下运行查看.Ibd文件的结构，将B+tree以及磁盘使用暴露出来，但是我不会用，这里带上他的github链接:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/akopytov/sysbench"  target="_blank" rel="nofollow">https://github.com/akopytov/sysbench</a></p> </blockquote> <p><strong>下面我们执行删除操作：</strong></p> <pre><code class="language-mysql">-- 删除前五十万条数据 delete from temp order by id LIMIT 500000</code></pre> <p><strong>文件大小</strong>：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/50a1fb2771983bf3fdb347ccfa207e7d.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p>删除后，磁盘文件的大小并没有变化，因为删除产生了磁盘碎片，空白page残留在文件中，被删除的数据记录仍然被保持在MySQL的链接清单中，因此数据存储文件的大小并不会随着数据的删除而减小，我们再次使用上述操作查看data_free。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/433763abca13ddfcfaa53a3cf40f83bb.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p>可以看到temp表的data_free增长了。</p> <h3 id="3对于碎片回收操作">3.对于碎片回收操作</h3> <p>对MySQL进行碎片整理有两种方法：</p> <ul> <li> <p>OPTIMIZE TABLE</p> <pre><code class="language-mysql">OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE table_name1 [, table_name2] ...</code></pre> </li> <li> <p>ALTER</p> <pre><code class="language-mysql">ALTER TABLE table_name ENGINE = Innodb</code></pre> </li> </ul> <p>OPTIMIZE可以同时对多个表格进行碎片整理，OPTIMIZE语句有两个可选的关键字：LOCAL和NO_WRITE_TO_BINLOG，默认是每次碎片整理都会被记录到BINlog二进制日志中去，如果带了关键字，就不会被记录到日志中去。</p> <p>ALTER看起来是执行了一次空操作，重新设置了一遍数据库引擎，同时会进行碎片整理。</p> <p>两种操作在一定程度是等价的。</p> <p><strong>使用optimize结果</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8105ad428668da7a93f59314cd50d2ea.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p><strong>磁盘文件小了一半左右</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/95ce370f44809f6a4cf442ec5b5f0efe.jpg" alt="MySQL碎片整理小节--实例演示"></p> <p><strong>alter不再演示</strong></p> <h3 id="4后记">4.后记</h3> <p>1.MySQL官方建议不要经常(每小时或每天)进行碎片整理，一般根据实际情况，只需要每周或者每月整理一次即可。</p> <p>2.OPTIMIZE TABLE只对MyISAM，BDB和InnoDB表起作用，尤其是MyISAM表的作用最为明显。此外，并不是所有表都需要进行碎片整理，一般只需要对包含上述可变长度的文本数据类型的表进行整理即可。</p> <p>3.在OPTIMIZE TABLE运行过程中，MySQL会锁定表。</p> <p>4.默认情况下，直接对InnoDB引擎的数据表使用OPTIMIZE TABLE，可能会显示「 Table does not support optimize, doing recreate + analyze instead」的提示信息。这个时候，我们可以用mysqld --skip-new或者mysqld --safe-mode命令来重启MySQL，以便于让其他引擎支持OPTIMIZE TABLE。</p> <blockquote> <p>参考博客：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/kerrycode/p/10943122.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/kerrycode/p/10943122.html</a> --写的很好，就是排版不舒服</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/lovebing/p/7463532.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/lovebing/p/7463532.html</a> --写的不错</p> </blockquote> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2406.htm">Vue-CLI 项目搭建详细步骤</a></p>
+                                        <p>下一个：<a href="/html/category/article-2408.htm">PHP后期静态绑定</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

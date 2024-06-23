@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2507.htm" />
+<title>防止重复提交拦截器 spring boot - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">防止重复提交拦截器 spring boot</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>自定义注解防止表单重复提交</p> <pre><code>import java.lang.annotation.Documented; import java.lang.annotation.ElementType; import java.lang.annotation.Inherited; import java.lang.annotation.Retention; import java.lang.annotation.RetentionPolicy; import java.lang.annotation.Target;  /**  * 自定义注解防止表单重复提交  *   * @author xxx  *  */ @Inherited @Target(ElementType.METHOD) @Retention(RetentionPolicy.RUNTIME) @Documented public @interface RepeatSubmit {  }</code></pre> <p>&nbsp;防止重复提交拦截器</p> <pre><code>import com.alibaba.fastjson.JSONObject; import com.manage.common.core.web.domain.AjaxResult; import com.manage.common.utils.ServletUtils; import com.manage.framework.interceptor.annotation.RepeatSubmit; import org.springframework.stereotype.Component; import org.springframework.web.method.HandlerMethod; import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;  import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; import java.lang.reflect.Method;  /**  * 防止重复提交拦截器  *   * @author xxx  */ @Component public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter {     @Override     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception     {         if (handler instanceof HandlerMethod)         {             HandlerMethod handlerMethod = (HandlerMethod) handler;             Method method = handlerMethod.getMethod();             RepeatSubmit annotation = method.getAnnotation(RepeatSubmit.class);             if (annotation != null)             {                 if (this.isRepeatSubmit(request))                 {                     AjaxResult ajaxResult = AjaxResult.error("不允许重复提交，请稍后再试");                     ServletUtils.renderString(response, JSONObject.toJSONString(ajaxResult));                     return false;                 }             }             return true;         }         else         {             return super.preHandle(request, response, handler);         }     }      /**      * 验证是否重复提交由子类实现具体的防重复提交的规则      *       * @param request      * @return      * @throws Exception      */     public abstract boolean isRepeatSubmit(HttpServletRequest request); }</code></pre> <p>判断请求url和数据是否和上一次相同，如果和上次相同，则是重复提交表单。 有效时间为10秒内。</p> <pre><code>import java.util.HashMap; import java.util.Map; import java.util.concurrent.TimeUnit; import javax.servlet.http.HttpServletRequest; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.stereotype.Component; import com.alibaba.fastjson.JSONObject; import com.manage.common.filter.RepeatedlyRequestWrapper; import com.manage.common.utils.StringUtils; import com.manage.common.utils.http.HttpHelper; import com.manage.framework.interceptor.RepeatSubmitInterceptor; import com.manage.framework.redis.RedisCache;  /**  * 判断请求url和数据是否和上一次相同，  * 如果和上次相同，则是重复提交表单。 有效时间为10秒内。  *   * @author xxx  */ @Component public class SameUrlDataInterceptor extends RepeatSubmitInterceptor {     public final String REPEAT_PARAMS = "repeatParams";      public final String REPEAT_TIME = "repeatTime";      public final String CACHE_REPEAT_KEY = "repeatData";      @Autowired     private RedisCache redisCache;      /**      * 间隔时间，单位:秒 默认10秒      *       * 两次相同参数的请求，如果间隔时间大于该参数，系统不会认定为重复提交的数据      */     private int intervalTime = 10;      public void setIntervalTime(int intervalTime)     {         this.intervalTime = intervalTime;     }      @SuppressWarnings("unchecked")     @Override     public boolean isRepeatSubmit(HttpServletRequest request)     {         RepeatedlyRequestWrapper repeatedlyRequest = (RepeatedlyRequestWrapper) request;         String nowParams = HttpHelper.getBodyString(repeatedlyRequest);          // body参数为空，获取Parameter的数据         if (StringUtils.isEmpty(nowParams))         {             nowParams = JSONObject.toJSONString(request.getParameterMap());         }         Map&lt;String, Object&gt; nowDataMap = new HashMap&lt;String, Object&gt;();         nowDataMap.put(REPEAT_PARAMS, nowParams);         nowDataMap.put(REPEAT_TIME, System.currentTimeMillis());          // 请求地址（作为存放session的key值）         String url = request.getRequestURI();          Object sessionObj = redisCache.getCacheObject(CACHE_REPEAT_KEY);         if (sessionObj != null)         {             Map&lt;String, Object&gt; sessionMap = (Map&lt;String, Object&gt;) sessionObj;             if (sessionMap.containsKey(url))             {                 Map&lt;String, Object&gt; preDataMap = (Map&lt;String, Object&gt;) sessionMap.get(url);                 if (compareParams(nowDataMap, preDataMap) &amp;&amp; compareTime(nowDataMap, preDataMap))                 {                     return true;                 }             }         }         Map&lt;String, Object&gt; cacheMap = new HashMap&lt;String, Object&gt;();         cacheMap.put(url, nowDataMap);         redisCache.setCacheObject(CACHE_REPEAT_KEY, cacheMap, intervalTime, TimeUnit.SECONDS);         return false;     }      /**      * 判断参数是否相同      */     private boolean compareParams(Map&lt;String, Object&gt; nowMap, Map&lt;String, Object&gt; preMap)     {         String nowParams = (String) nowMap.get(REPEAT_PARAMS);         String preParams = (String) preMap.get(REPEAT_PARAMS);         return nowParams.equals(preParams);     }      /**      * 判断两次间隔时间      */     private boolean compareTime(Map&lt;String, Object&gt; nowMap, Map&lt;String, Object&gt; preMap)     {         long time1 = (Long) nowMap.get(REPEAT_TIME);         long time2 = (Long) preMap.get(REPEAT_TIME);         if ((time1 - time2) &lt; (this.intervalTime * 1000))         {             return true;         }         return false;     } }</code></pre> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2506.htm">JavaScript如何使用过滤器从数组中删除元素</a></p>
+                                        <p>下一个：<a href="/html/category/article-2508.htm">idea中配置maven仓库</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

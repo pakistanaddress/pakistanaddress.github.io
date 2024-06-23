@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2405.htm" />
+<title>maven打war包 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">maven打war包</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <hr/> <h2><a id="maven_1" rel="nofollow"></a>maven打包</h2> <h3><a id="1__mavenjarSpring_Framework_4" rel="nofollow"></a>1 . maven打jar包(Spring Framework)</h3> <h4><a id="11__5" rel="nofollow"></a>1.1 插件使用</h4> <p>maven-resources-plugin（资源插件）,maven-compiler-plugin（编译项目）,maven-jar-plugin（将项目打成jar包）,maven-assembly-plugin（将所有依赖打成jar包）。使用maven-assembly-plugin容易产生一个错误，就是在多个依赖冲突的时候无法解决。不过使用 maven-shade-plugin 生成一个 uber-jar，可以解决依赖间的冲突,适用于Spring Framework。</p> <blockquote> <p>配置 maven-shade-plugin</p> </blockquote> <pre><code>&lt;plugins&gt;       &lt;plugin&gt;           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;           &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;           &lt;version&gt;2.4.1&lt;/version&gt;           &lt;executions&gt;               &lt;execution&gt;   				&lt;!-- 将goal shade:shade 绑定到 phase package 上,绑定后执行mvn package即可 --&gt;                 &lt;phase&gt;package&lt;/phase&gt;                   &lt;goals&gt;                       &lt;goal&gt;shade&lt;/goal&gt;                   &lt;/goals&gt;                   &lt;configuration&gt;                       &lt;transformers&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"&gt;                               &lt;mainClass&gt;com.xxg.Main&lt;/mainClass&gt;                           &lt;/transformer&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;                              &lt;resource&gt;META-INF/spring.handlers&lt;/resource&gt;                           &lt;/transformer&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;                               &lt;resource&gt;META-INF/spring.schemas&lt;/resource&gt;                           &lt;/transformer&gt;                       &lt;/transformers&gt;                   &lt;/configuration&gt;               &lt;/execution&gt;           &lt;/executions&gt;       &lt;/plugin&gt;   &lt;/plugins&gt;</code></pre> <blockquote> <p>配置完成后，执行mvn package即可打包。生成的jar文件包含了所有依赖，所以可以直接运行。</p> </blockquote> <pre><code>&lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;        &lt;resource&gt;META-INF/spring.handlers&lt;/resource&gt;   &lt;/transformer&gt;   &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;         &lt;resource&gt;META-INF/spring.schemas&lt;/resource&gt;   &lt;/transformer&gt;</code></pre> <blockquote> <p>这里的AppendingTransformer的作用是:在Spring Framework中会将多个依赖打到一个jar中,每个jar都会包含spring.handlers和spring.schemas文件,如果生成一个jar包文件会互相覆盖,运行时就会出现XML schema文件出错。为了避免互相影响，使用AppendingTransformer来对文件内容追加合并.</p> </blockquote> <h3><a id="2__mavenwar_49" rel="nofollow"></a>2 . maven打war包</h3> <h4><a id="21__50" rel="nofollow"></a>2.1 插件使用</h4> <p>打war时需要maven-resources-plugin（资源插件）,maven-compiler-plugin（编译项目）,maven-war-plugin插件</p> <blockquote> <p>maven-war-plugin配置</p> </blockquote> <pre><code>&lt;plugin&gt;      &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;      &lt;version&gt;3.2.0&lt;/version&gt;      &lt;configuration&gt;           &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;      &lt;/configuration&gt; &lt;/plugin&gt;</code></pre> <blockquote> <p>不想打进war包的jar的配置</p> </blockquote> <pre><code>&lt;build&gt; &lt;filters&gt;     &lt;!-- 过滤文件,通常是一个属性文件（名值对的形式） --&gt;     &lt;filter&gt;src/main/webapp/META-INF/auto-config.properties&lt;/filter&gt; &lt;/filters&gt; &lt;finalName&gt;communitytag&lt;/finalName&gt; &lt;plugins&gt;     &lt;plugin&gt;         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;         &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;         &lt;version&gt;2.1-alpha-1&lt;/version&gt;         &lt;configuration&gt; 			&lt;!-- 不想打进war包的xxx.jar的配置 --&gt;             &lt;warSourceExcludes&gt;*/lib/xxx.jar&lt;/warSourceExcludes&gt;             &lt;webResources&gt;                 &lt;resource&gt;                     &lt;!-- 元配置文件的目录，相对于pom.xml文件的路径 --&gt;                     &lt;directory&gt;src/main/webapp/WEB-INF&lt;/directory&gt;                     &lt;!-- 是否过滤文件，也就是是否启动auto-config的功能 --&gt;                     &lt;filtering&gt;true&lt;/filtering&gt;                     &lt;!-- 目标路径 --&gt;                     &lt;targetPath&gt;WEB-INF&lt;/targetPath&gt;                 &lt;/resource&gt;             &lt;/webResources&gt;         &lt;/configuration&gt;     &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt;</code></pre> <h3><a id="3__ideamavenwar_93" rel="nofollow"></a>3 . idea中maven打war包(多种方式)</h3> <blockquote> <p>单个执行指令先clean-&gt;package<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/74854acf169cc90aea52ec84dfc39f66.jpg" alt="maven打war包"></p> </blockquote> <blockquote> <p>Build Artifacts<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/6709eb8cdd29a0863bba60ad2d4e09cb.jpg" alt="maven打war包"></p> </blockquote> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2404.htm">Android开发基础——Fragment</a></p>
+                                        <p>下一个：<a href="/html/category/article-2406.htm">Vue-CLI 项目搭建详细步骤</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2470.htm" title="设计模式-六大原则之单一职责">设计模式-六大原则之单一职责</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2520.htm" title="Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型">Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2476.htm" title="Shiro介绍及解析">Shiro介绍及解析</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

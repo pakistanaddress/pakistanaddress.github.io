@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2301.htm" />
+<title>Spring Security认证_认证（成功和失败）后的处理方式 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Spring Security认证_认证（成功和失败）后的处理方式</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <h3><a id="_0" rel="nofollow"></a>认证成功的处理</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/b54be32c572b01b725bdadd82a092918.jpg" alt="Spring Security认证_认证（成功和失败）后的处理方式"><br /> 登录成功后，如果除了跳转页面还需要执行一些自定义代码时，如：统计访问量，推送消息等操作时，可以自定义登录成功处理器。</p> <h4><a id="_3" rel="nofollow"></a>自定义登录成功处理器</h4> <pre><code class="prism language-java"><span class="token comment">/**  * @Author yqq  * @Date 2022/05/17 17:06  * @Version 1.0  */</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">LoginSuccessHandler</span><span class="token keyword">implements</span><span class="token class-name">AuthenticationSuccessHandler</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">onAuthenticationSuccess</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span><span class="token class-name">Authentication</span> authentication<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">IOException</span><span class="token punctuation">,</span><span class="token class-name">ServletException</span><span class="token punctuation">{<!-- --></span><span class="token comment">//拿到用户的信息</span><span class="token class-name">UserDetails</span> userDetails<span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">UserDetails</span><span class="token punctuation">)</span>authentication<span class="token punctuation">.</span><span class="token function">getPrincipal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"用户名："</span><span class="token operator">+</span> userDetails<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"其他信息"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//重定向到主页</span>         response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span><span class="token string">"/main"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <h4><a id="_24" rel="nofollow"></a>配置登录成功处理器</h4> <pre><code class="prism language-java"><span class="token comment">/**      * 对Spring Security 配置      * @param http      * @throws Exception      */</span><span class="token annotation punctuation">@Override</span><span class="token keyword">protected</span><span class="token keyword">void</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token class-name">HttpSecurity</span> http<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">Exception</span><span class="token punctuation">{<!-- --></span><span class="token comment">//自定义表单登录</span>         http<span class="token punctuation">.</span><span class="token function">formLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">loginPage</span><span class="token punctuation">(</span><span class="token string">"/login.html"</span><span class="token punctuation">)</span><span class="token comment">//自定义登录页面</span><span class="token punctuation">.</span><span class="token function">usernameParameter</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token comment">//表单中的用户名项</span><span class="token punctuation">.</span><span class="token function">passwordParameter</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token comment">//表单中的密码项</span><span class="token punctuation">.</span><span class="token function">loginProcessingUrl</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span><span class="token comment">//表单提交路劲，提交后执行认证逻辑</span><span class="token comment">//                .successForwardUrl("/main")//登录成功后的路劲</span><span class="token punctuation">.</span><span class="token function">successHandler</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">LoginSuccessHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//登录成功的处理器</span><span class="token punctuation">.</span><span class="token function">failureForwardUrl</span><span class="token punctuation">(</span><span class="token string">"/fail"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//登录失败后的路劲</span></code></pre> <h4><a id="_44" rel="nofollow"></a>测试</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/a872e93d0366252e1cfa849cdadea88b.jpg" alt="Spring Security认证_认证（成功和失败）后的处理方式"></p> <h3><a id="_46" rel="nofollow"></a>认证失败的处理</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/88cb2a73cf7da81aa3d8bd811a78a45e.jpg" alt="Spring Security认证_认证（成功和失败）后的处理方式"><br /> 登录失败后，如果除了跳转页面还需要执行一些自定义代码时，如：统计失败次数，记录日志等，可以自定义登录失败处理器。</p> <h4><a id="_49" rel="nofollow"></a>自定义登录失败处理器</h4> <pre><code class="prism language-java"><span class="token comment">/**  * @Author yqq  * @Date 2022/05/17 17:25  * @Version 1.0  */</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">LoginFailureHandler</span><span class="token keyword">implements</span><span class="token class-name">AuthenticationFailureHandler</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">onAuthenticationFailure</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span><span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">,</span><span class="token class-name">AuthenticationException</span> exception<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">IOException</span><span class="token punctuation">,</span><span class="token class-name">ServletException</span><span class="token punctuation">{<!-- --></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"记录失败日志。。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span><span class="token string">"/fail"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <h4><a id="_66" rel="nofollow"></a>配置登录失败处理器</h4> <pre><code class="prism language-java"><span class="token comment">/**      * 对Spring Security 配置      * @param http      * @throws Exception      */</span><span class="token annotation punctuation">@Override</span><span class="token keyword">protected</span><span class="token keyword">void</span><span class="token function">configure</span><span class="token punctuation">(</span><span class="token class-name">HttpSecurity</span> http<span class="token punctuation">)</span><span class="token keyword">throws</span><span class="token class-name">Exception</span><span class="token punctuation">{<!-- --></span><span class="token comment">//自定义表单登录</span>         http<span class="token punctuation">.</span><span class="token function">formLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">loginPage</span><span class="token punctuation">(</span><span class="token string">"/login.html"</span><span class="token punctuation">)</span><span class="token comment">//自定义登录页面</span><span class="token punctuation">.</span><span class="token function">usernameParameter</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token comment">//表单中的用户名项</span><span class="token punctuation">.</span><span class="token function">passwordParameter</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token comment">//表单中的密码项</span><span class="token punctuation">.</span><span class="token function">loginProcessingUrl</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span><span class="token comment">//表单提交路劲，提交后执行认证逻辑</span><span class="token comment">//                .successForwardUrl("/main")//登录成功后的路劲</span><span class="token punctuation">.</span><span class="token function">successHandler</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">LoginSuccessHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//登录成功的处理器</span><span class="token comment">//                .failureForwardUrl("/fail");//登录失败后的路劲</span><span class="token punctuation">.</span><span class="token function">failureHandler</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">LoginFailureHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//登录失败的处理器</span><span class="token comment">//需要认证的资源</span>         http<span class="token punctuation">.</span><span class="token function">authorizeRequests</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/login.html"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//登录页默认授权不需要认证</span><span class="token punctuation">.</span><span class="token function">antMatchers</span><span class="token punctuation">(</span><span class="token string">"/fail"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//失败页面不需要认证</span><span class="token punctuation">.</span><span class="token function">anyRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">authenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//其余所有请求都需要认证</span></code></pre> <h4><a id="_93" rel="nofollow"></a>测试</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/415324f80dc78a3e7ffeec8751712267.jpg" alt="Spring Security认证_认证（成功和失败）后的处理方式"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/7f22d6d1428f08cf0c1ce8ff960f0e31.jpg" alt="Spring Security认证_认证（成功和失败）后的处理方式"></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2300.htm">SpringBoot 起步依赖+SpringBoot配置</a></p>
+                                        <p>下一个：<a href="/html/category/article-2302.htm">Azure Virtual Desktop创建配置管理详解</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2472.htm" title="mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题">mysql数据库备份为空_解决JAVA调用mysqldump备份数据库时文件为空的问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2469.htm" title="Java8 接口新特性">Java8 接口新特性</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2419.htm" />
+<title>JPA OneToMany和ManyToOne单向实现 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">JPA OneToMany和ManyToOne单向实现</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>博主在学习JPA的过程中，刚开始看到这一部分的时候也很迷惑，&nbsp;OneToMany和ManyToOne这两个注解可以单向实现，也可以双向实现</p> <p>下面是单向实现方式:</p> <p>1.@OneToMany</p> <p>这里使用外健关联的方式，博主设置的是运行项目时自动创建表格，该注解会自动生成外健关联关系</p> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:#808000">@Entity </span><span style="color:#808000">@Table</span>(name = <span style="color:#008000"><strong>"PARENTS"</strong></span>) <span style="color:#000080"><strong>public class </strong></span>Parents {     <span style="color:#808000">@Id </span><span style="color:#808000">    @GeneratedValue</span>(generator = <span style="color:#008000"><strong>"uuid"</strong></span>)     <span style="color:#808000">@GenericGenerator</span>(name=<span style="color:#008000"><strong>"uuid"</strong></span>,strategy = <span style="color:#008000"><strong>"uuid2"</strong></span>)     <span style="color:#808000">@Column</span>(name = <span style="color:#008000"><strong>"PID"</strong></span>)     <span style="color:#000080"><strong>private </strong></span>String <span style="color:#660e7a"><strong>id</strong></span>;      <span style="color:#808000">@Column</span>(name = <span style="color:#008000"><strong>"P_NAME"</strong></span>)     <span style="color:#000080"><strong>private </strong></span>String <span style="color:#660e7a"><strong>name</strong></span>;      <span style="color:#808000">@OneToMany</span>(cascade=CascadeType.<span style="color:#660e7a"><strong><em>ALL</em></strong></span>,fetch=FetchType.<span style="color:#660e7a"><strong><em>LAZY</em></strong></span>)</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:#808000">    @JoinColumn</span>(name = <span style="color:#008000"><strong>"P_ID"</strong></span>, nullable = <span style="color:#000080"><strong>false</strong></span>)</pre> <p>    <span style="color:#000080"><strong>private </strong></span>Set&lt;Child&gt;<span style="color:#660e7a"><strong>childSet</strong></span>=<span style="color:#000080"><strong>new </strong></span>HashSet&lt;Child&gt;(); </p> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">省略set/get方法  }</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">外健在多的一方管理，也就是@OneToMany在many一方</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">博主在测试过程中，遇到的大多数问题不是配置的问题，而是实际使用操作中遇到的问题</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:rgb(128,128,0)">@OneToMany该映射类在插入数据到数据库时：</span></pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:#808000">Parent p=ParentRepo.save(parent);</span></pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:#808000">在保存数据到Parent中时，也会自动把Child保存进入数据库</span></pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">@ManyToOne在插入时有不一样的操作方式</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">2.@ManyToOne</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"><span style="color:#808000">@Entity </span><span style="color:#808000">@Table</span>(name=<span style="color:#008000"><strong>"Child"</strong></span>) <span style="color:#000080"><strong>public class </strong></span>User <span style="color:#000080"><strong>implements </strong></span>Serializable{     <span style="color:#808000">@Id </span><span style="color:#808000">    @GeneratedValue</span>(generator=<span style="color:#008000"><strong>"uuid"</strong></span>)     <span style="color:#808000">@GenericGenerator</span>(name=<span style="color:#008000"><strong>"uuid"</strong></span>,strategy=<span style="color:#008000"><strong>"uuid2"</strong></span>)     <span style="color:#808000">@Column</span>(name=<span style="color:#008000"><strong>"CID"</strong></span>)     <span style="color:#000080"><strong>private </strong></span>String <span style="color:#660e7a"><strong>id</strong></span>;     <span style="color:#808000">@Column</span>(name=<span style="color:#008000"><strong>"c_name"</strong></span>)     <span style="color:#000080"><strong>private </strong></span>String <span style="color:#660e7a"><strong>name</strong></span>;     <span style="color:#808000">@Column</span>(name=<span style="color:#008000"><strong>"c_age"</strong></span>)     <span style="color:#000080"><strong>private </strong></span>Integer <span style="color:#660e7a"><strong>age</strong></span>;     <span style="color:#808000">@ManyToOne</span>(cascade = CascadeType.<span style="color:#660e7a"><strong><em>ALL</em></strong></span>,optional=<span style="color:#000080"><strong>true</strong></span>)  <span style="color:#808080"><em>//(fetch=FetchType.LAZY) </em></span><span style="color:#808080"><em>    </em></span><span style="color:#808000">@JoinColumn</span>(name = <span style="color:#008000"><strong>"parent_id"</strong></span>, nullable = <span style="color:#000080"><strong>false</strong></span>)     <span style="color:#000080"><strong>private </strong></span>Parent<span style="color:#660e7a"><strong> parent</strong></span>;     省略set/get方法 }</pre> <p>这里需要特别注意fetch=FetchType.LAZY不能设置为懒加载,在select操作中会发生返回值异常</p> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">在插入操作时:</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">先对parent执行save操作，然后把操作的返回值id设置到Child对象中parent对象中，</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt">再执行Child的save操作，否则会产生外健异常导致插入失败。</pre> <pre style="background-color:rgb(255,255,255); font-family:&quot;Courier New&quot;; font-size:13.2pt"></pre> <p>                 </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2418.htm">时域和频域的麦克斯韦方程组</a></p>
+                                        <p>下一个：<a href="/html/category/article-2420.htm">并发编程基础底层原理学习_在线工具</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2492.htm" title="JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)">JVM_01 内存结构(程序计数器、虚拟机栈、本地方法栈)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2473.htm" title="可以使用哪个MySQL函数找出字符串的长度（以位为单位）？">可以使用哪个MySQL函数找出字符串的长度（以位为单位）？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

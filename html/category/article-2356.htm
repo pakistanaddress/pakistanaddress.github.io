@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2356.htm" />
+<title>面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？ - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<blockquote> <p>哈喽！大家好，我是小奇，一位不靠谱的程序员<br /> 小奇打算以轻松幽默的对话方式来分享一些技术，如果你觉得通过小奇的文章学到了东西，那就给小奇一个赞吧<br /> 文章持续更新</p> </blockquote> <h1 id="一前言">一、前言</h1> <blockquote> <p><strong>RabbitMQ</strong>我们经常的使用，但是它有很多高级的特性我们也需要熟练的掌握才能应对现实场景中复杂的业务逻辑。</p> </blockquote> <h1 id="二面试">二、面试</h1> <blockquote> <p><strong>面试官：小奇是吧，我们开始面试吧</strong></p> </blockquote> <blockquote> <p>我：快点吧，早就饥渴难耐了</p> </blockquote> <p></p> <blockquote> <p><strong>面试官：有用过RabbitMQ吗</strong></p> </blockquote> <blockquote> <p>我：用过</p> </blockquote> <h1 id="三rabbitmq发送消息长时间没人处理过期怎么办">三、RabbitMQ发送消息长时间没人处理过期怎么办？</h1> <blockquote> <p><strong>面试官：RabbitMQ发送消息长时间没人处理过期怎么办？</strong></p> </blockquote> <blockquote> <p>我：消息长时间没人处理过期了我们为了不影响正常的交换机使用，我们可以将过期的消息放到一个<strong>死信交换机</strong>中，然后这个交换机绑定一个队列就是<strong>死信队列</strong>，然后通过一个专门的消费者来处理这些过期的消息</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a760c03a84166e96abbc8d1e04b306aa.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：只有消息到达过期时间没有被消费会进入死信交换机吗，还有其他的情况吗</strong></p> </blockquote> <blockquote> <p>我：消息成为死信一共有三种情况。<br /> 1：队列消息长度达到限制。<br /> 2：消费者拒收消息，并且不将消息放入原来的队列中让他重新发送。<br /> 3：原队列存在消息过期设置，消息达到超时时间未被消费。</p> </blockquote> <blockquote> <p><strong>面试官：我们怎么定义一个死信交换机和死信队列绑定呢？</strong></p> </blockquote> <blockquote> <p>我：我们可以通过<strong>x-dead-letter-exchange</strong>和<strong>x-dead-letter-routing-key</strong>两个参数来配置好死信交换机的名称，和死信交换机与死信队列之间的路由键名称。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/16cfe27ca18af7169c73918bf921f40d.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <h1 id="四ttl是什么">四、TTL是什么？</h1> <blockquote> <p><strong>面试官：TTL是什么？</strong></p> </blockquote> <blockquote> <p>我：TTL全称Time To Live（存活时间/过期时间），是mq中用来设置过期时间的。</p> </blockquote> <blockquote> <p><strong>面试官：我们一般怎么设置过期时间，用哪些方式？</strong></p> </blockquote> <blockquote> <p>我：我们有两种设置过期时间的方式，一个是对单个消息设置过期时间，一个是对一个队列设置过期时间，这样的话发送到队列中的消息都遵循那个过期时间。</p> </blockquote> <blockquote> <p>1：队列设置过期时间：x-message-ttl，单位：ms（毫秒），这样的话进入队列的所有消息都遵循这个过期时间。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/566d8196bc9a93943f2865d97d046f2b.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p>2：单个消息设置过期时间：expiration，单位：ms（毫秒），这样的话只有这条消息有过期时间。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b7231a3966dcc14ab85e8eb05906adea.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：那如果我即给单条消息设置了时间又给队列设置了时间会怎么样?</strong></p> </blockquote> <blockquote> <p>我：那样的话根据最短的那个时间来。</p> </blockquote> <h1 id="五rabbitmq延时队列怎么设计">五、RabbitMQ延时队列怎么设计？</h1> <blockquote> <p><strong>面试官：那你知道延时队列吗，一般都用来做什么场景下的需求呢？</strong></p> </blockquote> <blockquote> <p>我：知道，延时队列一般就是发送消息到MQ中后，消费者不要第一时间去处理，比如我们点外卖的时候我们下单成功了，这个时候库存已经减了，但是我们还没有支付，如果我们一直不支付的话，过30分钟订单就自动取消了，然后库存又恢复了。</p> </blockquote> <blockquote> <p><strong>面试官：那RabbitMQ有延时队列吗，如果让你自己设计一个延时队列怎么设计呢？</strong></p> </blockquote> <blockquote> <p>我：RabbitMQ中没有提供延时队列的功能，但是我们可以使用TTL+死信队列来实现延时队列的功能。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9e57da86cd35c83025a6a65d200ffad6.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：可以呀小伙子，这块掌握的不错</strong></p> </blockquote> <blockquote> <p>我：还行还行，都是日常的积累</p> </blockquote> <blockquote> <p><strong>面试官：小伙子真厉害啊，RabbitMQ掌握的非常棒，你面试通过了，明天上岗吧</strong></p> </blockquote> <blockquote> <p>我：啊，这么急吗，我后面还有好多东西没有讲呢。</p> </blockquote> <blockquote> <p><strong>面试官：不着急，进来了以后慢慢听你讲，加班让你跟我讲</strong></p> </blockquote> <blockquote> <p>我：啊。。。这也太难了吧</p> </blockquote> <h1 id="六总结">六、总结</h1> <blockquote> <p>这里关于RabbitMQ还没有整理完毕，文章后面持续更新，建议收藏。</p> </blockquote> <blockquote> <p>文章中涉及到的命令大家一定要像我一样每个都敲几遍，只有在敲的过程中才能发现自己对命令是否真正的掌握了。</p> </blockquote> <blockquote> <p>如果觉得我的文章还不错的话就点个赞吧</p> </blockquote> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2355.htm">VUE3.0使用ElementPlus开发登录界面</a></p>
+                                        <p>下一个：<a href="/html/category/article-2357.htm">Java8 Instant 时间戳</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2481.htm" title="检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

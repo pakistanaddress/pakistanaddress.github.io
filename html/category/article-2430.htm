@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2430.htm" />
+<title>【关于js数组对象一道题】将数组对象中的英文属性名替换为中文属性名 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">【关于js数组对象一道题】将数组对象中的英文属性名替换为中文属性名</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>将数组对象中的英文属性名替换为中文属性名</p> <pre><code class="prism language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>   <span class="token punctuation">{<!-- --></span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'湖北'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token punctuation">{<!-- --></span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'安徽'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token punctuation">{<!-- --></span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'北京'</span><span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token string">'年龄'</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'地址'</span><span class="token punctuation">}</span>  <span class="token keyword">function</span> <span class="token function">change</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>  <span class="token comment">// 在这里写代码</span> <span class="token punctuation">}</span>  <span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token function">change</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> map<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token comment">// [ 结果效果:</span> <span class="token comment">//  {'姓名': '张三', '年龄': 18, '地址': '湖北'}, </span> <span class="token comment">//  {'姓名': '李四', '年龄': 18, '地址': '安徽'}, </span> <span class="token comment">//  {'姓名': '王五', '年龄': 18, '地址': '北京'}</span> <span class="token comment">// ]</span> </code></pre> <p>解决:</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>     <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>       <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'湖北'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>       <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'安徽'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>       <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'北京'</span> <span class="token punctuation">}</span>     <span class="token punctuation">]</span>     <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token string">'年龄'</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'地址'</span> <span class="token punctuation">}</span>      <span class="token keyword">function</span> <span class="token function">change</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token comment">// 在这里写代码</span>       <span class="token keyword">let</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>       arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">arrItem</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> k <span class="token keyword">in</span> map<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>           obj<span class="token punctuation">[</span>map<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> arrItem<span class="token punctuation">[</span>k<span class="token punctuation">]</span>         <span class="token punctuation">}</span>         newArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>       <span class="token punctuation">}</span><span class="token punctuation">)</span>       <span class="token keyword">return</span> newArr     <span class="token punctuation">}</span><span class="token punctuation">;</span>     <span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token function">change</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> map<span class="token punctuation">)</span>     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> </code></pre> <p>结果:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/7071546880cac114478cf3860bc64129.jpg" alt="【关于js数组对象一道题】将数组对象中的英文属性名替换为中文属性名"></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2429.htm">C#面向抽象编程第二讲</a></p>
+                                        <p>下一个：<a href="/html/category/article-2431.htm">spring中jdbcTemplate.batchUpdate的几种使用情况_java</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2477.htm" title="spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2506.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

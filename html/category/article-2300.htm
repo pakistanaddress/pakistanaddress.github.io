@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2300.htm" />
+<title>SpringBoot 起步依赖+SpringBoot配置 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">SpringBoot 起步依赖+SpringBoot配置</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h1><a id="SpringBoot__0" rel="nofollow"></a>一、SpringBoot 起步依赖</h1> <p>1）版本锁定<br /> 如spring-boot-starter-parent中，指定了版本，子module中不需要再次指定版本</p> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependencyManagement<span class="token punctuation">&gt;</span></span><span class="token operator">&lt;</span><span class="token operator">/</span>dependencyManagement<span class="token operator">&gt;</span></code></pre> <p>2）依赖传递<br /> 如spring-boot-starter-web中</p> <h1><a id="SpringBoot_11" rel="nofollow"></a>二、SpringBoot配置</h1> <h2><a id="_12" rel="nofollow"></a>（一）配置文件分类</h2> <p>SpringBoot 是基于约定的，所以很多配置都有默认值，但如果想使用自己的配置替换默认的话，就可以使用application.properties 或者 application.yml （application.yaml）进行配置。</p> <ul> <li>properties<br /><code>server.port=8080</code></li> <li>yml<br /><code>server: port: 8080</code></li> </ul> <p>如果resource目录下同时存在以下配置文件：<br /> application.properties<br /> application.yml<br /> application.yaml<br /> 则优先级application.properties 最高，其次是application.yml，最后是application.yaml。即若3个配置文件存在同一个键值对，实际上取的值是application.properties文件中的；他们是叠加读取的。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/9dff67873a7d61183de293467d20e49a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="yaml_29" rel="nofollow"></a>（二）yaml</h2> <p>YAML全称是YAML Ain’t Markup Language，意思是yaml不是一种标记性语言。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/b9bf797fc26f3fd77d7caaa49846f0aa.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/9179a651a1f3158093e3fa9c4c0651e8.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/d2990380b4152315bd79836df8abd16d.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/78e8999557f684ad532a03be6be7e6a5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/99270d2eb074a572d50898a051e2c27a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_38" rel="nofollow"></a>（三）读取配置文件内容</h2> <h3><a id="1Value_39" rel="nofollow"></a>1、@Value</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/0d680a8c3c2bf703b15b32fb6b2af3c5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/dd5aa9f6c6eeb54d1138e365e6c84ecd.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h3><a id="2Environment_43" rel="nofollow"></a>2、Environment</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/b1670cd1ad75375e034bb75fdc137aff.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/01bd417c6026bdecfbf95946a906bfa9.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h3><a id="3_ConfigurationProperties_47" rel="nofollow"></a>3、 @ConfigurationProperties</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/448ef92876f01bfb5bc13b50e1b06fa9.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/0959ff327e6eeb65cf129edd4a993d90.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/e00f012fb79d071bee4a3e5234be125c.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p>加上下面这依赖之后，自己写的类上的属性就能在配置文件里有提示了。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/62f06d58fa3078ff522eda06d5aabc17.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/126a5a101ffbe02cb47a6428e06363e5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="profile_56" rel="nofollow"></a>（四）profile</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/52f9b752af98d792e48ad3b8c445128a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/c638c2172afc357f821f4a2c7f979686.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/e88c733492c7af916fbe24f222e59ab5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/ee809ae534de4f9433a916644d1af5b7.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/dd937b4a39a5b486c32b2f427d4cec48.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/ff2b3d8d53f0c76536c6977049ac322d.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/2b440db8aa5b293de931a60aebeefc6e.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_69" rel="nofollow"></a>（五）内部配置加载顺序</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/660bf91d8f803a4ef1807bf97432f8b6.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /> resource目录下是属于第4种，在classpath的根目录下。</p> <p>多个文件都会加载，形成互补的配置；同名变量生效优先级1&gt;2&gt;3&gt;4。<br /> 说明：1和2是不会打进jar包文件里的，因为他不符合maven结构<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/1f12099a7231345125bb23f0306e8503.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_77" rel="nofollow"></a>（六）外部配置加载顺序</h2> <p>https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/8be272eb46775740d49f5eaef839f088.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /> 17种外部配置方式<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/c0264ccd8ff90a063048d066bba3f02a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/a450b1c587b8d20400a05468cdb83c23.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2299.htm">Java调用REST接口（get，post请求方法）</a></p>
+                                        <p>下一个：<a href="/html/category/article-2301.htm">Spring Security认证_认证（成功和失败）后的处理方式</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2482.htm" title="mysql中的时间字段用什么数据类型">mysql中的时间字段用什么数据类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

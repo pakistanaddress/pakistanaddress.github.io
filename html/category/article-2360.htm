@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2360.htm" />
+<title>feign.RetryableException: Read timed out executing&#8212;SpringCloud组件Feign连接超时处理 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">feign.RetryableException: Read timed out executing&#8212;SpringCloud组件Feign连接超时处理</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atelier-sulphurpool-light"> <h3><a id="_0" rel="nofollow"></a>一、问题描述</h3> <blockquote> <p>目前大部分公司都是使用微服务架构，自然免不了服务间的调用，在服务调用的过程中，可能会出现连接超时或者读取超时的问题。接下来针对SpringCloud组件Feign的超时问题从根源上看一下如何解决。</p> </blockquote> <pre><code class="prism language-java">feign<span class="token punctuation">.</span>RetryableException<span class="token operator">:</span> Read timed out executing<span class="token punctuation">(</span>请求方式<span class="token punctuation">)</span><span class="token punctuation">(</span>请求地址<span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>FeignException<span class="token punctuation">.</span><span class="token function">errorExecuting</span><span class="token punctuation">(</span>FeignException<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">65</span><span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>SynchronousMethodHandler<span class="token punctuation">.</span><span class="token function">executeAndDecode</span><span class="token punctuation">(</span>SynchronousMethodHandler<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">105</span><span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>SynchronousMethodHandler<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>SynchronousMethodHandler<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">76</span><span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>ReflectiveFeign$FeignInvocationHandler<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>ReflectiveFeign<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">103</span><span class="token punctuation">)</span>         at com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>proxy<span class="token punctuation">.</span>$Proxy113<span class="token punctuation">.</span><span class="token function">getBaseRow</span><span class="token punctuation">(</span>Unknown Source<span class="token punctuation">)</span> Caused by<span class="token operator">:</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>SocketTimeoutException<span class="token operator">:</span> Read timed out         at java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>SocketInputStream<span class="token punctuation">.</span><span class="token function">socketRead0</span><span class="token punctuation">(</span>Native Method<span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>SocketInputStream<span class="token punctuation">.</span><span class="token function">socketRead</span><span class="token punctuation">(</span>SocketInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">116</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>SocketInputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>SocketInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">170</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>SocketInputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>SocketInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">141</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedInputStream<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>BufferedInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">246</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedInputStream<span class="token punctuation">.</span><span class="token function">read1</span><span class="token punctuation">(</span>BufferedInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">286</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedInputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>BufferedInputStream<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">345</span><span class="token punctuation">)</span>         at sun<span class="token punctuation">.</span>net<span class="token punctuation">.</span>www<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpClient<span class="token punctuation">.</span><span class="token function">parseHTTPHeader</span><span class="token punctuation">(</span>HttpClient<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">704</span><span class="token punctuation">)</span>         at sun<span class="token punctuation">.</span>net<span class="token punctuation">.</span>www<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpClient<span class="token punctuation">.</span><span class="token function">parseHTTP</span><span class="token punctuation">(</span>HttpClient<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">647</span><span class="token punctuation">)</span>         at sun<span class="token punctuation">.</span>net<span class="token punctuation">.</span>www<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpURLConnection<span class="token punctuation">.</span><span class="token function">getInputStream0</span><span class="token punctuation">(</span>HttpURLConnection<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">1569</span><span class="token punctuation">)</span>         at sun<span class="token punctuation">.</span>net<span class="token punctuation">.</span>www<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpURLConnection<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span>HttpURLConnection<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">1474</span><span class="token punctuation">)</span>         at java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>HttpURLConnection<span class="token punctuation">.</span><span class="token function">getResponseCode</span><span class="token punctuation">(</span>HttpURLConnection<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">480</span><span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>Client$Default<span class="token punctuation">.</span><span class="token function">convertResponse</span><span class="token punctuation">(</span>Client<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">152</span><span class="token punctuation">)</span>         at feign<span class="token punctuation">.</span>Client$Default<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>Client<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">74</span><span class="token punctuation">)</span></code></pre> <h3><a id="_28" rel="nofollow"></a>二、解决方案</h3> <h5><a id="ymlconnectTimeoutreadTimeout_29" rel="nofollow"></a>在yml文件中配置connectTimeout和readTimeout</h5> <pre><code class="prism language-java">feign<span class="token operator">:</span>     client<span class="token operator">:</span>         config<span class="token operator">:</span><span class="token keyword">default</span><span class="token operator">:</span>                 connectTimeout<span class="token operator">:</span><span class="token number">60000</span>                 readTimeout<span class="token operator">:</span><span class="token number">60000</span></code></pre> <h3><a id="_38" rel="nofollow"></a>三、源码追踪（知其然，知其所以然）</h3> <h5><a id="1_FeignExceptionjava67SynchronousMethodHandlerjava104_39" rel="nofollow"></a>1、首先看下日志报错打印 FeignException.java:67、SynchronousMethodHandler.java:104</h5> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/fe47f2938d65c04e29a21c6c8a6168b1.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/63172aa9deb362e6ec111c834d58d83a.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"></p> <h5><a id="2optionsHTTP_42" rel="nofollow"></a>2、查看options（HTTP请求的配置）的初始化</h5> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/d22a021aef695988d65f8ae39303c408.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/0f4e4778daa4b4da314c74ef69d52df8.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/26960c94b130d61de27f550cffddb29a.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"></p> <h5><a id="3options_46" rel="nofollow"></a>3、options的默认值和配置</h5> <blockquote> <p>源码追踪到这可以看出feign请求的默认连接超时时间为10秒 读取超时时间为60秒</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/4ba76fe9f626a7fb1af3ace219d1e8e6.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/20fe1e35d195281f5b6907a868fb2495.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"></p> <h5><a id="3FeignClientPropertiesconfig_52" rel="nofollow"></a>3、FeignClientProperties的config属性</h5> <blockquote> <p>FeignClientProperties是Feign客户端的配置类，对应我们在yml文件中的feign.client。<br /> 我们可以通过配置connectTimeout和readTimeout的大戏</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/fc7c9a724f7b518f734619ac7fba3ce4.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/c3205b09653a25bce89e6e928ce5009b.jpg" alt="feign.RetryableException: Read timed out executing---SpringCloud组件Feign连接超时处理"></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2359.htm">Java字符串比较，==，等于，匹配，compareTo()之间的差异。</a></p>
+                                        <p>下一个：<a href="/html/category/article-2361.htm">vue项目中数据更新页面不刷新问题</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2514.htm" title="Vue学习笔记6 &#8211; 学习vue-admin-template(1)">Vue学习笔记6 &#8211; 学习vue-admin-template(1)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2477.htm" title="spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2490.htm" title="Semaphore的工作原理及实例">Semaphore的工作原理及实例</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

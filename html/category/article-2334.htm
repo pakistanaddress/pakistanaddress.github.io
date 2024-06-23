@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2334.htm" />
+<title>利用JavaScript实现秒表功能 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">利用JavaScript实现秒表功能</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;     &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;     &lt;div&gt;00:00:00:00&lt;/div&gt;     &lt;button &gt;开始&lt;/button&gt;     &lt;button disabled&gt;暂停&lt;/button&gt;     &lt;button disabled&gt;继续&lt;/button&gt;     &lt;button disabled&gt;重置&lt;/button&gt;     &lt;script&gt;         // 秒表功能分析         // 核心思路:         //   定义一个变量,根据定时器,每秒执行一次,每次执行++自增操作         //               变量存储的数值,就会每秒+1         //   现在需要的记录效果,是每0.01秒,也就是10毫秒执行一次         //   根据累计的数值,执行进位 ms 如果达到 100,就是1秒         //   如果 秒 达到 60 就是 1分钟         //   如果 分钟 达到 60 就是 1小时           // 获取按钮的标签对象         var oBtnStart = document.querySelectorAll('button')[0];         var oBtnPause = document.querySelectorAll('button')[1];         var oBtnContinue = document.querySelectorAll('button')[2];         var oBtnReset = document.querySelectorAll('button')[3];         var hour = minutes = seconds = millisecond = 0;          // 定义存储 时 分 秒 毫秒 字符串的变量         // 如果直接在 millisecond seconds minutes hour 变量上进行 拼接操作,会影响 ++操作的执行         // 单独的建立变量,来存储累加时间的执行结果         var ms = '';         var s = '';         var m = '';         var h = '';          // 因为定时器,是定义在函数内部,         // 必须定义一个全局变量,来存储定时器         // 在函数外部可以调用,终止定时器         var time = 0;                  // 获取div标签对象         var oDiv = document.querySelector('div');           //  开始按钮         oBtnStart.onclick = function(){             // 点击开始按钮,执行函数,执行秒表计时             timer();             oBtnStart.disabled = true;             oBtnPause.disabled = false;             oBtnContinue.disabled = true;             oBtnReset.disabled = true;         }         //  暂停按钮         oBtnPause.onclick = function(){             // 点击暂停按钮,清除定时器,终止秒表执行             clearInterval(time);             oBtnStart.disabled = true;             oBtnPause.disabled = true;             oBtnContinue.disabled = false;             oBtnReset.disabled = false;         }         //  继续按钮         oBtnContinue.onclick = function(){             // 点击继续按钮,继续执行定时器             timer();             oBtnStart.disabled = true;             oBtnPause.disabled = false;             oBtnContinue.disabled = true;             oBtnReset.disabled = true;          }         //  重置按钮         oBtnReset.onclick = function(){             // 点击重置按钮,将所有的数据,都恢复到0的状态             // 所有变量存储的数据都是 0 , div中的内容,也恢复到0             hour = minutes = seconds = millisecond = 0;             oDiv.innerHTML = '00:00:00:00'             oBtnStart.disabled = false;             oBtnPause.disabled = true;             oBtnContinue.disabled = true;             oBtnReset.disabled = true;         }          //  计时函数         function timer(){             // 赋值操作,将定时器,存储在全局作用域变量中             time = setInterval(function(){                 millisecond++;                 if( millisecond == 100){                     seconds++;                     millisecond = 0;                 }                 if( seconds == 60 ){                     minutes++;                     seconds = 0;                 }                 if( minutes == 60 ){                     hour++;                     minutes = 0;                 }              //  补零操作             // 如果记录的时间小于0,要做补零操作                 if( millisecond &lt; 10 ){                     ms = '0' + millisecond;                  }else{                     ms = millisecond;                  }                 if( seconds &lt; 10 ){                     s = '0' + seconds;                  }else{                     s = seconds;                  }                 if( minutes &lt; 10 ){                     m = '0' + minutes;                  }else{                     m = minutes;                  }                 if( hour &lt; 10 ){                     h = '0' + hour;                  }else{                     h = hour;                  }                 // 每次执行,返回一个记录时间的字符串                 // 将这个字符串,写入到div中                 oDiv.innerHTML = ` ${h}:${m}:${s}:${ms} `             },10);         }      &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; </code></pre> <p>实现效果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/748a4c5e411798ad5bbee69bad8026a7.jpg" alt="利用JavaScript实现秒表功能"><br /> 当点击开始时：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/ab006f85a97e54707f98a31d7fa0f26b.jpg" alt="利用JavaScript实现秒表功能"><br /> 当点击暂停时：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/206ae2518f5adb2a3a12b18778454caa.jpg" alt="利用JavaScript实现秒表功能"><br /> 当点击继续时：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/9dd0170bfd5904d40b2d5a6e22ebb198.jpg" alt="利用JavaScript实现秒表功能"></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2333.htm">docker-compose部署etcd 集群</a></p>
+                                        <p>下一个：<a href="/html/category/article-2335.htm">Spring Boot四大神器之Auto Configuration</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2471.htm" title="1分钟掌握 Python 函数参数">1分钟掌握 Python 函数参数</a></li>
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

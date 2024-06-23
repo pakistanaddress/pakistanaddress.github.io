@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2310.htm" />
+<title>vue CLI3.0自己实现一个轮播组件，并设置自定义属性 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">vue CLI3.0自己实现一个轮播组件，并设置自定义属性</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>搭建CLI步奏过程不详细介绍了</p> <p>主要利用Vue.component()注册全局组件,滑动效果使用了translateX<br /> 如下图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/d6c27f3c8c36ba3cd5e96edab838cf47.jpg" alt="vue CLI3.0自己实现一个轮播组件，并设置自定义属性"><br /> 让后开始详细介绍如何实现自己的轮播组件</p> <p>一.新建jv-swiper文件夹<br /> 1.1、然后在jv-swiper文件夹新建index.vue ，该vue其实为swiper的外层控制</p> <pre><code>&lt;template&gt;   &lt;div class="jv-swiper" ref="swileng"&gt;     &lt;slot&gt;&lt;/slot&gt;           &lt;div v-if="indicator==='true'" class="indicator-box"&gt;//此段代码为指示器，轮播的小点点         &lt;div  v-for="(i,index) in jv_siwdom" :key="index" :class="jv_siw_index==index?'indicator_color':''" class="indicator"&gt;    &lt;/div&gt;      &lt;/div&gt;       &lt;/div&gt; &lt;/template&gt;  &lt;script&gt;  /* eslint-disable */ export default {   name: "JvSwiper",   porps: {},   data() {     return {       indicator: true,       jv_siwdom: 0,       jv_siw_index: 0,     };   },   created() {},   mounted() {     let jv_interval = 3000,//滑动间隔       jv_duration = 300,//运动时间       jv_indicator = true;//指示器，轮播的小点点     try {       jv_interval = this.$refs.swileng.attributes.interval.value;//使用过程中设置的属性参数       jv_duration = this.$refs.swileng.attributes.duration.value;       jv_indicator = this.$refs.swileng.attributes.indicator.value;            } catch (error) {           }     this.indicator = jv_indicator;//把用户设置的或者默认的运动直接存储一下     let siwdom = this.$refs.swileng.childNodes,//获取有用户设置了多少张轮播     slef=this,       cont = 0,       box_left = 0;     this.jv_siwdom=siwdom.length - 1;  //给负责渲染层的变量赋值，让它生产多少张轮播          let seti = setInterval(() =&gt; {//执行       SwiRotste();     }, jv_interval);          function SwiRotste() {       cont += 1;        //进来就累加一次       if (cont == siwdom.length - 1) {  //如果等于最后一个         cont = 0;       }       slef.jv_siw_index=cont;        //把当前的值赋值给jv_siw_index,告诉我们当前滑动到哪一张       box_left = 100 * cont;       for (let i = 0, s = siwdom.length - 1; i &lt; s; i++) {  //给每个div添加不同的translateX值及运动时间         siwdom[i].style.transform = `translateX(${-box_left}%)`;         siwdom[i].style.transition = `${jv_duration / 1000}s`;       }     }   } }; &lt;/script&gt;  &lt;style&gt; .jv-swiper {   width: 100%;   height: auto;   background-color: slategrey;   display: -webkit-inline-box;   overflow: hidden;   position: relative; } .indicator-box{   display: flex; position: absolute;   bottom: 12px;   right: 6px;  } .indicator {   width: 6px;   height: 6px;   border-radius: 100%;   background-color: #333;   margin: 0 3px; } .indicator_color{   background-color: #fff; } &lt;/style&gt;    </code></pre> <p>1.2、然后在jv-swiper文件夹新建swiper-item.vue ，该vue其实为swiper的swiper-item</p> <pre><code>&lt;template&gt;   &lt;div class="swiper-item"&gt;     &lt;slot&gt;&lt;/slot&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; export default {   name: "swiper-item",   porps: {} }; &lt;/script&gt; &lt;style&gt; .swiper-item {      width: 100%;   height: 100%;     z-index: 9999;   } .swiper-item img {   width: 100%;   height: auto; } &lt;/style&gt;   </code></pre> <p>二、在jv-swiper同级新建jv-index.js用了统一注册组件</p> <pre><code>/* eslint-disable */ import JvSwiper from './jv-swiper' import SwiperItem from './jv-swiper/swiper-item.vue'  const JvIndex={     install:function(Vue){         // Vue.component()是用来注册全局组件的        Vue.component("jv-swiper", JvSwiper);        Vue.component("swiper-item", SwiperItem);     }   } export default JvIndex  </code></pre> <p>三、在mian.js 注册一下</p> <pre><code>import JvIndex from './components/jv-index' Vue.use(JvIndex) </code></pre> <p>四、开始使用啦~</p> <pre><code>&lt;template&gt;   &lt;div class="hello"&gt;     &lt;h1&gt;{<!-- -->{ msg }}&lt;/h1&gt;     //第一个轮播     &lt;jv-swiper interval='5000' duration='400' indicator='true'&gt;//设置自定义属性，这几个（ interval、duration、indicator）属性都需要放子啊标签上哦       &lt;swiper-item  v-for="(item, index) in img" v-bind:key="index"&gt;          &lt;img :src="item" alt=""&gt;         &lt;/swiper-item&gt;     &lt;/jv-swiper&gt;          //第二个轮播     &lt;jv-swiper interval='3000' duration='400' indicator='true'&gt;       &lt;swiper-item  v-for="(item, index) in img" v-bind:key="index"&gt;          &lt;img :src="item" alt=""&gt;         &lt;/swiper-item&gt;     &lt;/jv-swiper&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; /* eslint-disable */ export default {   name: "HelloWorld",   props: {     msg: String   },   data() {     return {       img: ['http://m.xuelejia.com/static/images/lunbo2.jpg','http://m.xuelejia.com/static/images/new-banner2.png','http://m.xuelejia.com/static/images/lunbo3.jpg']     };   } }; &lt;/script&gt;  &lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt; &lt;style scoped&gt; h3 {   margin: 40px 0 0; } ul {   list-style-type: none;   padding: 0; } li {   display: inline-block;   margin: 0 10px; } a {   color: #42b983; } &lt;/style&gt;  </code></pre> <p>好了大功告成，下面为效果图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/3c6c6adef7ba234f3b46dd6d7ad7cbbf.jpg" alt="vue CLI3.0自己实现一个轮播组件，并设置自定义属性"></p> <p>总结：</p> <p>主要利用Vue.component()注册全局组件<br /> 使用 <code>this.$refs.swileng.attributes</code> 获取用户设置的参数，不知道各位大佬有没有更好的方式，求介绍<br /> 使用<code>this.$refs.swileng.childNodes</code>获取用多少张轮播，不知道各位大佬有没有更好的方式，求介绍<br /> 滑动效果使用了translateX 使用 slot 实现用户在组件标签内插入html代码 个人感觉自己写的代码还是有点小乱，还需改进提升</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2309.htm">C#操作Byte数组和十六进制进行互转_C#教程</a></p>
+                                        <p>下一个：<a href="/html/category/article-2311.htm">Redis 主从同步原理解析</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
+                        <li class="py-2"><a href="/html/category/article-2503.htm" title="Python实现学生管理系统">Python实现学生管理系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

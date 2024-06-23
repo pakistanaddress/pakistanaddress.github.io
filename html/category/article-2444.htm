@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2444.htm" />
+<title>SpringBoot中异常处理_在线工具 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">SpringBoot中异常处理_在线工具</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<h1 id="一背景">一、背景</h1> <p>在我们编写程序的过程中，程序中可能随时发生各种异常，<strong>那么我们如何优雅的处理各种异常呢？</strong></p> <h1 id="二需求">二、需求</h1> <h2 id="1拦截系统中部分异常返回自定义的响应">1、拦截系统中部分异常，返回自定义的响应。</h2> <p><strong>比如：</strong><br /> 系统发生<code>HttpRequestMethodNotSupportedException</code>异常，我们需要返回如下信息。<br /> http的状态码：返回 <code>405</code></p> <pre><code class="language-json">{ 	code: 自定义异常码, 	message: 错误消息 } </code></pre> <h2 id="2实现自定义异常的拦截">2、实现自定义异常的拦截</h2> <p>拦截我们自己写的 <code>BizException</code></p> <h1 id="三编写一些异常基础代码">三、编写一些异常基础代码</h1> <h2 id="1引入jar包">1、引入jar包</h2> <pre><code class="language-xml">&lt;dependencies&gt;     &lt;dependency&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;dependency&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-validation&lt;/artifactId&gt;     &lt;/dependency&gt; &lt;/dependencies&gt; </code></pre> <p><strong>注意：</strong><br /> 引入<code>spring-boot-starter-validation</code>是为了验证请求的中的参数，然后当参数不满足时抛出异常。</p> <h2 id="2定义一个自定义异常">2、定义一个自定义异常</h2> <pre><code class="language-java">public class BizException extends RuntimeException {     public BizException() {     }     public BizException(String message) {         super(message);     }     public BizException(String message, Throwable cause) {         super(message, cause);     }     public BizException(Throwable cause) {         super(cause);     }     public BizException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {         super(message, cause, enableSuppression, writableStackTrace);     } } </code></pre> <h2 id="3编写一个简单的控制层">3、编写一个简单的控制层</h2> <pre><code class="language-java">@RestController @RequestMapping("exception") public class ExceptionTestController {      static class Req {         @NotBlank         public String password;     }      @PostMapping("password")     public String checkPassword(@Validated @RequestBody Req req) {          if (Objects.equals(req.password, "exception")) {             throw new BizException("密码传递的是exception字符串");         }          return "当前密码,password: " + req.password;     } } </code></pre> <p><strong>解释</strong><br /> 提供一个 <code>/exception/password</code> api，需要传递一个<code>password</code>参数<br /> 1、当不传递 password 参数时将抛出MethodArgumentNotValidException异常。<br /> 2、当password传递exception参数时，则抛出BizException异常。</p> <h2 id="4测试">4、测试</h2> <h3 id="1不传递password参数响应是什么">1、不传递password参数响应是什么</h3> <h4 id="1使用默认的defaulthandlerexceptionresolver处理">1、使用默认的DefaultHandlerExceptionResolver处理</h4> <p>这个类<code>DefaultHandlerExceptionResolver</code>是默认自动配置的。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/8162c398a748c4b7ea20237eb761973e.jpg" alt="SpringBoot中异常处理_在线工具"><br /><code>从上图中可以看出有一个默认字段的返回值</code><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/623f7c3313ff6ad6954580565b6c175b.jpg" alt="SpringBoot中异常处理_在线工具"></p> <h4 id="2使用responseentityexceptionhandler处理">2、使用ResponseEntityExceptionHandler处理</h4> <h5 id="1编写异常处理代码-使用默认的逻辑">1、编写异常处理代码-使用默认的逻辑</h5> <pre><code class="language-java">@RestControllerAdvice public class RestExceptionHandler extends ResponseEntityExceptionHandler {      @Override     protected ResponseEntity&lt;Object&gt; handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {         // 此处自定义返回值         return super.handleMethodArgumentNotValid(ex, headers, status, request);     } } </code></pre> <p>可以看到<code>handleMethodArgumentNotValid</code>方法直接调用父类的方法，即使用默认的处理方式。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/e906b4c20123b0d1c0638ef501c04ddc.jpg" alt="SpringBoot中异常处理_在线工具"></p> <p><code>从上图中可以看出返回值是空</code></p> <h5 id="2编写异常处理代码-返回值返回自定义内容">2、编写异常处理代码-返回值返回自定义内容</h5> <pre><code class="language-java">@Component @RestControllerAdvice public class RestExceptionHandler extends ResponseEntityExceptionHandler { 	@Override     protected ResponseEntity&lt;Object&gt; handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {         // 此处自定义返回值         return super.handleMethodArgumentNotValid(ex, headers, status, request);     }          	@Override     protected ResponseEntity&lt;Object&gt; handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {         Set&lt;HttpMethod&gt; supportedMethods = ex.getSupportedHttpMethods();          // 自定义请求返回值         Map&lt;String, Object&gt; body = new HashMap&lt;&gt;(4);         body.put("code", "错误码");         body.put("message", "当前请求的方法不支持,支持的请求方法为:" + supportedMethods);          return new ResponseEntity&lt;&gt;(body, headers, status);     } } </code></pre> <p>由上面的代码可知<code>handleHttpRequestMethodNotSupported</code>方法返回了自定义的body。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/0406e7be34fff448d0c683b322e5b52d.jpg" alt="SpringBoot中异常处理_在线工具"><br /><code>从上图中可以看出，返回了我们自己定义的返回值。</code></p> <h3 id="2password参数传递exception">2、password参数传递exception</h3> <h4 id="1使用responseentityexceptionhandler或defaulthandlerexceptionresolver处理">1、使用ResponseEntityExceptionHandler或DefaultHandlerExceptionResolver处理</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/fb6d0b8d8a3fac171da8279a714aab3a.jpg" alt="SpringBoot中异常处理_在线工具"><br /><code>由上图可知返回结果不对，我们需要自定义返回结果。</code></p> <h4 id="2返回自定义异常">2、返回自定义异常</h4> <h5 id="1编写bizexception处理代码">1、编写BizException处理代码</h5> <pre><code class="language-java">@RestControllerAdvice public class BizExceptionHandler {      @ExceptionHandler(BizException.class)     public ResponseEntity&lt;Object&gt; handleBizException(BizException exception) {         // 自定义请求返回值         Map&lt;String, Object&gt; body = new HashMap&lt;&gt;(4);         body.put("code", "错误码");         body.put("message", "异常信息为:" + exception.getMessage());         return new ResponseEntity&lt;&gt;(body, HttpStatus.INTERNAL_SERVER_ERROR);     } } </code></pre> <h5 id="2测试返回结果">2、测试返回结果</h5> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/dca08bc6458e7005bdb11aa9009eb719.jpg" alt="SpringBoot中异常处理_在线工具"><br /><code>从上图可知返回了自定义信息</code></p> <h1 id="四注意事项">四、注意事项</h1> <h2 id="1如果实现自定义异常处理">1、如果实现自定义异常处理</h2> <ol> <li>类上使用<code>@RestControllerAdvice</code>注解</li> <li>方法上使用<code>@ExceptionHandler</code>来处理特定的异常</li> </ol> <h2 id="2responseentityexceptionhandler默认处理那些异常">2、ResponseEntityExceptionHandler默认处理那些异常</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/605a2da4f329da030c9b4c677a327dbe.jpg" alt="SpringBoot中异常处理_在线工具"></p> <h2 id="3使用了responseentityexceptionhandler后为什么发生了异常后返回体为空">3、使用了ResponseEntityExceptionHandler后，为什么发生了异常后返回体为空</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/cd9fb1b178df70b1c7885650f5b9f623.jpg" alt="SpringBoot中异常处理_在线工具"><br /> 默认情况下，实现了 <code>ResponseEntityExceptionHandler</code>这个类后，这个类处理的所有异常的响应结果都是 <code>null</code>，如果想返回别的值需要我们自己去处理。</p> <h1 id="五总结">五、总结</h1> <p>1、如果我们想处理自定义异常，则可以使用 <code>@RestControllerAdvice</code> || <code>@ControllerAdvice</code> 配置<code>@ExceptionHandler</code>来使用。<br /> 2、如果我们实现了<code>ResponseEntityExceptionHandler</code>来处理异常，那么默认的异常的响应结果为空，如果想不为空，则需要我们自己处理。<br /> 3、默认情况下，标准的Spring MVC异常会通过<code>DefaultHandlerExceptionResolver</code>来处理。</p> <h1 id="六代码实现">六、代码实现</h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-exception-handler"  target="_blank"  rel="nofollow">https://gitee.com/huan1993/spring-cloud-parent/tree/master/springboot/springboot-exception-handler</a></p> <h1 id="七参考文档">七、参考文档</h1> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/e42087b39088b2fd3e527dd8bcd953df.jpg" alt="SpringBoot中异常处理_在线工具"></p> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2443.htm">修改docker容器的存储路径</a></p>
+                                        <p>下一个：<a href="/html/category/article-2445.htm">图解：冒泡排序及其优化</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2504.htm" title="全链路日志追踪系统介绍与思考">全链路日志追踪系统介绍与思考</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2502.htm" title="python end用法_python end用法">python end用法_python end用法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2499.htm" title="我们如何解析Java中的嵌套JSON对象？">我们如何解析Java中的嵌套JSON对象？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

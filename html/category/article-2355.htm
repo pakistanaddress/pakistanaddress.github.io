@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2355.htm" />
+<title>VUE3.0使用ElementPlus开发登录界面 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">VUE3.0使用ElementPlus开发登录界面</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h1>1 步骤说明</h1> <ul> <li>创建项目web&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;vue create web30_3</li> <li>》创建过程中选项&nbsp; &nbsp; &nbsp; &nbsp;选择 Manually select features</li> <li>》创建过程中选项&nbsp; &nbsp; &nbsp; &nbsp;选择Babel，Router, Vuex</li> <li>》创建过程中选项&nbsp; &nbsp; &nbsp; &nbsp;选择版本3.0</li> <li>》创建过程中选项&nbsp; &nbsp; &nbsp; &nbsp;选择In dedicated config files</li> <li>》创建过程中选项&nbsp; &nbsp; &nbsp; &nbsp;如果保存选择，则对 Save this as a preset for future project 选择yes</li> <li>cd web30_3</li> <li>npm run serve</li> <li>安装插件&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;npm i element-plus --save&nbsp; &nbsp;注--save作用是项目拷贝时已经有包保存</li> <li>修改src下main.js文件，见编程说明部分2.1</li> </ul> <h1>2 编程说明</h1> <h2>2.1 main.js 修改说明</h2> <p>增加两行内容</p> <p>import ElementPlus from 'element-plus'</p> <p>import 'element-plus/lib/theme-chalk/index.css'</p> <p>再用use引入。这点与vue2.0 编程一致。</p> <pre><code class="language-javascript">import {createApp} from 'vue' import App from './App.vue' import router from './router' import store from './store' import ElementPlus from 'element-plus' import 'element-plus/lib/theme-chalk/index.css'  createApp(App).use(store).use(router).use(ElementPlus).mount(rootContainer:'#app')</code></pre> <h2>&nbsp;2.2 设计login页面</h2> <p>设计表单，形成为独立Login页面，可以单独建立目录来存放，如后台 /back，则该文件为src/views/back/Login.vue</p> <p>全部代码为：</p> <pre><code class="language-html">&lt;template&gt;     &lt;el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm"&gt;         &lt;el-form-item label="密码" prop="pass"&gt;             &lt;el-input type="password" v-model="ruleForm.pass" autocomplete="off"&gt;&lt;/el-input&gt;         &lt;/el-form-item&gt;         &lt;el-form-item label="确认密码" prop="checkPass"&gt;             &lt;el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"&gt;&lt;/el-input&gt;         &lt;/el-form-item&gt;         &lt;el-form-item label="年龄" prop="age"&gt;             &lt;el-input v-model.number="ruleForm.age"&gt;&lt;/el-input&gt;         &lt;/el-form-item&gt;         &lt;el-form-item&gt;             &lt;el-button type="primary" @click="submitForm('ruleForm')"&gt;提交&lt;/el-button&gt;             &lt;el-button @click="resetForm('ruleForm')"&gt;重置&lt;/el-button&gt;         &lt;/el-form-item&gt;     &lt;/el-form&gt; &lt;/template&gt;  &lt;script&gt;     export default {         data() {             var checkAge = (rule, value, callback) =&gt; {                 if (!value) {                     return callback(new Error('年龄不能为空'));                 }                 setTimeout(() =&gt; {                     if (!Number.isInteger(value)) {                         callback(new Error('请输入数字值'));                     } else {                         if (value &lt; 18) {                             callback(new Error('必须年满18岁'));                         } else {                             callback();                         }                     }                 }, 1000);             };             var validatePass = (rule, value, callback) =&gt; {                 if (value === '') {                     callback(new Error('请输入密码'));                 } else {                     if (this.ruleForm.checkPass !== '') {                         this.$refs.ruleForm.validateField('checkPass');                     }                     callback();                 }             };             var validatePass2 = (rule, value, callback) =&gt; {                 if (value === '') {                     callback(new Error('请再次输入密码'));                 } else if (value !== this.ruleForm.pass) {                     callback(new Error('两次输入密码不一致!'));                 } else {                     callback();                 }             };             return {                 ruleForm: {                     pass: '',                     checkPass: '',                     age: ''                 },                 rules: {                     pass: [                         { validator: validatePass, trigger: 'blur' }                     ],                     checkPass: [                         { validator: validatePass2, trigger: 'blur' }                     ],                     age: [                         { validator: checkAge, trigger: 'blur' }                     ]                 }             };         },         methods: {             submitForm(formName) {                 alert(1)                 this.$refs[formName].validate((valid) =&gt; {                     if (valid) {                         alert('submit!');                     } else {                         console.log('error submit!!');                         return false;                     }                 });             },             resetForm(formName) {                 this.$refs[formName].resetFields();             }         }     } &lt;/script&gt;  &lt;style scoped&gt; &lt;/style&gt;</code></pre> <h2>2.3 App.vue 嵌入login页面</h2> <pre><code class="language-html hljs">&lt;router-link to="/Login"&gt;登录&lt;/router-link&gt; &lt;el-button @click="this.$router.push('/about')"&gt;跳转&lt;/el-button&gt;</code></pre> <p>全文件如下：</p> <pre><code class="language-html">&lt;template&gt;   &lt;div id="nav"&gt;     &lt;router-link to="/"&gt;Home&lt;/router-link&gt; |     &lt;router-link to="/Login"&gt;登录&lt;/router-link&gt;     &lt;el-button @click="this.$router.push('/about')"&gt;跳转&lt;/el-button&gt;   &lt;/div&gt;   &lt;router-view/&gt; &lt;/template&gt;  &lt;style&gt; #app {   font-family: Avenir, Helvetica, Arial, sans-serif;   -webkit-font-smoothing: antialiased;   -moz-osx-font-smoothing: grayscale;   text-align: center;   color: #2c3e50; }  #nav {   padding: 30px; }  #nav a {   font-weight: bold;   color: #2c3e50; }  #nav a.router-link-exact-active {   color: #42b983; } &lt;/style&gt;</code></pre> <h2>&nbsp;2.4 修改路由文件</h2> <p>router/index.js 需要配置网页路由</p> <pre>, {   path: '/Login',   name: 'Login',   // route level code-splitting   // this generates a separate chunk (about.[hash].js) for this route   // which is lazy-loaded when the route is visited.   component: () =&gt; import(/* webpackChunkName: "about" */ '../views/back/Login.vue') }</pre> <p>形成为如下文件</p> <pre><code class="language-javascript">import { createRouter, createWebHashHistory } from 'vue-router' import Home from '../views/Home.vue'  const routes = [   {     path: '/',     name: 'Home',     component: Home   },   {     path: '/about',     name: 'About',     // route level code-splitting     // this generates a separate chunk (about.[hash].js) for this route     // which is lazy-loaded when the route is visited.     component: () =&gt; import(/* webpackChunkName: "about" */ '../views/About.vue')   },   {     path: '/Login',     name: 'Login',     component: ()=&gt;import('../views/back/Login')   } ]  const router = createRouter({   history: createWebHashHistory(),   routes })  export default router</code></pre> <h1>3 编译运行和测试</h1> <p>D:\workspace_vue\web30_3&gt;npm run serve</p> <p>&gt; web30_3@0.1.0 serve D:\workspace_vue\web30_3<br /> &gt; vue-cli-service serve</p> <p>&nbsp;INFO &nbsp;Starting development server...<br /> 98% after emitting CopyPlugin</p> <p>&nbsp;DONE &nbsp;Compiled successfully in 7941ms</p> <p>&nbsp;&nbsp; App running at:<br /> &nbsp; - Local: &nbsp; http://localhost:8080/<br /> &nbsp; - Network: http://192.168.137.168:8080/</p> <p>&nbsp; Note that the development build is not optimized.<br /> &nbsp; To create a production build, run npm run build.<br /> 现在可以输入网址，http://192.168.137.168:8080/，在浏览器可以看到首页Home，再点击登录，可以进入登录页面。后面就是后台的对接工作了。</p> <p>http://192.168.137.168:8080/</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220607/ef66e5d95bb6140497172268e6b7554b.jpg"></p> <p>&nbsp;点击登录得到：</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220607/44baac3166bba731bb8dedb9ccfc33f4.jpg"></p> <h1>4 ElementPlus 官网获取插件素材</h1> <p>网址为<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://element-plus.gitee.io/#/zh-CN"  rel="nofollow">https://element-plus.gitee.io/#/zh-CN</a></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2354.htm">maven生成war包的两种方式</a></p>
+                                        <p>下一个：<a href="/html/category/article-2356.htm">面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2474.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2520.htm" title="Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型">Jav详细介绍的Mapper对应的Mybatis xml查询结果resultType返回值类型</a></li>
+                        <li class="py-2"><a href="/html/category/article-2475.htm" title="VUEJS实现网页进度条加载效果">VUEJS实现网页进度条加载效果</a></li>
+                        <li class="py-2"><a href="/html/category/article-2484.htm" title="Gin-使用GORM操作mysql 数据库">Gin-使用GORM操作mysql 数据库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2508.htm" title="idea中配置maven仓库">idea中配置maven仓库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

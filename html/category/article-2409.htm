@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2409.htm" />
+<title>Spring Boot项目配置Druid数据源(druid-spring-boot-starter) - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">Spring Boot项目配置Druid数据源(druid-spring-boot-starter)</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h3> <a id="Druid_0" rel="nofollow"></a>Druid介绍</h3> <p>Druid是阿里巴巴的一个开源项目，号称为监控而生的数据库连接池，在功能、性能、扩展性方面都超过其他例如DBCP、C3P0、BoneCP、Proxool、JBoss DataSource等连接池,而且Druid已经在阿里巴巴部署了超过600个应用，通过了极为严格的考验，这才收获了大家的青睐！</p> <h3> <a id="Spring_bootDruid_4" rel="nofollow"></a>Spring boot集成Druid</h3> <p>Apache Druid（Incubating） - 面向列的分布式数据存储，非常适合为交互式应用程序提供动力,开发中使用的更多。</p> <p>以往我们都是直接引入Druid的依赖：</p> <pre><code>&lt;dependency&gt;            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;            &lt;artifactId&gt;druid&lt;/artifactId&gt;            &lt;version&gt;1.1.12&lt;/version&gt;    &lt;/dependency&gt; </code></pre> <p>apache中已经出了一套完美支持SpringBoot的方案所以说我们不使用上面的依赖而是使用：</p> <pre><code>&lt;dependency&gt;     &lt;groupId&gt;com.alibaba&lt;/groupId&gt;     &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;     &lt;version&gt;1.1.22&lt;/version&gt; &lt;/dependency&gt; </code></pre> <p>两种依赖都可以，但是配置的方式有些不同，使用druid依赖项的，在配置的时候需要新建Druid的配置类文件，而druid-spring-boot-starter依赖项则不需要，这里我使用的druid-spring-boot-starter–更简单。</p> <h3> <a id="YML_27" rel="nofollow"></a>配置YML文件</h3> <pre><code>spring:   datasource:     # 数据源基本配置     username: root     password: XXXX     url: jdbc:mysql://XXX.XX.XX.XXX:33306/数据库名?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai     # driver-class需要注意mysql驱动的版本(com.mysql.cj.jdbc.Driver 或 com.mysql.jdbc.Driver)     driver-class-name: com.mysql.cj.jdbc.Driver     type: com.alibaba.druid.pool.DruidDataSource     # Druid的其他属性配置     druid:       # 初始化时建立物理连接的个数       initial-size: 5       # 连接池的最小空闲数量       min-idle: 5       # 连接池最大连接数量       max-active: 20       # 获取连接时最大等待时间，单位毫秒       max-wait: 60000       # 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。       test-while-idle: true       # 既作为检测的间隔时间又作为testWhileIdel执行的依据       time-between-eviction-runs-millis: 60000       # 销毁线程时检测当前连接的最后活动时间和当前时间差大于该值时，关闭当前连接(配置连接在池中的最小生存时间)       min-evictable-idle-time-millis: 30000       # 用来检测数据库连接是否有效的sql 必须是一个查询语句(oracle中为 select 1 from dual)       validation-query: select 'x'       # 申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true       test-on-borrow: false       # 归还连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true       test-on-return: false       # 是否缓存preparedStatement, 也就是PSCache,PSCache对支持游标的数据库性能提升巨大，比如说oracle,在mysql下建议关闭。       pool-prepared-statements: false       # 置监控统计拦截的filters，去掉后监控界面sql无法统计，stat: 监控统计、Slf4j:日志记录、waLL: 防御sqL注入       filters: stat,wall,slf4j       # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100       max-pool-prepared-statement-per-connection-size: -1       # 合并多个DruidDataSource的监控数据       use-global-data-source-stat: true       # 通过connectProperties属性来打开mergeSql功能；慢SQL记录       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000 </code></pre> <p><strong>这里配置很重要，比如不配置filters的stat,我们在Druid的监控页面中就拿不到想要的信息。</strong></p> <h3> <a id="_74" rel="nofollow"></a>新建配置文件</h3> <p><strong>这里使用的是druid-spring-boot-starter的依赖项, 无需创建对应的Druid配置项, 但是如果使用的druid依赖项, 除了yml配置不同外, 还需要创建一个下面这样的配置文件</strong></p> <pre><code>@Configuration @Slf4j public class DruidDatasrouceConfig {      /**      * DruidDatasrouceConfig      *      * @return DataSource      */     @ConfigurationProperties(prefix = "spring.datasource")     @Bean     public DruidDataSource druidDataSource() {         //         DruidDataSource druidDataSource = new DruidDataSource();          log.info("Datasource创建完成 ...");         log.info(druidDataSource.toString());          return druidDataSource;     } } </code></pre> <h3> <a id="_102" rel="nofollow"></a>配置监控</h3> <p>上边我们已经开启filters的stat监控统计插件，下边进行添加监控配置：</p> <pre><code>spring:   datasource:     druid:       web-stat-filter:         # 是否启用StatFilter默认值true         enabled: true         # 添加过滤规则         url-pattern: /*         # 忽略过滤的格式         exclusions: /druid/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico </code></pre> <p>StatViewServlet配置：Druid内置提供了一个StatViewServlet用于展示Druid的统计信息，StatViewServlet的用途包括：</p> <ol> <li>提供监控信息展示的html页面</li> <li>提供监控信息的JSON API</li> </ol> <p>配置如下，需要注意的是用户名和密码：</p> <pre><code>spring:   datasource:     druid:       stat-view-servlet:         # 是否启用StatViewServlet默认值true         enabled: true         # 访问路径为/druid时，跳转到StatViewServlet         url-pattern: /druid/*         # 是否能够重置数据         reset-enable: false         # 需要账号密码才能访问控制台，默认为root         login-username: druid         login-password: druid         # IP白名单         allow: 127.0.0.1         # IP黑名单（共同存在时，deny优先于allow）         deny:  </code></pre> <p>到这里，关于Druid的配置就基本完成了, 想要了解更多的朋友，可以去查阅官方文档<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter"  rel="nofollow">Druid github</a></p> <h3> <a id="Druid_145" rel="nofollow"></a>验证Druid</h3> <p>我们直接启动项目，浏览器访问localhost:8080/druid或者127.0.0.1:8080/druid得到如下页面说明配置成功：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/a68f9ccc8ea339bdf2530b7127b19090.jpg" alt="Spring Boot项目配置Druid数据源(druid-spring-boot-starter)"></p> <p>进入Druid的登陆页面，输入我们在配置文件中配置的用户名和密码登陆，进入下面的页面：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/7730d5a8c294a5c42c65cf293d44c778.jpg" alt="Spring Boot项目配置Druid数据源(druid-spring-boot-starter)"></p> <p>首页可以看到一些基本配置信息，点击菜单栏中的数据源可以查看到我们的数据源配置信息，以及连接池配置信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/d167b6b0e6b77e333feada025904d831.jpg" alt="Spring Boot项目配置Druid数据源(druid-spring-boot-starter)"></p> <p>点击sql监控，查看执行sql信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/1bc3aaa4591ddd2215cb9ff4995ea8c8.jpg" alt="Spring Boot项目配置Druid数据源(druid-spring-boot-starter)"></p> <p>发现此时没有任何sql执行记录，所以我们访问链接localhost:8080/user(自己整一个测试请求)，执行一次查询操作，再来查看 sql监控页面，发现已经有了一条记录：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/a5503e4772e617d83253d4677da7d980.jpg" alt="Spring Boot项目配置Druid数据源(druid-spring-boot-starter)"></p> <p>点击该条记录可以查看更多详情，这里就不介绍了，配置成功的小伙伴们可以自己体验Druid的各种强大功能！</p> <h3> <a id="_168" rel="nofollow"></a>结语</h3> <p>到这里，Spring boot整合Druid的内容就介绍完了，希望对您有所帮助</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2408.htm">PHP后期静态绑定</a></p>
+                                        <p>下一个：<a href="/html/category/article-2410.htm">React + TypeScript + Taro前端开发小结</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2522.htm" title="Python 实现走迷宫深度优先回溯算法（优质代码）">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2487.htm" title="Python Module_subprocess子进程(程序调用)">Python Module_subprocess子进程(程序调用)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2516.htm" title="vue中watch监听，ajax异步问题解决">vue中watch监听，ajax异步问题解决</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2491.htm" title="jQuery显示与隐藏动画">jQuery显示与隐藏动画</a></li>
+                        <li class="py-2"><a href="/html/category/article-2489.htm" title="Hyperledger Fabric无系统通道启动及通道的创建和删除">Hyperledger Fabric无系统通道启动及通道的创建和删除</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

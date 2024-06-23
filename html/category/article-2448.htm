@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2448.htm" />
+<title>使用注解@Validated、@Valid和BindingResult对入参进行校验 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">使用注解@Validated、@Valid和BindingResult对入参进行校验</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>使用注解@Validated、@Valid和BindingResult对入参进行校验</h3> <ul> <li><a href="#_1" rel="nofollow">常见校验注解</a></li> <li> <ul> <li> <ul> <li><a href="#_3" rel="nofollow">一般常用</a></li> </ul> </li> </ul> </li> <li><a href="#ValidValidated__7" rel="nofollow">@Valid和@Validated 区别</a></li> <li><a href="#BindingResult_15" rel="nofollow">BindingResult</a></li> </ul> </div> <h1> <a id="_1" rel="nofollow"></a>常见校验注解</h1> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230122/0c9bfbec627c430a60304750ecb533a5.jpg" alt="使用注解@Validated、@Valid和BindingResult对入参进行校验"></p> <h3> <a id="_3" rel="nofollow"></a>一般常用</h3> <p>@NotNull 常用于数值类型<br /> @NotBlank 用于字符串类型 校验时会去除前后空字符串<br /> @NotEmpty 可用于字符串(不同于NotBlank,不会去除空格)，数组，集合，map等</p> <h1> <a id="ValidValidated__7" rel="nofollow"></a>@Valid和@Validated 区别</h1> <p>@Valid：没有分组校验的功能。<br /> @Valid：可以用在方法、构造函数、方法参数和成员属性（字段）上<br /> @Validated：提供了一个分组功能，可以在入参验证时，根据不同的分组采用不同的验证机制<br /> @Validated：可以用在类型、方法和方法参数上。但是不能用在成员属性（字段）上<br /> 两者是否能用于成员属性（字段）上直接影响能否提供嵌套验证的功能<br /> 如A类中引用B类，且A、B二类都有内部校验，为了使B类也生效，在A类中引用B类时，在B类变量上加@Valid注解，如果B类为集合等类型且不能为空还需要再加@NotEmpty</p> <h1> <a id="BindingResult_15" rel="nofollow"></a>BindingResult</h1> <p>BindingResult用在实体类校验信息返回结果绑定。<br /> 该类作为方法入参，要写在实体对象后面，如下</p> <pre><code class="prism language-java">    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/createHssNums"</span><span class="token punctuation">)</span>     <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"新增数字"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"&lt;br&gt;开发人：常晓东&lt;br&gt;时间：2021/11/22&lt;br&gt;新增,存中已存在时，不允许新增"</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> <span class="token class-name">ResponseData</span> <span class="token function">createHssNums</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token annotation punctuation">@Validated</span><span class="token punctuation">(</span><span class="token class-name">NumSaveVO<span class="token punctuation">.</span>CreateGroup</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token class-name">ValidList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">NumSaveVO</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">Nums</span><span class="token punctuation">,</span> <span class="token class-name">BindingResult</span> bindingResult<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">if</span> <span class="token punctuation">(</span>bindingResult<span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">return</span> <span class="token class-name">ResponseData</span><span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span><span class="token string">"验证不通过"</span><span class="token punctuation">,</span> <span class="token class-name">StatusCode</span><span class="token punctuation">.</span>DATAERROR<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getListValidatedResult</span><span class="token punctuation">(</span>bindingResult<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token class-name">NumImportResultVO</span> resultVO <span class="token operator">=</span> iNumService<span class="token punctuation">.</span><span class="token function">createBatch</span><span class="token punctuation">(</span><span class="token class-name">Nums</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">if</span> <span class="token punctuation">(</span>resultVO<span class="token punctuation">.</span><span class="token function">hasError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">return</span> <span class="token class-name">ResponseData</span><span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span>resultVO<span class="token punctuation">.</span><span class="token function">getErrMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">StatusCode</span><span class="token punctuation">.</span>DATAERROR<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>resultVO<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token keyword">return</span> <span class="token class-name">ResponseData</span><span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>此代码使用了分组校验，如果新增时不需要传入id，而修改时需要传入id那么要对该实体类中的id字段进行分组校验，分组校验一般有两种：1.自定义注解；2.接口方式；本人采用第二种方式，只需要编写两个分组接口，接口中不需要任何代码在实体类校验注解中写入groups ={接口} 便可以分组校验。<br /> 注意：如果使用了分组校验，那么实体类中swagger的 @ApiModelProperty(value = “ID”, required = true)注解中的required = true将失效。<br /> 或者</p> <pre><code class="prism language-java">    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/a"</span><span class="token punctuation">)</span>     <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"测试"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token annotation punctuation">@Valid</span> <span class="token class-name">TestEntity</span> test<span class="token punctuation">,</span><span class="token class-name">BindingResult</span> bindingResult<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">if</span> <span class="token punctuation">(</span>bindingResult<span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">throw</span> <span class="token keyword">new</span> 自定义<span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"错误提示码"</span><span class="token punctuation">,</span>bindingResult<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDefaultMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>     <span class="token punctuation">}</span> </code></pre> <p>bindingResult.hasErrors() 判断是否校验通过，未通过bindingResult.getFieldError().getDefaultMessage()获取在TestEntity的属性设置的自定义message，如果没有设置，则返回默认值"javax.validation.constraints.XXX.message"。</p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2447.htm">k8s入门之Service</a></p>
+                                        <p>下一个：<a href="/html/category/article-2449.htm">数据库事务四大特性、四大隔离级别以及解决的三种问题</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2518.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2521.htm" title="C++入门   面向对象的基础">C++入门   面向对象的基础</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2519.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2528.htm" title="算法：在一个集合中选取所有符合条件的元素组合">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

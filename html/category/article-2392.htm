@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-2392.htm" />
+<title>vue 图片资源应该如何存放并引入（public、assets）？ - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">vue 图片资源应该如何存放并引入（public、assets）？</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><a class="link-info" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/config/"  title="全局cli配置：vue.config.js" rel="nofollow">全局cli配置：vue.config.js</a></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前写项目就想着怎么简单怎么来，图片要用了，就直接在要用图片的页面，新建一个跟页面同等级的<strong>imgs</strong> 文件夹，然后在页面中直接<strong>“<span style="color:#ed7976;">./imgs/图片.png</span>”</strong>，不得不说这样写很方便。</p> <p style="text-align:center;"><img decoding="async" alt="" height="71" src="http://img.555519.xyz/uploads3/20220609/980ed5c32606dbba4738f7b330d54c59.jpg"></p> <p>但是这样做显得不太高级，而且图片太多的时候，可能会重复添加到项目中。vue-cli3 里面有两个可以存放图片的位置：<strong>public、assets</strong>，这两个的区别一直分得不是很清楚，今天就整理疏通一下，将了解下面3点：</p> <ol> <li>两者存放什么图片，什么时候使用，在某种情况下应该使用哪种方式；</li> <li>使用方式；</li> <li>图片路径转换；</li> </ol> <p>在了解上面几点之前，先来看看官网的介绍：</p> <h1>一、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/guide/html-and-static-assets.html#%E5%A4%84%E7%90%86%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"  title="处理静态资源" rel="nofollow">处理静态资源</a></h1> <blockquote> <p><strong>静态资源可以通过两种方式进行处理：</strong></p> <ol> <li>在 JavaScript 被导入或在 template/CSS 中通过<span style="color:#fe2c24;"><strong>相对路径</strong></span>被引用。这类引用会被 webpack 处理。</li> <li>放置在<code>public</code>&nbsp;目录下或通过<span style="color:#fe2c24;"><strong>绝对路径</strong></span>被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处理。</li> </ol> </blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一种方式：例如在某个 .vue 文件中通过 import "./" 的方法引入某个组件、js方法，或者像我之前在项目中写的<strong>“<span style="color:#ed7976;">./imgs/图片.png</span>”</strong>，这就是采用相对路径引用资源的方法。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二种方式：例如在 public/index.html 中<span style="color:#ed7976;">&lt;link&nbsp;&nbsp;href="&lt;%=&nbsp;BASE_URL&nbsp;%&gt;favicon.ico"&gt;</span> 通过<span style="color:#ed7976;">&lt;%=&nbsp;BASE_URL&nbsp;%&gt;</span> 引用 favicon.icon，这是绝对路径。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两种方式简单来说，一种是相对路径引用静态资源（会被webpack处理），一种是采用绝对路径引用资源（不会被webpack处理）。【这里的资源不局限于图片，还有js、css等都可以属于静态资源】</p> <h2>1.1<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/guide/html-and-static-assets.html#%E4%BB%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%AF%BC%E5%85%A5"  title="相对路径引用/导入资源" rel="nofollow">相对路径引用/导入资源</a></h2> <blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当你在 JavaScript、CSS 或<code>*.vue</code>&nbsp;文件中使用相对路径 (必须以<code>.</code>&nbsp;开头) 引用一个静态资源时，该资源将会被包含进入 webpack 的依赖图中。在其编译过程中，所有诸如<code>&lt;img src="..."&gt;</code>、<code>background: url(...)</code>&nbsp;和 CSS<code>@import</code>&nbsp;的资源 URL<strong>都会被解析为一个模块依赖</strong>。</p> <p><img fetchpriority="high" decoding="async" alt="" height="463" src="http://img.555519.xyz/uploads3/20220609/5f699dc79e7ffd3608424cdfdabf705e.jpg"></p> </blockquote> <p>根据上面官方的讲解，大概情形在项目中的展示情况：</p> <h3>1.1.1 通过静态路径导入资源时，例如导入图片，我们在模板中使用，需要通过<span style="color:#ed7976;">require</span>的这种方法去引入：</h3> <pre><code class="language-javascript">&lt;img :src="logo" /&gt;  export default {   data(){     return {      //相对路径不一定都是./，也可能是../，按照图片存放位置来决定       logo: require("./imgs/logo.png")      }   } }</code></pre> <h3>1.1.2&nbsp;在写背景图样式的时候，就可以像普通 H5 页面一样直接引入：</h3> <pre><code class="language-html">&lt;template&gt;   &lt;div&gt;     &lt;div class="login"&gt;&lt;/div&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;style scoped lang="scss"&gt;   .login{background: url("./imgs/login.png") no-repeat center;} &lt;/style&gt;</code></pre> <h3>1.1.3 若是引入动态背景图，写法与1相似</h3> <pre><code class="language-html">&lt;template&gt;   &lt;div&gt;     &lt;div class="login" :style="{backgroundImg: url(loginImg)}"&gt;&lt;/div&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt;   export default{     data(){       return {         loginImg: require('./imgs/login.png')       }     }   } &lt;/script&gt;  &lt;style scoped lang="scss"&gt;   .login{     background-repeat: no-repeat; background-size:100%;   } &lt;/style&gt;</code></pre> <hr/> <h1>二、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/guide/html-and-static-assets.html#url-%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99"  title="URL转换规则" rel="nofollow">URL转换规则</a></h1> <blockquote> <ol> <li> <p>如果 URL 是一个绝对路径 (例如<code>/images/foo.png</code>)，它将会被保留不变。</p> </li> <li> <p>如果 URL 以<strong><span style="color:#fe2c24;"><code>.</code></span></strong>&nbsp;开头，它会作为一个相对模块请求被解释且基于你的文件系统中的目录结构进行解析。</p> </li> <li> <p>如果 URL 以<span style="color:#fe2c24;"><strong><code>~</code></strong></span>&nbsp;开头，其后的任何内容都会作为一个模块请求被解析。这意味着你甚至可以引用 Node 模块中的资源：</p> <pre><code class="language-html">&lt;img src="~some-npm-package/foo.png" alt="vue 图片资源应该如何存放并引入（public、assets）？"&gt;</code></pre> </li> <li> <p>如果 URL 以<span style="color:#fe2c24;"><strong><code>@</code></strong></span>&nbsp;开头，它也会作为一个模块请求被解析。它的用处在于 Vue CLI 默认会设置一个指向<code>&lt;projectRoot&gt;/src</code>&nbsp;的别名<code>@</code>。<strong>(仅作用于模版中)</strong></p> </li> </ol> </blockquote> <h1 id="public-文件夹"><code>三、</code>关于public</h1> <h2>3.1<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/guide/html-and-static-assets.html#public-%E6%96%87%E4%BB%B6%E5%A4%B9"  title="public&nbsp;文件夹" rel="nofollow">public&nbsp;文件夹</a></h2> <blockquote> <p>任何放置在<code>public</code>&nbsp;文件夹的静态资源都会被简单的复制，而不经过 webpack。你需要通过绝对路径来引用它们。</p> <p>注意我们推荐将资源作为你的模块依赖图的一部分导入，这样它们会通过 webpack 的处理并获得如下好处：</p> <ul> <li>脚本和样式表会被压缩且打包在一起，从而避免额外的网络请求。</li> <li>文件丢失会直接在编译时报错，而不是到了用户端才产生 404 错误。</li> <li>最终生成的文件名包含了内容哈希，因此你不必担心浏览器会缓存它们的老版本。</li> </ul> <p><code>public</code>&nbsp;目录提供的是一个<strong>应急手段</strong>，当你通过绝对路径引用它时，留意应用将会部署到哪里。如果你的应用没有部署在域名的根部，那么你需要为你的 URL 配置<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/config/#publicpath"  title="publicPath" rel="nofollow">publicPath</a>&nbsp;前缀：</p> <ul> <li> <p>在<code>public/index.html</code>&nbsp;或其它通过<code>html-webpack-plugin</code>&nbsp;用作模板的 HTML 文件中，你需要通过<code>&lt;%= BASE_URL %&gt;</code>&nbsp;设置链接前缀：</p> <pre><code class="language-html">&lt;link  href="&lt;%= BASE_URL %&gt;favicon.ico"&gt;</code></pre> </li> <li> <p>在模板中，你首先需要向你的组件传入基础 URL：</p> <pre><code class="language-javascript">data () {   return {     publicPath: process.env.BASE_URL   } }</code></pre> <p>然后：</p> <pre><code class="language-html">&lt;img :src="`${publicPath}my-image.png`"&gt;</code></pre> </li> </ul> </blockquote> <h2 id="何时使用-public-文件夹">3.2<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cli.vuejs.org/zh/guide/html-and-static-assets.html#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-public-%E6%96%87%E4%BB%B6%E5%A4%B9"  title="何时使用&nbsp;public&nbsp;文件夹" rel="nofollow">何时使用&nbsp;public&nbsp;文件夹</a></h2> <blockquote> <ul> <li>你需要在构建输出中指定一个文件的名字。</li> <li>你有上千个图片，需要动态引用它们的路径。</li> <li>有些库可能和 webpack 不兼容，这时你除了将其用一个独立的<code>&lt;script&gt;</code>&nbsp;标签引入没有别的选择。</li> </ul> </blockquote> <hr/> <p>上面官方说的大部分都是 public 的内容。</p> <h1>四、总结</h1> <p>public放不会变动的文件（相当于vue-cli2.x中的static）<br /> public/ 目录下的文件并不会被Webpack处理：它们会直接被复制到最终的打包目录（默认是dist/static）下。必须使用绝对路径引用这些文件，这个取决于你vue.config.js中 publicPath 的配置，默认的是/。</p> <p> assets放可能会变动的文件<br /> assets目录中的文件会被webpack处理解析为模块依赖，只支持相对路径形式。</p> <p>简单来说就是就是public放别人家js文件（也就是不会变动），assets放自己写的js、css文件（需要改动的文件）</p> <p><img decoding="async" alt="" height="405" src="http://img.555519.xyz/uploads3/20220609/86cce9d495304976875df38048d3a3bd.jpg"></p> <p>推荐一篇文，个人认为很实用：</p> <p><a class="has-card" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/vickylinj/p/15599154.html"  title="Vue处理静态资源：public、assets目录 - vickylinj - 博客园" rel="nofollow"><span class="link-card-box"><span class="link-title">Vue处理静态资源：public、assets目录 - vickylinj - 博客园</span><span class="link-desc">前言: webpack中的require解析 首先明确一点，在项目中的webpack.config.js等项目配置文件中使用的require属于nodejs范畴，而进入index.js后，加载的组件中</span><span class="link-link"><img decoding="async" alt="" class="link-link-icon" src="http://img.555519.xyz/uploads3/20220609/00793b403834710f821e6d7f50cf36c6.jpg">https://www.cnblogs.com/vickylinj/p/15599154.html</span></span></a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/yeminglong/p/12734819.html"  title="vue项目引入背景图报Module not found: Error: Can't resolve './src/assets/theme/logo_blue.png' in'xxx'错误" rel="nofollow">vue项目引入背景图报Module not found: Error: Can't resolve './src/assets/theme/logo_blue.png' in'xxx'错误</a></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-2391.htm">DDL(数据定义语言)</a></p>
+                                        <p>下一个：<a href="/html/category/article-2393.htm">如果未提供任何参数，MySQL ASCII()函数将返回什么？</a></p>
+                                    </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2478.htm" title="Jackson忽略字段不序列化字段的3种方法">Jackson忽略字段不序列化字段的3种方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2523.htm" title="ElementUI el-upload 断点续传文件">ElementUI el-upload 断点续传文件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2486.htm" title="Java实习生面试题汇总">Java实习生面试题汇总</a></li>
+                        <li class="py-2"><a href="/html/category/article-2479.htm" title="pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2512.htm" title="测试开发该如何在团队中推广新工具和新技术">测试开发该如何在团队中推广新工具和新技术</a></li>
+                        <li class="py-2"><a href="/html/category/article-2485.htm" title="PDB调试方法">PDB调试方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
+                        <li class="py-2"><a href="/html/category/article-2524.htm" title="Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具">Django学习——图书管理系统图书修改、orm常用和非常用字段（了解）、 orm字段参数（了解）、字段关系（了解）、手动创建第三张表、Meta元信息、原生SQL、Django与ajax(入门)_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">46</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
