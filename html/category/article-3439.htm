@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-3439.htm" />
+<title>PYQT5(13)-基本窗口控件-拖曳与剪贴板 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">PYQT5(13)-基本窗口控件-拖曳与剪贴板</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h3>Drag与Drop</h3> <p>为用户提供的拖曳功能很直观，在很多桌面应用程序中，复制或移动对象都可以通过拖曳来完成。</p> <p>基于MIME类型(Multipurpose Internet Mail Extension, 多用途互联网邮件扩展类型)的拖曳数据传输是基于QDrag类的。QMimeData对象将关联的数据与其对应的MIME类型相关联。</p> <p>MIME类型的数据可以简单理解为互联网上的各种资源，比如文本、音频和视频资源等，互联网上的每一种资源都属于一种MIME类型的数据。</p> <p>MimeData类函数允许检测和使用方便的MIME类型。</p> <table border="1" cellpadding="1" cellspacing="1" style="width:700px;"> <tbody> <tr> <td style="background-color:#cccccc;">判断函数</td> <td style="background-color:#cccccc;">设置函数</td> <td style="background-color:#cccccc;">获取函数</td> <td style="background-color:#cccccc;">MIME类型</td> </tr> <tr> <td>hasText()</td> <td>text()</td> <td>setText()</td> <td>text/plain</td> </tr> <tr> <td>hasHtml()</td> <td>html()</td> <td>setHtml()</td> <td>text/html</td> </tr> <tr> <td>hasUrls()</td> <td>urls()</td> <td>setUrls()</td> <td>text/uri-list</td> </tr> <tr> <td>haslmage()</td> <td>imageData()</td> <td>setlmageData()</td> <td>image/*</td> </tr> <tr> <td>hasColor()</td> <td>colorData()</td> <td>setColorData()</td> <td>application/x-color</td> </tr> </tbody> </table> <p>许多QWidget对象都支持拖曳动作，允许拖曳数据的控件必须设置<strong>QWidget.setDragEnabled()</strong>为<strong>True</strong>。另外，控件应该响应拖曳事件，以便存储所拖曳的数据。</p> <p>常用的拖曳事件</p> <table border="1" cellpadding="1" cellspacing="1" style="width:700px;"> <tbody> <tr> <td>DragEnterEvent</td> <td>当执行一个拖曳控件操作，并且鼠标指针进入该控件时，这个事件将被触发。在这个事件中可以获得被操作的窗口控件，还可以有条件地接受或拒绝该拖曳操作</td> </tr> <tr> <td>DragMoveEvent</td> <td>在拖曳操作进行时会触发该事件</td> </tr> <tr> <td>DragLeaveEvent</td> <td>当执行一个拖曳控件操作，并且鼠标指针离开该控件时，这个事件将被触发</td> </tr> <tr> <td>DropEvent</td> <td>当拖曳操作在目标控件上被释放时，这个事件将被触发</td> </tr> </tbody> </table> <pre><code class="language-python">import sys from PyQt5.QtCore import * from PyQt5.QtGui import * from PyQt5.QtWidgets import *   class Combo(QComboBox):      def __init__(self, title, parent):         super(Combo, self).__init__(parent)         # 允许拖曳         self.setAcceptDrops(True)      def dragEnterEvent(self, e):         print(e)         if e.mimeData().hasText():             e.accept()         else:             e.ignore()      def dropEvent(self, e):         self.addItem(e.mimeData().text())   class Example(QWidget):     def __init__(self):         super(Example, self).__init__()         self.initUI()      def initUI(self):         lo = QFormLayout()         lo.addRow(QLabel("请把左边的文本拖拽到右边的下拉菜单中"))         edit = QLineEdit()         # 允许拖曳控件         edit.setDragEnabled(True)         com = Combo("Button", self)         lo.addRow(edit, com)         self.setLayout(lo)         self.setWindowTitle('简单拖拽例子')   if __name__ == '__main__':     app = QApplication(sys.argv)     ex = Example()     ex.show()     sys.exit(app.exec_())</code></pre> <p><img decoding="async" alt="" height="82" src="http://img.555519.xyz/uploads/20230112/953a3dab3c7ab663d84748e0afc9ed88.jpg"></p> <h3>QClipboard</h3> <p>QClipboard类提供了对系统剪贴板的访问，可以在应用程序之间复制和粘贴数据。它的操作类似于QDrag类，并使用类似的数据类型。</p> <p>QApplication类有一个静态方法clipboard()，它返回对剪贴板对象的引用。任何类型的MimeData都可以从剪贴板复制或粘贴。</p> <p>常用方法</p> <table border="1" cellpadding="1" cellspacing="1" style="width:700px;"> <tbody> <tr> <td>clear()</td> <td>清除剪贴板的内容</td> </tr> <tr> <td>setlmage()</td> <td>将QImage对象复制到剪贴板中</td> </tr> <tr> <td>setMimeData()</td> <td>将MIME数据设置为剪贴板</td> </tr> <tr> <td>setPixmap()</td> <td>从剪贴板中复制Pixmap对象</td> </tr> <tr> <td>setText()</td> <td>从剪贴板中复制文本</td> </tr> <tr> <td>text()</td> <td>从剪贴板中检索文本</td> </tr> </tbody> </table> <p>常用信号</p> <p>dataChanged：当剪贴板内容发生变化时，这个信号被发射</p> <pre><code class="language-python">import os import sys from PyQt5.QtCore import QMimeData from PyQt5.QtWidgets import (QApplication, QDialog, QGridLayout, QLabel, QPushButton) from PyQt5.QtGui import QPixmap   class Form(QDialog):     def __init__(self, parent=None):         super(Form, self).__init__(parent)         textCopyButton = QPushButton("&amp;Copy Text")         textPasteButton = QPushButton("Paste &amp;Text")         htmlCopyButton = QPushButton("C&amp;opy HTML")         htmlPasteButton = QPushButton("Paste &amp;HTML")         imageCopyButton = QPushButton("Co&amp;py Image")         imagePasteButton = QPushButton("Paste &amp;Image")         self.textLabel = QLabel("Original text")         self.imageLabel = QLabel()         self.imageLabel.setPixmap(QPixmap(os.path.join(             os.path.dirname(__file__), "images/clock.png")))         layout = QGridLayout()         layout.addWidget(textCopyButton, 0, 0)         layout.addWidget(imageCopyButton, 0, 1)         layout.addWidget(htmlCopyButton, 0, 2)         layout.addWidget(textPasteButton, 1, 0)         layout.addWidget(imagePasteButton, 1, 1)         layout.addWidget(htmlPasteButton, 1, 2)         layout.addWidget(self.textLabel, 2, 0, 1, 2)         layout.addWidget(self.imageLabel, 2, 2)         self.setLayout(layout)         textCopyButton.clicked.connect(self.copyText)         textPasteButton.clicked.connect(self.pasteText)         htmlCopyButton.clicked.connect(self.copyHtml)         htmlPasteButton.clicked.connect(self.pasteHtml)         imageCopyButton.clicked.connect(self.copyImage)         imagePasteButton.clicked.connect(self.pasteImage)         self.setWindowTitle("Clipboard 例子")      def copyText(self):         clipboard = QApplication.clipboard()         clipboard.setText("I've been clipped!")      def pasteText(self):         clipboard = QApplication.clipboard()         self.textLabel.setText(clipboard.text())      def copyImage(self):         clipboard = QApplication.clipboard()         clipboard.setPixmap(QPixmap(os.path.join(             os.path.dirname(__file__), "./images/python.png")))      def pasteImage(self):         clipboard = QApplication.clipboard()         self.imageLabel.setPixmap(clipboard.pixmap())      def copyHtml(self):         mimeData = QMimeData()         mimeData.setHtml("&lt;b&gt;Bold and &lt;font color=red&gt;Red&lt;/font&gt;&lt;/b&gt;")         clipboard = QApplication.clipboard()         clipboard.setMimeData(mimeData)      def pasteHtml(self):         clipboard = QApplication.clipboard()         mimeData = clipboard.mimeData()         if mimeData.hasHtml():             self.textLabel.setText(mimeData.html())   if __name__ == "__main__":     app = QApplication(sys.argv)     form = Form()     form.show()     sys.exit(app.exec_())</code></pre> <p><img decoding="async" alt="" height="103" src="http://img.555519.xyz/uploads/20230112/e8e376e2681e34f50020e2d0e24b21a7.jpg"></p> </p></div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-3138.htm">vue3 ref获取元素</a></p>
+                                        <p>下一个：<a href="/html/category/article-3440.htm">IDEA工程-数据库连接-mysql连接</a></p>
+                                    </div>
+                                <div class="panel panel-default mt-5">
+                    <div class="panel-heading">
+                        <h3 class="m-0">推荐文章</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="p-0 x-0">
+                                                        <li class="py-2"><a href="/html/category/article-2517.htm">C#关键字Check简单介绍_C#教程</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2491.htm">jQuery显示与隐藏动画</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2479.htm">pythonmysql查询转list_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2438.htm">关于feign调用传递header的解决方法</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2437.htm">PostgreSQL执行计划：Bitmap scan VS index only scan</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2399.htm">kafka-5-设置开机自启动kafka</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2389.htm">数据库常用函数_在线工具</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2328.htm">linux搭建NFS网络文件共享服务</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2323.htm">SQL 查询执行顺序</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2286.htm">Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2497.htm" title="PHP表达式详解">PHP表达式详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2496.htm" title=".NET Core(.NET6)中gRPC使用">.NET Core(.NET6)中gRPC使用</a></li>
+                        <li class="py-2"><a href="/html/category/article-2477.htm" title="spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解">spring和springMVC整合父子容器问题：整合Spring时Service层为什么不做全局包扫描详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2501.htm" title="Android Studio之菜单栏制作">Android Studio之菜单栏制作</a></li>
+                        <li class="py-2"><a href="/html/category/article-2495.htm" title="js中数组常用遍历，VUE 中数组常用遍历">js中数组常用遍历，VUE 中数组常用遍历</a></li>
+                        <li class="py-2"><a href="/html/category/article-2480.htm" title="Docker常见问题详解">Docker常见问题详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-2500.htm" title="JavaScript 进阶第二章（循环结构 ）">JavaScript 进阶第二章（循环结构 ）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2493.htm" title="FreeRTOS实时操作系统信号量基础_操作系统">FreeRTOS实时操作系统信号量基础_操作系统</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
