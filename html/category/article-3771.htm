@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="canonical" href="https://pakistanaddress.github.io/html/category/article-3771.htm" />
+<title>使用Echarts3实现动态折线图 - Pakistan Address</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/assets/addons/xcblog/img/pakistanaddress/favicon.ico" type="image/x-icon"/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/addons/xcblog/css/pakistanaddress/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/addons/xcblog/css/pakistanaddress/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/addons/xcblog/js/frontend/pakistanaddress/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21f4e50ed805b3a1bd1374e6b345c04a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3ls_logo">
+								<a href="/">Pakistan Address</a>
+							</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+														<li><a href="/">首页</a></li>
+														<li><a href="/html/category/">文章分类</a></li>
+														<li><a href="#">关于</a></li>
+							<li><a href="#">联系</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <h1 style="word-break: break-all;">使用Echarts3实现动态折线图</h1>
+            <ul>
+                <li><a href="/">首页</a><i>|</i></li>
+                <li><a href="/html/category/">文章分类</a><i>|</i></li>
+                <li>正文</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- single -->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="wthree_single_grid1">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2><strong>#1引入Echarts及地图文件</strong></h2> <p>*1）下载Echarts JS库文件及地图文件</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; Echarts库下载地址<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://echarts.baidu.com/download.html"  rel="nofollow"> http://echarts.baidu.com/download.html</a></p> <h2></h2> <h2><strong>#2绘制折线图</strong></h2> <p>*1）准备DOM容器，并设置高度和宽度为100%</p> <pre class="has"><code class="language-html"> &lt;!DOCTYPE html&gt; &lt;html style="height:100%;"&gt; &lt;head&gt;     &lt;meta charset="utf-8"&gt;     &lt;!-- 引入 ECharts 文件 --&gt;     &lt;script src="echarts.min.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body style="height:100%;"&gt;     &lt;div id="main" style="width:100%;height:100%;"&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  </code></pre> <p>*2）准备虚构随机数据，实际由接口获取</p> <pre class="has"><code class="language-html">var getData = [     {"month":"2017-07","count":6},{"month":"2017-08","count":2},{"month":"2017-09","count":0},     {"month":"2017-10","count":0},{"month":"2017-11","count":6},{"month":"2017-12","count":1},     {"month":"2018-01","count":4},{"month":"2018-02","count":5},{"month":"2018-03","count":2},     {"month":"2018-04","count":2},{"month":"2018-05","count":0},{"month":"2018-06","count":3},     {"month":"2018-07","count":3},{"month":"2018-08","count":2},{"month":"2018-09","count":4},     {"month":"2018-10","count":5},{"month":"2018-11","count":5},{"month":"2018-12","count":3},     {"month":"2019-01","count":3},{"month":"2019-02","count":0},{"month":"2019-03","count":0}]</code></pre> <p>*3）基于准备好的dom，初始化echarts实例</p> <pre class="has"><code class="language-html"> var chart = echarts.init(document.getElementById('main'));  </code></pre> <p>*4）指定图表的配置项</p> <pre class="has"><code class="language-html">index = 7; option = {     tooltip : {         trigger: 'axis'     },     xAxis : [{         type : 'category',         boundaryGap : false,         data : function (){             var list = [];                 for (var i = 0; i &lt; index; i++) {                     list.push(getData[i].month);                 }                 return list;         }()     }],     yAxis : [{         type : 'value'     }],     series : [{         name:'',         type:'line',         smooth: true,         data:function (){             var list = [];             for (var i = 0; i &lt; index; i++) {                 list.push(getData[i].count);             }             return list;         }()     }] };</code></pre> <p>*5）使用指定的配置项和数据显示图表</p> <pre class="has"><code class="language-html"> chart.setOption(option);  </code></pre> <p>*6）使用定时器设置动态效果</p> <pre class="has"><code class="language-html">	setInterval(function (){ 		if (index == getData.length -1) { 			index = 0; 		} 		var data = option.series[0].data; 		data.shift(); 		data.push(getData[index].count); 		option.xAxis[0].data.shift(); 		option.xAxis[0].data.push(getData[index++].month); 		myChart.setOption(option); 	}, 2000);</code></pre> <h2><strong>#3完整代码及效果</strong></h2> <p>*1）完整代码</p> <pre class="has"><code class="language-html"> &lt;!DOCTYPE html&gt; &lt;html style="height:100%;"&gt; &lt;head&gt;     &lt;meta charset="utf-8"&gt;     &lt;script src="echarts.min.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body style="height:100%;"&gt;     &lt;div id="main" style="width:100%;height:100%;"&gt;&lt;/div&gt;     &lt;script&gt; 	var getData = [ 		{"month":"2017-07","count":6},{"month":"2017-08","count":2},{"month":"2017-09","count":0}, 		{"month":"2017-10","count":0},{"month":"2017-11","count":6},{"month":"2017-12","count":1}, 		{"month":"2018-01","count":4},{"month":"2018-02","count":5},{"month":"2018-03","count":2}, 		{"month":"2018-04","count":2},{"month":"2018-05","count":0},{"month":"2018-06","count":3}, 		{"month":"2018-07","count":3},{"month":"2018-08","count":2},{"month":"2018-09","count":4}, 		{"month":"2018-10","count":5},{"month":"2018-11","count":5},{"month":"2018-12","count":3}, 		{"month":"2019-01","count":3},{"month":"2019-02","count":0},{"month":"2019-03","count":0}] 	var index = 7; 	var option = { 		tooltip : { 			trigger: 'axis' 		}, 		xAxis : [{ 			type : 'category', 			boundaryGap : false, 			data : function (){ 				var list = []; 					for (var i = 0; i &lt; index; i++) { 						list.push(getData[i].month); 					} 					return list; 			}() 		}], 		yAxis : [{ 			type : 'value' 		}], 		series : [{ 			name:'', 			type:'line', 			smooth: true, 			data:function (){ 				var list = []; 				for (var i = 0; i &lt; index; i++) { 					list.push(getData[i].count); 				} 				return list; 			}() 		}] 	};      	var myChart = echarts.init(document.getElementById('main'));     myChart.setOption(option); 	setInterval(function (){ 		if (index == getData.length -1) { 			index = 0; 		} 		var data = option.series[0].data; 		data.shift(); 		data.push(getData[index].count); 		option.xAxis[0].data.shift(); 		option.xAxis[0].data.push(getData[index++].month); 		myChart.setOption(option); 	}, 2000);     &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  </code></pre> <p>*2）效果图</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads3/20220607/30d39f53cfd631063f4f2384906e6e68.jpg"></p> <p>*3）在线编辑</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gallery.echartsjs.com/editor.html?c=xrFYmIEn2y&amp;v=1"  rel="nofollow">https://gallery.echartsjs.com/editor.html?c=xrFYmIEn2y&amp;v=1</a></p> </div> 			                </div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/html/category/article-3746.htm">Python轻松入门-13 函数返回值</a></p>
+                                        <p>下一个：<a href="/html/category/article-3772.htm">git下载、安装、配置与简单应用</a></p>
+                                    </div>
+                                <div class="panel panel-default mt-5">
+                    <div class="panel-heading">
+                        <h3 class="m-0">推荐文章</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="p-0 x-0">
+                                                        <li class="py-2"><a href="/html/category/article-2528.htm">算法：在一个集合中选取所有符合条件的元素组合</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2522.htm">Python 实现走迷宫深度优先回溯算法（优质代码）</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2513.htm">hbase的概述和hbase架构及基本组件</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2471.htm">1分钟掌握 Python 函数参数</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2427.htm">自定义注解详细介绍</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2397.htm">Spring Boot运行原理</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2298.htm">SpringCloudRPC远程调用核心原理：Feign远程调用的执行流程</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2286.htm">Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2278.htm">element中el-cascader的使用</a></li>
+                                                        <li class="py-2"><a href="/html/category/article-2269.htm">Java笔记-使用BindingResult把表单错误传出来</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+                            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2483.htm" title="setTimeout、Promise、Async/Await 的区别">setTimeout、Promise、Async/Await 的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2513.htm" title="hbase的概述和hbase架构及基本组件">hbase的概述和hbase架构及基本组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-2507.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/html/category/article-3440.htm" title="IDEA工程-数据库连接-mysql连接">IDEA工程-数据库连接-mysql连接</a></li>
+                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-2505.htm" title="SpringMvc注解@PathVariable">SpringMvc注解@PathVariable</a></li>
+                        <li class="py-2"><a href="/html/category/article-2494.htm" title="flink调优之RocksDB设置">flink调优之RocksDB设置</a></li>
+                        <li class="py-2"><a href="/html/category/article-2498.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/html/category/article-3745.htm" title="vue 跨组件进行传值简易方法">vue 跨组件进行传值简易方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+    <!-- footer -->
+	
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="/assets/addons/xcblog/img/pakistanaddress/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+            <div class="col-lg-8 footer-left">
+                <p class="m-0">Pakistan Address 版权所有</p>
+            </div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="/assets/addons/xcblog/js/frontend/pakistanaddress/bootstrap.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
