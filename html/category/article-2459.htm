@@ -95,7 +95,7 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="col-md-9">
                 <div class="wthree_single_grid1">
-                      				  				  				<div id="content_views" class="htmledit_views"> <p><strong>统一接口返回类的意义：</strong></p> <p>基于java的前后端分离项目中，前端获取后端controller层接口返回的JSON格式的数据，并展示出来。通常为了提高代码质量，会将后端返回的数据进行统一的格式处理。</p> <p>自定义工具类取名为Result</p> <pre><code class="language-java">import lombok.Data; import lombok.NoArgsConstructor; import lombok.experimental.Accessors;  @Data  //getter和setter函数 @AllArgsConstructor //全参构造 @NoArgsConstructor   //无参构造 @Accessors(chain = true)//可以链式操作，默认是false public class Result&lt;T&gt;{     private int code; //状态码      private String message;  //信息      private T data;  //数据 }</code></pre> <p>在controller中接口返回类型定义为Result，添加一个测试接口，查找所有用户。</p> <pre><code class="language-java">    //查找所有用户     @GetMapping("find")     public Result find(){         //userService.findAll() 为查找所有用户所得的结果         return new Result().setCode(200).setData(userService.findAll()).setMessage("查找成功");     }</code></pre> <p>接着在postman中输入</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8080/find"  rel="nofollow">http://localhost:8080/find</a></p> <p>得到返回结果如图：</p> <p><img fetchpriority="high" decoding="async" alt="" height="751" src="http://img.555519.xyz/uploads3/20220904/f6052fec00d4dbd3dbe591e37f93e72e.jpg"></p> <p><strong>以上仅仅为测试，以此引申到其他接口的编写。</strong></p> <p><span style="color:#fe2c24;"><strong>&nbsp;如果需要实战项目或springboot技术栈的整合，欢迎评论私信</strong></span></p> </div> 			                </div>
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><strong>统一接口返回类的意义：</strong></p> <p>基于java的前后端分离项目中，前端获取后端controller层接口返回的JSON格式的数据，并展示出来。通常为了提高代码质量，会将后端返回的数据进行统一的格式处理。</p> <p>自定义工具类取名为Result</p> <pre><code class="language-java">import lombok.Data; import lombok.NoArgsConstructor; import lombok.experimental.Accessors;  @Data  //getter和setter函数 @AllArgsConstructor //全参构造 @NoArgsConstructor   //无参构造 @Accessors(chain = true)//可以链式操作，默认是false public class Result<T>{     private int code; //状态码      private String message;  //信息      private T data;  //数据 }</code></pre> <p>在controller中接口返回类型定义为Result，添加一个测试接口，查找所有用户。</p> <pre><code class="language-java">    //查找所有用户     @GetMapping("find")     public Result find(){         //userService.findAll() 为查找所有用户所得的结果         return new Result().setCode(200).setData(userService.findAll()).setMessage("查找成功");     }</code></pre> <p>接着在postman中输入</p> <p>http://localhost:8080/find</p> <p>得到返回结果如图：</p> <p><img fetchpriority="high" decoding="async" alt="" height="751" src="http://img.555519.xyz/uploads3/20220904/f6052fec00d4dbd3dbe591e37f93e72e.jpg"></p> <p><strong>以上仅仅为测试，以此引申到其他接口的编写。</strong></p> <p><span style="color:#fe2c24;"><strong>&nbsp;如果需要实战项目或springboot技术栈的整合，欢迎评论私信</strong></span></p> </div> 			                </div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/html/category/article-2458.htm">JavaScript怎么比较数组元素是否相等</a></p>
                                         <p>下一个：<a href="/html/category/article-2460.htm">C++，获取当前工作路径</a></p>
@@ -108,16 +108,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3772.htm" title="git下载、安装、配置与简单应用">git下载、安装、配置与简单应用</a></li>
+                        <li class="py-2"><a href="/html/category/article-4308.htm" title="菠萝肉段的家常做法(菠萝烀肉)">菠萝肉段的家常做法(菠萝烀肉)</a></li>
+                        <li class="py-2"><a href="/html/category/article-4458.htm" title="猫汪清宠（喵汪清宠驱虫药怎么样）">猫汪清宠（喵汪清宠驱虫药怎么样）</a></li>
+                        <li class="py-2"><a href="/html/category/article-5944.htm" title="宠物用品批发进货app（宠物用品批发进货市场）">宠物用品批发进货app（宠物用品批发进货市场）</a></li>
                         <li class="py-2"><a href="/html/category/article-2839.htm" title="springboot之依赖版本管理">springboot之依赖版本管理</a></li>
-                        <li class="py-2"><a href="/html/category/article-4566.htm" title="儿童女孩足球鞋(儿童女孩足球运动鞋)">儿童女孩足球鞋(儿童女孩足球运动鞋)</a></li>
-                        <li class="py-2"><a href="/html/category/article-2840.htm" title="MySQL 表数据多久刷一次盘">MySQL 表数据多久刷一次盘</a></li>
-                        <li class="py-2"><a href="/html/category/article-4309.htm" title="蜜雪加盟一般多少钱镇上（蜜雪加盟需要多少钱）">蜜雪加盟一般多少钱镇上（蜜雪加盟需要多少钱）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4419.htm" title="虽然是精神病但没关系韩剧女主剧照（虽然是精神病但没关系大结局）居然可以这样，">虽然是精神病但没关系韩剧女主剧照（虽然是精神病但没关系大结局）居然可以这样，</a></li>
-                        <li class="py-2"><a href="/html/category/article-3746.htm" title="Python轻松入门-13 函数返回值">Python轻松入门-13 函数返回值</a></li>
-                        <li class="py-2"><a href="/html/category/article-2511.htm" title="vue3.0 elementUI实现上传文件的暂停继续功能">vue3.0 elementUI实现上传文件的暂停继续功能</a></li>
-                        <li class="py-2"><a href="/html/category/article-3137.htm" title="[转]图解分布式一致性协议Paxos">[转]图解分布式一致性协议Paxos</a></li>
-                        <li class="py-2"><a href="/html/category/article-4112.htm" title="Vue3实践setup函数详解">Vue3实践setup函数详解</a></li>
-                        <li class="py-2"><a href="/html/category/article-3439.htm" title="PYQT5(13)-基本窗口控件-拖曳与剪贴板">PYQT5(13)-基本窗口控件-拖曳与剪贴板</a></li>
+                        <li class="py-2"><a href="/html/category/article-3745.htm" title="vue 跨组件进行传值简易方法">vue 跨组件进行传值简易方法</a></li>
+                        <li class="py-2"><a href="/html/category/article-4084.htm" title="@Scheduled 动态配置cron">@Scheduled 动态配置cron</a></li>
+                        <li class="py-2"><a href="/html/category/article-4494.htm" title="麻辣火锅鸡（麻辣火锅鸡的正宗做法视频）">麻辣火锅鸡（麻辣火锅鸡的正宗做法视频）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
                     </ul>
     </div>
 </div>
@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

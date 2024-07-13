@@ -95,7 +95,7 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="col-md-9">
                 <div class="wthree_single_grid1">
-                      				  				  				<div id="content_views" class="markdown_views prism-dracula"> <hr/> <h1> <a id="_1" rel="nofollow"></a>版权声明</h1> <ul> <li>本文原创作者：谷哥的小弟</li> <li>作者博客地址：http://blog.csdn.net/lfdfhl</li> </ul> <hr/> <h1> <a id="_5" rel="nofollow"></a>参考资料</h1> <ol> <li>《大话设计模式》 作者：程杰</li> <li>《Java设计模式》 作者：刘伟</li> <li>《图解设计模式》 作者：结城浩</li> <li>《重学Java设计模式》 作者：付政委</li> <li>《Head First设计模式》作者：埃里克·弗里曼</li> </ol> <hr/> <h1> <a id="_12" rel="nofollow"></a>单一职责原则概述</h1> <p>单一职责原则(Single Responsibility Principle, SRP)是最简单的面向对象设计原则；它常用于控制类的粒度大小。</p> <p>该原则定义如下：</p> <p>一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。</p> <blockquote> <p>Every object should have a single responsibility,and that responsibility should be entirely encapsulated by the class.</p> </blockquote> <p>在软件系统中一个类(大到模块，小到方法)承担的职责越多，它被复用的可能性就越小；而且一个类承担的职责过多，相当于将这些职责耦合在一起，当其中一个职责变化时可能会影响其他职责的运作。因此要将这些职责进行分离，将不同的职责封装在不同的类中。即将不同的变化原因封装在不同的类中，如果多个职责总是同时发生改变则可将它们封装在同一类中。</p> <p>单一职责原则是实现高内聚、低耦合的指导方针。它是最简单但又最难运用的原则，需要设计人员发现类的不同职责并将其分离，而发现类的多重职责需要设计人员具有较强的分析设计能力和相关实践经验。</p> <h1> <a id="_25" rel="nofollow"></a>单一职责原则案例</h1> <p>在CustomerDataChart类中：</p> <ul> <li>getConnection( )用于连接数据库</li> <li>findCustomers( )用于查询所有客户信息</li> <li>createChart( )用于创建图表</li> <li>displayChart( )用于显示图表</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230205/0652e959102dd275072c9a0639ebbfbc.jpg" alt="面向对象编程原则(03)——单一职责原则"><br /> CustomerDataChart类承担了太多的职责，既包含与数据库相关的方法，又包含与图表生成和显示相关的方法。如果在其他类中也需要连接数据库或者使用<br /> findCustomers()方法查询客户信息，则难以实现代码的重用。无论是修改数据库连接方式还是修改图表显示方式都需要修改该类，它拥有不止一个引起它变化的原因，违背了单一职责原则。</p> <p>因此，需要对该类进行拆分使其满足单一职责原则，可将CustomerDataChart类拆分为以下3个类。</p> <ul> <li>1、DBUtils:负责连接数据库，包含数据库连接方法getConnection( )。</li> <li>2、CustomerDAO：负责操作数据库中的Customer表，包含对Customer表的增、删、改、查等方法，例如findCustomers( )方法。</li> <li>3、CustomerDataChart：负责图表的生成和显示，包含createChart( )方法和displayChart( )方法。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230205/16dc417cec767ff564ebca9f41551bb9.jpg" alt="面向对象编程原则(03)——单一职责原则"></p> </p></div> 			                </div>
+                      				  				  				<div id="content_views" class="markdown_views prism-dracula"> <hr/> <h1> 版权声明</h1> <ul> <li>本文原创作者：谷哥的小弟</li> <li>作者博客地址：http://blog.csdn.net/lfdfhl</li> </ul> <hr/> <h1> 参考资料</h1> <ol> <li>《大话设计模式》 作者：程杰</li> <li>《Java设计模式》 作者：刘伟</li> <li>《图解设计模式》 作者：结城浩</li> <li>《重学Java设计模式》 作者：付政委</li> <li>《Head First设计模式》作者：埃里克·弗里曼</li> </ol> <hr/> <h1> 单一职责原则概述</h1> <p>单一职责原则(Single Responsibility Principle, SRP)是最简单的面向对象设计原则；它常用于控制类的粒度大小。</p> <p>该原则定义如下：</p> <p>一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。</p> <blockquote> <p>Every object should have a single responsibility,and that responsibility should be entirely encapsulated by the class.</p> </blockquote> <p>在软件系统中一个类(大到模块，小到方法)承担的职责越多，它被复用的可能性就越小；而且一个类承担的职责过多，相当于将这些职责耦合在一起，当其中一个职责变化时可能会影响其他职责的运作。因此要将这些职责进行分离，将不同的职责封装在不同的类中。即将不同的变化原因封装在不同的类中，如果多个职责总是同时发生改变则可将它们封装在同一类中。</p> <p>单一职责原则是实现高内聚、低耦合的指导方针。它是最简单但又最难运用的原则，需要设计人员发现类的不同职责并将其分离，而发现类的多重职责需要设计人员具有较强的分析设计能力和相关实践经验。</p> <h1> 单一职责原则案例</h1> <p>在CustomerDataChart类中：</p> <ul> <li>getConnection( )用于连接数据库</li> <li>findCustomers( )用于查询所有客户信息</li> <li>createChart( )用于创建图表</li> <li>displayChart( )用于显示图表</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230205/0652e959102dd275072c9a0639ebbfbc.jpg" alt="面向对象编程原则(03)——单一职责原则"><br /> CustomerDataChart类承担了太多的职责，既包含与数据库相关的方法，又包含与图表生成和显示相关的方法。如果在其他类中也需要连接数据库或者使用<br /> findCustomers()方法查询客户信息，则难以实现代码的重用。无论是修改数据库连接方式还是修改图表显示方式都需要修改该类，它拥有不止一个引起它变化的原因，违背了单一职责原则。</p> <p>因此，需要对该类进行拆分使其满足单一职责原则，可将CustomerDataChart类拆分为以下3个类。</p> <ul> <li>1、DBUtils:负责连接数据库，包含数据库连接方法getConnection( )。</li> <li>2、CustomerDAO：负责操作数据库中的Customer表，包含对Customer表的增、删、改、查等方法，例如findCustomers( )方法。</li> <li>3、CustomerDataChart：负责图表的生成和显示，包含createChart( )方法和displayChart( )方法。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230205/16dc417cec767ff564ebca9f41551bb9.jpg" alt="面向对象编程原则(03)——单一职责原则"></p> </p></div> 			                </div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/html/category/article-2422.htm">sparksql 操作hive</a></p>
                                         <p>下一个：<a href="/html/category/article-2424.htm">python sum+=i+1_1.Pydef sum(n,p=2):result</a></p>
@@ -108,16 +108,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-4308.htm" title="菠萝肉段的家常做法(菠萝烀肉)">菠萝肉段的家常做法(菠萝烀肉)</a></li>
-                        <li class="py-2"><a href="/html/category/article-4309.htm" title="蜜雪加盟一般多少钱镇上（蜜雪加盟需要多少钱）">蜜雪加盟一般多少钱镇上（蜜雪加盟需要多少钱）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4385.htm" title="动物疫苗的作用 动物疫苗的作用意义">动物疫苗的作用 动物疫苗的作用意义</a></li>
+                        <li class="py-2"><a href="/html/category/article-2840.htm" title="MySQL 表数据多久刷一次盘">MySQL 表数据多久刷一次盘</a></li>
+                        <li class="py-2"><a href="/html/category/article-4530.htm" title="一片枫叶的拼音怎么写呀怎么组词啊（一片枫叶的拼音怎么写呀怎么组词啊）">一片枫叶的拼音怎么写呀怎么组词啊（一片枫叶的拼音怎么写呀怎么组词啊）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4458.htm" title="猫汪清宠（喵汪清宠驱虫药怎么样）">猫汪清宠（喵汪清宠驱虫药怎么样）</a></li>
                         <li class="py-2"><a href="/html/category/article-2517.htm" title="C#关键字Check简单介绍_C#教程">C#关键字Check简单介绍_C#教程</a></li>
-                        <li class="py-2"><a href="/html/category/article-4084.htm" title="@Scheduled 动态配置cron">@Scheduled 动态配置cron</a></li>
-                        <li class="py-2"><a href="/html/category/article-2515.htm" title="Java中Stack.peek()与Stack.pop()与Queue.poll的区别">Java中Stack.peek()与Stack.pop()与Queue.poll的区别</a></li>
-                        <li class="py-2"><a href="/html/category/article-2527.htm" title="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</a></li>
-                        <li class="py-2"><a href="/html/category/article-4418.htm" title="动物医院运营管理工作内容怎么写（动物医院管理流程）">动物医院运营管理工作内容怎么写（动物医院管理流程）</a></li>
                         <li class="py-2"><a href="/html/category/article-4495.htm" title="动物疫苗企业名单公布查询官网（动物疫苗市场规模）">动物疫苗企业名单公布查询官网（动物疫苗市场规模）</a></li>
-                        <li class="py-2"><a href="/html/category/article-2525.htm" title="自研FeignClient轻量级http客户端">自研FeignClient轻量级http客户端</a></li>
+                        <li class="py-2"><a href="/html/category/article-2509.htm" title="python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具">python数据可视化-matplotlib入门(7)-从网络加载数据及数据可视化的小总结_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-4531.htm" title="福建农大动物医院没开了吗最近（福州农大动物医院怎么样）">福建农大动物医院没开了吗最近（福州农大动物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/html/category/article-2510.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/html/category/article-2839.htm" title="springboot之依赖版本管理">springboot之依赖版本管理</a></li>
+                        <li class="py-2"><a href="/html/category/article-2526.htm" title="【笔记】PyTorch快速入门：基础部分合集_在线工具">【笔记】PyTorch快速入门：基础部分合集_在线工具</a></li>
                     </ul>
     </div>
 </div>
@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
